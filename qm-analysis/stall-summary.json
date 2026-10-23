@@ -1,0 +1,35 @@
+{
+  "boot_count": 299,
+  "event_count": 59,
+  "candidate_boot_count": 36,
+  "long_or_signal_boot_count": 24,
+  "event_categories": {
+    "service": 19,
+    "nic_bringup": 1,
+    "qm_timeout": 6,
+    "ssh_session": 19,
+    "clock_jump": 11,
+    "soft_lockup": 2,
+    "hrtimer_latency": 1
+  },
+  "kernel_message_count": 118925,
+  "normalized_kernel_signature_count": 415,
+  "kernel_diagnostic_counts": {
+    "soft_lockup": 2,
+    "kernel_WARNING": 0,
+    "rcu_stall": 0,
+    "hung_task": 0,
+    "oops_panic": 0,
+    "nic_watchdog": 0,
+    "storage_io_error": 0,
+    "clocksource_unstable": 0
+  },
+  "rtc_invalid_boot_count": 60,
+  "rtc_invalid_and_long_or_signal": [
+    [
+      1,
+      63
+    ]
+  ],
+  "all_offset_fields_match": true
+}

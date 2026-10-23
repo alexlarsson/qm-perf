@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": [
+    "All grouped boot graphs retained",
+    "Five phases per graph",
+    "Network-online band on every boot and reference",
+    "New phase uses pink background",
+    "Network boundary precedes host default target",
+    "Reference band matches averaged boundaries",
+    "Color legend describes the new phase",
+    "New background supports hover details",
+    "New phase popup includes original logs"
+  ]
+}

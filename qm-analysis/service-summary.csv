@@ -1,0 +1,55 @@
+service,samples,median_s,min_s,max_s,worst_file,worst_boot_index,review_candidate_count,review_candidate_boots,start_failure_boot_count
+user-runtime-dir@0.service,299,0.14957,0.079347,32.578744,qm-run-2.json,66,3,qm-run-2.json:31 (31.662805s); qm-run-2.json:66 (32.578744s); qm-run-3.json:26 (30.657029s),0
+NetworkManager.service,299,2.130567,1.971261,34.553991,qm-run-1.json,1,2,qm-run-1.json:1 (34.553991s); qm-run-1.json:63 (34.166140s),0
+mount-sysroot.service,299,0.200064,0.193789,32.366758,qm-run-2.json,35,1,qm-run-2.json:35 (32.366758s),0
+systemd-hostnamed.service,299,1.408519,1.300477,33.335989,qm-run-1.json,63,1,qm-run-1.json:63 (33.335989s),1
+sshd-keygen@rsa.service,99,2.129419,0.457004,11.000486,qm-run-2.json,60,2,qm-run-2.json:20 (9.609965s); qm-run-2.json:60 (11.000486s),0
+qm.service,293,3.8628,3.607679,8.779693,qm-run-2.json,61,0,,0
+systemd-journal-flush.service,299,1.063785,0.221513,3.952537,qm-run-1.json,48,6,qm-run-1.json:6 (3.625741s); qm-run-1.json:11 (3.937949s); qm-run-1.json:48 (3.952537s); qm-run-1.json:93 (3.198932s); qm-run-2.json:39 (3.420528s); qm-run-2.json:84 (3.194085s),0
+systemd-udevd.service,299,0.348055,0.323014,2.242569,qm-run-3.json,2,2,qm-run-3.json:2 (2.242569s); qm-run-3.json:4 (2.151391s),0
+systemd-vconsole-setup.service,299,0.44629,0.43882,1.750637,qm-run-3.json,66,1,qm-run-3.json:66 (1.750637s),0
+sshd.service,299,0.17011,0.105591,1.209942,qm-run-2.json,36,1,qm-run-2.json:36 (1.209942s),0
+user@0.service,299,2.19418,1.897687,2.844641,qm-run-2.json,0,0,,0
+initrd-switch-root.service,299,3.678778,3.640519,4.279996,qm-run-3.json,67,0,,0
+systemd-logind.service,299,1.181696,1.006398,1.380592,qm-run-2.json,91,0,,0
+chronyd.service,299,0.38698,0.325423,0.552371,qm-run-2.json,98,0,,0
+systemd-user-sessions.service,299,0.071031,0.062704,0.214655,qm-run-3.json,62,0,,0
+systemd-repart.service,299,0.139773,0.133993,0.275385,qm-run-2.json,42,0,,0
+systemd-random-seed.service,299,0.06771,0.058743,0.18311,qm-run-1.json,85,0,,0
+systemd-tmpfiles-setup.service,299,1.383625,1.359422,1.492222,qm-run-1.json,20,0,,0
+systemd-network-generator.service,299,0.128205,0.09294,0.234916,qm-run-3.json,93,0,,0
+modprobe@drm.service,299,0.161977,0.133206,0.267765,qm-run-3.json,93,0,,0
+systemd-journald.service,299,0.296372,0.26587,0.402144,qm-run-3.json,93,0,,0
+systemd-udev-trigger.service,299,0.921472,0.883937,1.011442,qm-run-1.json,86,0,,0
+podman-clean-transient-at-shutdown.service,299,0.09416,0.067631,0.181947,qm-run-2.json,30,0,,0
+dracut-shutdown.service,299,0.099953,0.0742,0.186663,qm-run-2.json,30,0,,0
+rcu-normal.service,299,0.085272,0.060995,0.169449,qm-run-2.json,30,0,,0
+early-boot-service.service,299,0.17121,0.141645,0.253366,qm-run-1.json,90,0,,0
+systemd-modules-load.service,299,0.122453,0.096746,0.204049,qm-run-3.json,93,0,,0
+NetworkManager-dispatcher.service,62,0.156642,0.097722,0.231406,qm-run-1.json,19,0,,0
+systemd-tmpfiles-setup-dev-early.service,299,0.233654,0.215037,0.30617,qm-run-3.json,93,0,,0
+initrd-cleanup.service,299,0.079481,0.078372,0.150547,qm-run-2.json,35,0,,0
+modprobe@fuse.service,299,0.148504,0.102204,0.215348,qm-run-1.json,72,0,,0
+systemd-udev-load-credentials.service,299,0.161106,0.119793,0.221923,qm-run-3.json,93,0,,0
+systemd-update-utmp-runlevel.service,299,0.11978,0.055023,0.172259,qm-run-3.json,64,0,,0
+ukiboot-set-success.service,299,0.044462,0.033549,0.096817,qm-run-2.json,78,0,,0
+modprobe@configfs.service,299,0.162185,0.11644,0.212552,qm-run-3.json,93,0,,0
+modprobe@efi_pstore.service,299,0.153355,0.102895,0.197977,qm-run-3.json,98,0,,0
+kmod-static-nodes.service,299,0.166781,0.120533,0.209866,qm-run-3.json,98,0,,0
+auditd.service,299,0.071963,0.068435,0.114605,qm-run-2.json,55,0,,0
+systemd-sysctl.service,299,0.150725,0.134683,0.191139,qm-run-3.json,58,0,,0
+systemd-update-done.service,299,0.065459,0.062348,0.104513,qm-run-2.json,45,0,,0
+sshd-keygen@ed25519.service,99,0.184885,0.167287,0.223194,qm-run-2.json,41,0,,0
+sshd-keygen@ecdsa.service,99,0.190678,0.170553,0.226546,qm-run-2.json,41,0,,0
+ostree-remount.service,299,0.06756,0.06362,0.08659,qm-run-2.json,35,0,,0
+bootc-sysusers-shadow-sync.service,299,0.385282,0.377865,0.403169,qm-run-3.json,1,0,,0
+selinux-bools.service,299,0.107103,0.104111,0.122782,qm-run-2.json,88,0,,0
+dbus-broker.service,299,0.14917,0.140252,0.163509,qm-run-1.json,86,0,,0
+ostree-prepare-root.service,299,0.094888,0.08873,0.105519,qm-run-2.json,31,0,,0
+systemd-tmpfiles-setup-dev.service,299,0.128703,0.126967,0.138893,qm-run-2.json,54,0,,0
+systemd-sysusers.service,299,0.169759,0.158916,0.178123,qm-run-3.json,93,0,,0
+systemd-update-utmp.service,299,0.065571,0.063253,0.072069,qm-run-3.json,24,0,,0
+initrd-parse-etc.service,299,0.108057,0.106947,0.112018,qm-run-3.json,19,0,,0
+cntvct@basic.service,299,0.0,0.0,0.0,qm-run-1.json,0,0,,0
+getty@tty1.service,299,0.0,0.0,0.0,qm-run-1.json,0,0,,0
+serial-getty@ttyLF0.service,299,0.0,0.0,0.0,qm-run-1.json,0,0,,0

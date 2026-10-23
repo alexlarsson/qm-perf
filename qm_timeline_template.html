@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QM boot comparison and stall evidence</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#202b3c;background:#f5f7fa;font-size:14px}
+*{box-sizing:border-box}body{margin:24px}h1{font-size:26px;margin:0 0 10px}p{line-height:1.5;max-width:1180px}
+table{border-collapse:collapse;width:100%}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid #dce2ea}
+.legend{max-width:1180px;background:white;margin:18px 0;border:1px solid #dce2ea}.legend th{background:#eaf0f7}.legend td{padding:7px 12px}.legend code{font-size:12px}
+.swatch{display:inline-block;width:28px;height:14px;border:1px solid #26334655;vertical-align:middle;margin-right:8px}.sample-line{display:inline-block;width:28px;border-top:2px dashed #46576b;vertical-align:middle;margin-right:8px}
+.controls{display:flex;flex-wrap:wrap;gap:18px;align-items:center;background:#fff;padding:13px;border:1px solid #dce2ea;margin-bottom:12px}.controls label{display:flex;gap:7px;align-items:center}input[type=search]{width:240px}input,select,button{font:inherit}input[type=search],select{padding:6px;border:1px solid #b4c0cf;border-radius:4px}
+.table-scroll{overflow-x:auto;border:1px solid #cbd5e2;background:white}.boots{min-width:1200px;table-layout:fixed}.boots th{background:#eaf0f7;position:sticky;top:0;z-index:1}.boots .boot-col{width:155px}.boots .summary-col{width:205px}.boots td{padding:12px 8px}.boots tr.reference{background:#f4f8ff;box-shadow:inset 4px 0 #2468aa}.boot-name{font-size:17px;font-weight:700;margin-bottom:7px}.boot-note{color:#53627a;line-height:1.6;font-size:12px}.tag{display:inline-block;background:#e9eef5;padding:2px 6px;border-radius:4px;margin:1px 0 7px;font-size:11px}.reference .tag{background:#daeaff;color:#16477b}
+svg.timeline{display:block;width:100%;height:auto;min-width:790px}.track-label{font:11px ui-monospace,monospace;fill:#26374b}.track-label.missing{fill:#8b95a4}.axis-label{font:11px system-ui;fill:#34445a}.phase-label{font:10px system-ui;fill:#102335;font-weight:700;pointer-events:none}.timing-label{font:10px system-ui;fill:#778598}.mark{cursor:pointer}.mark:focus{outline:2px solid #173d69;outline-offset:2px}.phase-mark{cursor:pointer}.normal-interval{stroke:#34485f;stroke-width:1.6;stroke-dasharray:3 3;opacity:.85}.normal-cap{stroke:#34485f;stroke-width:1.2}.service-timing:hover .normal-interval{stroke-width:3}.summary-list{margin:0;padding-left:16px;font-size:12px;line-height:1.5}.summary-list li{margin-bottom:7px}.empty{color:#718095;font-style:italic}.counter{font-size:12px;color:#53627a;margin:12px 0}
+.popover{display:none;position:fixed;z-index:10;width:min(760px,calc(100vw - 28px));max-height:calc(100vh - 32px);overflow:auto;background:#fff;border:1px solid #8596ac;border-radius:8px;box-shadow:0 12px 40px #172c4050}.popover.open{display:block}.popup-head{position:sticky;top:0;background:#fff;z-index:2;padding:12px 14px;border-bottom:1px solid #dce2ea}.popup-title{font-size:15px;font-weight:700;margin:0 0 8px}.popup-actions{display:flex;gap:8px}.popup-actions button{background:#edf2f8;border:1px solid #b5c1d0;padding:4px 9px;border-radius:4px;cursor:pointer}.popup-body{padding:12px 14px}.popup-body p{margin:0 0 10px;font-size:12px}.popup-body dl{font-size:12px;display:grid;grid-template-columns:120px 1fr;gap:5px;margin:0 0 12px}.popup-body dt{font-weight:650}.popup-body dd{margin:0;overflow-wrap:anywhere}.log-heading{font-weight:700;font-size:13px;margin:14px 0 8px}.log-list{background:#f5f7fa;border:1px solid #dce2ea;padding:6px;font:11px/1.55 ui-monospace,monospace}.log-line{white-space:pre-wrap;overflow-wrap:anywhere;padding:1px 4px;border-left:3px solid transparent}.log-time{color:#66788d}.log-line.kernel{border-left-color:#9977bc}.log-line.related{background:#fff4c7}.log-line.diagnostic{background:#ffe4e2;border-left-color:#ce3832;color:#8c1715}.log-line mark{background:#ffe276;color:#172c40;font-weight:700;border-radius:2px;padding:0 1px}.small{font-size:12px;color:#53627a}.no-results{padding:25px}.sticky-status{white-space:nowrap}
+@media(max-width:900px){body{margin:12px}.legend{font-size:12px}.controls{gap:10px}.popover{width:calc(100vw - 24px)}}
+</style>
+</head>
+<body>
+<h1>Boot timelines and stall evidence</h1>
+<p>One graph per boot, on the same time axis. Thin dashed lines show recorded service startup and comparison intervals, including healthy starts. Solid bars and dots show the detected observations. Times are seconds since the reconstructed Linux kernel-start origin; operation bounds and report times do not establish the exact onset of a CPU stall.</p>
+
+<table class="legend" aria-label="Timeline color and line legend">
+<thead><tr><th>Appearance</th><th>Meaning</th><th>Appearance</th><th>Meaning</th></tr></thead>
+<tbody>
+<tr><td><span class="swatch" style="background:#e4e9f1"></span>Gray background</td><td>Kernel startup, before initrd</td><td><span class="swatch" style="background:#ffe066"></span>Yellow background</td><td>Initrd</td></tr>
+<tr><td><span class="swatch" style="background:#75d6ff"></span>Cyan background</td><td>Host startup, after initrd and before <code>network-online.target</code></td><td><span class="swatch" style="background:#ffabdf"></span>Pink background</td><td>After <code>network-online.target</code>, before the host default target</td></tr>
+<tr><td><span class="swatch" style="background:#9aec85"></span>Green background</td><td>After reaching the host default target (<code>graphical.target</code>)</td><td><span class="swatch" style="background:repeating-linear-gradient(135deg,#fff,#fff 3px,#dce2ea 3px,#dce2ea 4px)"></span>Hatched background</td><td>Beyond the last captured journal record; the reference row uses the mean observation end</td></tr>
+<tr><td><span class="sample-line"></span>Thin dashed gray</td><td>Recorded service startup, NIC milestones, or first SSH session; reference row shows averages</td><td>Vertical dashed boundaries</td><td>Host <code>network-online.target</code> and default target reach times</td></tr>
+<tr><td><span style="display:inline-block;width:9px;height:9px;background:#b75010;border-radius:50%;margin:0 17px 0 9px"></span>Orange dot</td><td>Logind seat announcement, on its startup row; reference shows the mean announcement time</td><td>Podman network setup</td><td>Dashed span from the first to last observed bridge/veth setup milestone; click for individual milestones</td></tr>
+<tr><td><span style="display:inline-block;width:9px;height:9px;background:#00584b;border-radius:50%;margin:0 17px 0 9px"></span>Teal dot</td><td>Logind new-session announcement, on the logind row; reference shows the mean first announcement per boot</td><td>Seat versus session</td><td>Separate log messages: <code>New seat seat0</code> and <code>New session … of user …</code>; click dots for IDs and original lines</td></tr>
+<tr><td><span class="swatch" style="background:#2468aa"></span>Blue bar</td><td>Service startup outlier</td><td><span class="swatch" style="background:#c23830"></span>Red bar / dot</td><td>QM attempt ending in timeout / soft-lockup watchdog report</td></tr>
+<tr><td><span class="swatch" style="background:#7952a0"></span>Purple bar</td><td>Delayed SSH session opening after key acceptance</td><td><span class="swatch" style="background:#00796b"></span>Dark green bar</td><td>Long interval between NIC bring-up messages</td></tr>
+<tr><td><span class="swatch" style="background:#ad7900"></span>Gold dot</td><td>Chronyd forward-time-jump report</td><td><span class="swatch" style="background:#666"></span>Gray dot</td><td>Isolated microsecond hrtimer diagnostic</td></tr>
+<tr><td><span class="sample-line" style="border-color:#c23830"></span>Red dashed span</td><td>Watchdog age reference ending at its report; approximate, not proven stall onset</td><td>Click, or press Enter/Space</td><td>Open timing details and highlighted original logs; close with Close, Escape, or a click outside the popup</td></tr>
+</tbody></table>
+
+<p id="reference-explanation" class="small"></p>
+<div class="controls">
+<label>Run <select id="run"><option value="all">All runs</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></label>
+<label>Find <input type="search" id="search" placeholder="Boot, service, or observation"></label>
+<label><input type="checkbox" id="moderate" checked> Include moderate observations</label>
+<label><input type="checkbox" id="service-lines" checked> Show dashed comparison intervals</label>
+<span id="status" class="small sticky-status" aria-live="polite"></span>
+</div>
+<div class="table-scroll">
+<table class="boots" aria-label="Grouped boot timelines">
+<thead><tr><th class="boot-col">Boot</th><th>Boot phases and service timings — common scale</th><th class="summary-col">Detected observations</th></tr></thead>
+<tbody id="boot-rows"></tbody>
+</table>
+</div>
+<p class="small">The phase transition uses the host system manager’s configured default target, not the separate user manager’s <code>default.target</code>. A reached target can include failed dependencies. Missing service records remain marked “not recorded”; they are not treated as zero-duration starts. Nominal service state does not show which thread was executing or held a lock.</p>
+
+<aside id="popover" class="popover" aria-label="Timeline details" aria-hidden="true">
+ <div class="popup-head"><div id="popup-title" class="popup-title"></div><div class="popup-actions"><button id="copy">Copy logs</button><button id="close">Close</button></div></div>
+ <div id="popup-body" class="popup-body"></div>
+</aside>
+<script id="timeline-data" type="application/json">@@MODEL@@</script>
+<script>
+'use strict';
+const model=JSON.parse(document.getElementById('timeline-data').textContent);
+window.timelineModel=model;
+const colors={service:'#2468aa',qm_timeout:'#c23830',ssh_session:'#7952a0',nic_bringup:'#00796b',clock_jump:'#ad7900',soft_lockup:'#c23830',hrtimer_latency:'#666'};
+const phaseColors={kernel:'#e4e9f1',initrd:'#ffe066',startup:'#75d6ff',online:'#ffabdf',after:'#9aec85'};
+const $=id=>document.getElementById(id), NS='http://www.w3.org/2000/svg';
+const fmt=value=>Number(value).toFixed(3)+' s';
+let copyText='';
+function elem(tag,attributes={},text){const n=document.createElement(tag);for(const [k,v] of Object.entries(attributes))n.setAttribute(k,v);if(text!==undefined)n.textContent=text;return n;}
+function svgElem(tag,attributes={},text){const n=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attributes))n.setAttribute(k,v);if(text!==undefined)n.textContent=text;return n;}
+function bindMark(node,detail,label){node.classList.add('mark');node.setAttribute('tabindex','0');node.setAttribute('role','button');node.setAttribute('aria-label',label);node._detail=detail;node.addEventListener('click',event=>{event.stopPropagation();showPopup(detail,event);});node.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();showPopup(detail,null,node);}});}
+function closePopup(){$('popover').classList.remove('open');$('popover').setAttribute('aria-hidden','true');}
+$('close').onclick=closePopup;document.addEventListener('keydown',event=>{if(event.key==='Escape')closePopup();});document.addEventListener('click',event=>{if(!$('popover').contains(event.target))closePopup();});
+function addParagraph(parent,text,className=''){parent.append(elem('p',{class:className},text));}
+function addDefinition(dl,key,value){dl.append(elem('dt',{},key),elem('dd',{},value));}
+function highlightedMessage(text,tokens){const fragment=document.createDocumentFragment();let offset=0;while(offset<text.length){let next=-1,token='';for(const candidate of tokens.filter(Boolean)){const at=text.indexOf(candidate,offset);if(at>=0&&(next<0||at<next)){next=at;token=candidate;}}if(next<0){fragment.append(document.createTextNode(text.slice(offset)));break;}fragment.append(document.createTextNode(text.slice(offset,next)));fragment.append(elem('mark',{},token));offset=next+token.length;}return fragment;}
+function showPopup(detail,event,anchor){
+ const row=detail.row,body=$('popup-body');body.replaceChildren();$('popup-title').textContent=row.label+' · '+detail.title;copyText='';
+ const dl=elem('dl');body.append(dl);
+ if(detail.start!==undefined){addDefinition(dl,detail.end===null||detail.end===undefined?'Time':'Start',fmt(detail.start));if(detail.end!==null&&detail.end!==undefined){addDefinition(dl,'End',fmt(detail.end));addDefinition(dl,'Duration',fmt(detail.end-detail.start));}}
+ if(detail.source)addDefinition(dl,'Timing source',detail.source);
+ if(detail.note)addParagraph(body,detail.note);
+ if(detail.milestones?.length){body.append(elem('div',{class:'log-heading'},row.reference?'Mean network setup milestones':'Observed network setup milestones'));const milestones=elem('dl');for(const milestone of detail.milestones)addDefinition(milestones,milestone.label,fmt(milestone.time)+(milestone.samples?' · '+milestone.samples+' boots':''));body.append(milestones);}
+ if(detail.event){const e=detail.event;addDefinition(dl,'Context at',fmt(e.context_anchor_kernel_s));addDefinition(dl,'Starting',e.starting_at_anchor||'None observed');addDefinition(dl,'Nominally active',e.nominally_started_at_anchor||'None observed');if(e.stopping_at_anchor)addDefinition(dl,'Stopping',e.stopping_at_anchor);}
+ if(row.reference){
+  const stats=detail.stats;if(stats){addDefinition(dl,'Contributing boots',stats.samples+' / '+row.sample_count);if(stats.start_min!==undefined)addDefinition(dl,'Observed starts',fmt(stats.start_min)+' – '+fmt(stats.start_max));if(stats.duration_min!==undefined)addDefinition(dl,'Observed durations',fmt(stats.duration_min)+' – '+fmt(stats.duration_max));if(stats.time_min!==undefined)addDefinition(dl,'Announcement range',fmt(stats.time_min)+' – '+fmt(stats.time_max));}
+  else addDefinition(dl,'Contributing boots',String(row.sample_count));
+  addParagraph(body,'Arithmetic means from boots with no detected observations in this report. Intervals use the first recorded interval per boot; seat dots use matching first announcements; the session dot uses the first new-session announcement per boot. Missing records are excluded from each mean.');
+  body.append(elem('div',{class:'log-heading'},'Log evidence'));
+  addParagraph(body,'This row combines multiple boots, so it has no single representative log excerpt. Open an individual boot for original log lines.');
+ }else if(detail.missing){addParagraph(body,'No usable timing interval is recorded for this track in this boot.');}
+ else{
+  let from=detail.start,to=detail.end??detail.start;
+  if(detail.event&&detail.event.category==='soft_lockup'){from=detail.event.context_anchor_kernel_s;to=detail.start+.25;}
+  else if(detail.end===null||detail.end===undefined){from=detail.start-1;to=detail.start+1;}
+  else{from-=.02;to+=.02;}
+  const logs=row.logs.filter(log=>log.t>0&&log.t>=from&&log.t<=to);
+  body.append(elem('div',{class:'log-heading'},'Original journal lines · '+logs.length+' records'));
+  addParagraph(body,'Window '+fmt(Math.max(from,0))+' – '+fmt(to)+'. Related text is highlighted; diagnostic lines are red. Journal order is preserved.','small');
+  const list=elem('div',{class:'log-list',role:'log'});body.append(list);
+  const tokens=detail.tokens||[];
+  for(const log of logs){const classes=['log-line'];if(log.message.startsWith('kernel: '))classes.push('kernel');if(tokens.some(token=>log.message.includes(token)))classes.push('related');if(/BUG:|WARNING:|timed out|Failed to|Failed with|Unable to|I\/O error/.test(log.message))classes.push('diagnostic');const line=elem('div',{class:classes.join(' ')});line.append(elem('span',{class:'log-time'},log.t.toFixed(6).padStart(10)+'  '),highlightedMessage(log.message,tokens));list.append(line);}
+  if(!logs.length)addParagraph(list,'No timestamped journal lines fall inside this window. Unit timing can precede buffered journal delivery.');
+  copyText=logs.map(log=>log.t.toFixed(6).padStart(10)+'  '+log.message).join('\n');
+ }
+ $('copy').disabled=!copyText;$('copy').textContent='Copy logs';$('popover').classList.add('open');$('popover').setAttribute('aria-hidden','false');
+ const popup=$('popover'),width=popup.getBoundingClientRect().width;let x=event?.clientX??anchor?.getBoundingClientRect().right??20;let y=event?.clientY??anchor?.getBoundingClientRect().top??20;
+ x=x+18+width<innerWidth?x+18:Math.max(12,x-width-18);y=Math.min(Math.max(12,y-35),Math.max(12,innerHeight-360));popup.style.left=Math.min(x,innerWidth-width-12)+'px';popup.style.top=y+'px';popup.style.maxHeight=(innerHeight-y-12)+'px';
+}
+$('copy').onclick=async()=>{try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(copyText);else{const box=elem('textarea');box.value=copyText;box.style.position='fixed';box.style.left='-10000px';document.body.append(box);box.select();if(!document.execCommand('copy'))throw new Error('Clipboard unavailable');box.remove();}$('copy').textContent='Copied';}catch(error){$('copy').textContent='Select log text to copy';}};
+function laneForEvent(row,event){if(event.category==='service')return event.description;if(event.category==='qm_timeout')return 'qm.service';if(event.category==='nic_bringup')return 'NIC bring-up';if(event.category==='ssh_session'){const pid=/SSH PID (\d+)/.exec(event.description)?.[1];return row.services['First SSH session']?.[0]?.pid===pid?'First SSH session':'SSH session PID '+pid;}return 'Kernel / clock reports';}
+function tokensForEvent(event){if(event.category==='service')return[event.description];if(event.category==='qm_timeout')return['qm.service','podman[','qm[','podman0','veth0'];if(event.category==='ssh_session')return['sshd-session['+/SSH PID (\d+)/.exec(event.description)[1]+']'];if(event.category==='nic_bringup')return['s32-dwmac','(end0)'];if(event.category==='soft_lockup')return['BUG: soft lockup','default_idle_call','cpuidle_idle_call','do_idle'];if(event.category==='clock_jump')return['chronyd[','Forward time jump'];return['hrtimer:'];}
+function drawTimeline(row,visibleEvents){
+ const lanes=[...model.tracked];for(const event of visibleEvents){const lane=laneForEvent(row,event);if(!lanes.includes(lane))lanes.push(lane);}if(!lanes.includes('Kernel / clock reports'))lanes.push('Kernel / clock reports');
+ const W=1120,left=225,right=15,plot=W-left-right,top=58,gap=20,height=top+lanes.length*gap+10,x=t=>left+t/model.axis_max*plot,y=lane=>top+lanes.indexOf(lane)*gap;
+ const svg=svgElem('svg',{class:'timeline',viewBox:`0 0 ${W} ${height}`,width:W,height,role:'img','aria-label':row.label+' boot timeline','data-boot':row.key});
+ const id='coverage-'+row.key.replace(/[^a-z0-9]/gi,'-'),defs=svgElem('defs'),pattern=svgElem('pattern',{id,width:7,height:7,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'});pattern.append(svgElem('rect',{width:7,height:7,fill:'#fff'}),svgElem('line',{x1:0,x2:0,y1:0,y2:7,stroke:'#d5dde8','stroke-width':2}));defs.append(pattern);svg.append(defs);
+ const p=row.phases,parts=[['kernel','Kernel',0,p.kernel_end],['initrd','Initrd',p.kernel_end,p.initrd_end],['startup','Startup',p.initrd_end,p.network_online],['online','Network online',p.network_online,p.target_reached],['after','After default target',p.target_reached,p.observed_end]];
+ for(const [key,label,start,end]of parts){const rect=svgElem('rect',{x:x(start),y:3,width:Math.max(0,x(end)-x(start)),height:height-10,fill:phaseColors[key],class:'phase-mark','data-phase':key});bindMark(rect,{row,title:label+' phase',start,end,source:row.reference?'mean phase boundaries':key==='online'?p.network_source+'; '+p.target_source:key==='startup'?p.network_source:key==='after'?p.target_source:'systemd boot-phase timing',note:key==='after'?'The host default target is '+p.target+'. Reaching it does not establish that every service succeeded.':key==='online'?'The host has reached network-online.target and is still waiting for its default target. The network-online milestone does not by itself prove external connectivity.':''},label+' '+fmt(start)+' to '+fmt(end));svg.append(rect);if(x(end)-x(start)>66)svg.append(svgElem('text',{x:(x(start)+x(end))/2,y:17,'text-anchor':'middle',class:'phase-label'},label));}
+ if(p.observed_end<model.axis_max)svg.append(svgElem('rect',{x:x(p.observed_end),y:3,width:x(model.axis_max)-x(p.observed_end),height:height-10,fill:'url(#'+id+')'}));
+ for(let tick=0;tick<=model.axis_max;tick+=10){svg.append(svgElem('line',{x1:x(tick),x2:x(tick),y1:23,y2:height-7,stroke:'#51647d',opacity:.19}),svgElem('text',{x:x(tick),y:38,'text-anchor':'middle',class:'axis-label'},tick+'s'));}
+ svg.append(svgElem('line',{x1:x(p.network_online),x2:x(p.network_online),y1:22,y2:height-7,stroke:'#934078','stroke-width':1,'stroke-dasharray':'2 2'}),svgElem('line',{x1:x(p.target_reached),x2:x(p.target_reached),y1:22,y2:height-7,stroke:'#275a26','stroke-width':1,'stroke-dasharray':'2 2'}));
+ for(const lane of lanes){const yy=y(lane),spans=row.services[lane]||[],isTracked=model.tracked.includes(lane),label=svgElem('text',{x:3,y:yy+4,class:'track-label'+(isTracked&&!spans.length?' missing':'')},lane);svg.append(label,svgElem('line',{x1:left,x2:W-right,y1:yy+9,y2:yy+9,stroke:'#fff',opacity:.3}));
+  if(isTracked&&!spans.length){svg.append(svgElem('text',{x:left+7,y:yy+4,class:'timing-label'},'not recorded'));bindMark(label,{row,title:lane,missing:true},lane+' not recorded');}
+  for(let index=0;index<spans.length;index++){const span=spans[index],group=svgElem('g',{class:'service-timing','data-unit':lane,'data-attempt':span.qm_attempt||index+1});group.style.display=$('service-lines').checked?'':'none';const x1=x(span.start),x2=x(span.end);group.append(svgElem('rect',{x:x1-5,y:yy-7,width:Math.max(x2-x1+10,12),height:14,fill:'transparent'}),svgElem('line',{x1,x2,y1:yy,y2:yy,class:'normal-interval'}),svgElem('line',{x1,x2:x1,y1:yy-3,y2:yy+3,class:'normal-cap'}),svgElem('line',{x1:x2,x2,y1:yy-3,y2:yy+3,class:'normal-cap'}));const detail={row,title:lane+(span.qm_attempt?' · QM attempt '+span.qm_attempt:spans.length>1?' · attempt '+(index+1):''),start:span.start,end:span.end,source:span.source,stats:row.reference?span:null,milestones:span.milestones,note:[span.note,span.status==='failed'?'This recorded attempt ended in a timeout or failure.':''].filter(Boolean).join(' '),tokens:lane==='NIC bring-up'?['s32-dwmac','(end0)']:lane==='Podman network setup'?['podman0','veth','netavark','aardvark']:lane==='systemd-logind.service'?['systemd-logind.service','systemd-logind[','New seat']:lane==='First SSH session'?['sshd-session['+span.pid+']']:[lane]};bindMark(group,detail,lane+' '+fmt(span.start)+' to '+fmt(span.end));if(index===0)bindMark(label,detail,lane+' timing details');svg.append(group);}
+ }
+ for(const marker of [...(row.seat_announcements||[]),...(row.session_announcements||[])]){const session=marker.kind==='session',yy=y('systemd-logind.service'),group=svgElem('g',{class:session?'session-announcement':'seat-announcement','data-unit':'systemd-logind.service',[session?'data-session':'data-seat']:session?marker.session:marker.seat,'data-time':marker.time});group.append(svgElem('circle',{cx:x(marker.time),cy:yy,r:8,fill:'transparent'}),svgElem('circle',{cx:x(marker.time),cy:yy,r:3.5,fill:session?'#00584b':'#b75010',stroke:'#fff','stroke-width':1}));bindMark(group,{row,title:marker.title,start:marker.time,end:null,source:marker.source,stats:marker.stats,note:marker.note,tokens:marker.tokens||[session?'New session ':'New seat '+marker.seat]},marker.title+' at '+fmt(marker.time));svg.append(group);}
+ for(const event of visibleEvents){const lane=laneForEvent(row,event),yy=y(lane),start=event.start_kernel_s,end=event.end_kernel_s,color=colors[event.category],group=svgElem('g',{class:'issue','data-category':event.category,'data-description':event.description});
+  if(end!==null){group.append(svgElem('rect',{x:x(start),y:yy-5,width:Math.max(x(end)-x(start),3),height:10,rx:2,fill:color}));}
+  else{if(event.category==='soft_lockup')group.append(svgElem('line',{x1:x(event.context_anchor_kernel_s),x2:x(start),y1:yy,y2:yy,stroke:color,'stroke-width':2,'stroke-dasharray':'5 3'}));group.append(svgElem('circle',{cx:x(start),cy:yy,r:5,fill:color}));}
+  bindMark(group,{row,title:event.description,start,end,event,note:event.note,tokens:tokensForEvent(event)},event.description+' '+fmt(start));svg.append(group);
+ }
+ return svg;
+}
+function render(){
+ closePopup();const run=$('run').value,search=$('search').value.toLowerCase().trim(),includeModerate=$('moderate').checked,body=$('boot-rows');body.replaceChildren();let boots=0,observations=0;
+ for(const row of model.rows){const selectedEvents=row.events.filter(event=>includeModerate||!['moderate','minor'].includes(event.severity));if(!row.reference){if(run!=='all'&&row.run!==Number(run))continue;if(!selectedEvents.length)continue;const haystack=(row.key+' '+row.label+' '+row.events.map(e=>e.description).join(' ')).toLowerCase();if(search&&!haystack.includes(search))continue;boots++;observations+=selectedEvents.length;}
+  const tr=elem('tr',{class:row.reference?'reference':'boot-row','data-boot':row.key}),info=elem('td'),chart=elem('td'),summary=elem('td');info.append(elem('div',{class:'boot-name'},row.label),elem('span',{class:'tag'},row.reference?row.sample_count+' boots':selectedEvents.length+' observation'+(selectedEvents.length===1?'':'s')));const note=elem('div',{class:'boot-note'});note.textContent=(row.reference?'Mean network online: ':'Network online: ')+fmt(row.phases.network_online)+'\n'+(row.reference?'Mean default target: ':'Default target: ')+fmt(row.phases.target_reached)+'\nObserved '+(row.reference?'mean ':'')+'to '+fmt(row.phases.observed_end);note.style.whiteSpace='pre-line';info.append(note);chart.append(drawTimeline(row,selectedEvents));
+  if(row.reference){summary.append(elem('p',{class:'small'},'Arithmetic mean of the first recorded interval per service. Click for contributing sample counts and ranges.'),elem('p',{class:'small'},'No detected observations in the included boots.'));}
+  else{const ul=elem('ul',{class:'summary-list'});for(const event of selectedEvents){const li=elem('li');li.textContent=event.description;li.style.color=colors[event.category];ul.append(li);}summary.append(ul);}
+  tr.append(info,chart,summary);body.append(tr);
+ }
+ $('status').textContent=boots+' boots · '+observations+' observations';if(!boots){const tr=elem('tr'),td=elem('td',{colspan:3,class:'no-results'},'No boots match this filter.');tr.append(td);body.append(tr);}
+}
+$('reference-explanation').textContent='Average reference: '+model.reference.boot_count+' boots with no detected observations, excluding all '+model.reference.excluded_count+' boots listed below. Selection stays fixed when filters change. Phase boundaries and service timings use arithmetic means; a missing service does not contribute a zero.';
+$('run').onchange=render;$('search').oninput=render;$('moderate').onchange=render;$('service-lines').onchange=()=>{document.querySelectorAll('.service-timing').forEach(node=>node.style.display=$('service-lines').checked?'':'none');};
+window.showTimelineDetail=showPopup;window.renderTimeline=render;render();
+</script>
+</body>
+</html>

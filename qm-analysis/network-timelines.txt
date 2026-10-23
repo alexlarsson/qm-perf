@@ -1,0 +1,1533 @@
+qm-run-1.json boot 1
+-39.932919  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+-39.929782  systemd[1]: Created slice system-sshd\x2dkeygen.slice - Slice /system/sshd-keygen.
+-39.305229  systemd-sysusers[223]: /usr/lib/sysusers.d/openssh-server.conf:2: Conflict with earlier configuration for user 'sshd' in /usr/lib/sysusers.d/00-base-users.conf:15, ignoring line.
+-37.189061  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_wake_irq not found
+-37.187095  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_lpi not found
+-37.126204  kernel: s32-dwmac 4033c000.ethernet: IRQ sfty not found
+-36.922773  kernel: s32-dwmac 4033c000.ethernet: User ID: 0x10, Synopsys ID: 0x52
+-36.828794  kernel: s32-dwmac 4033c000.ethernet: DWMAC4/5
+-36.826200  kernel: s32-dwmac 4033c000.ethernet: DMA HW capability register supported
+-36.823718  kernel: s32-dwmac 4033c000.ethernet: RX Checksum Offload Engine supported
+-36.821843  kernel: s32-dwmac 4033c000.ethernet: TX Checksum insertion supported
+-36.819688  kernel: s32-dwmac 4033c000.ethernet: Wake-Up On Lan supported
+-36.817418  kernel: s32-dwmac 4033c000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+-36.815494  kernel: s32-dwmac 4033c000.ethernet: Enabled L3L4 Flow TC (entries=8)
+-36.813365  kernel: s32-dwmac 4033c000.ethernet: Enabled RFS Flow TC (entries=10)
+-36.811509  kernel: s32-dwmac 4033c000.ethernet: Enabling HW TC (entries=256, max_off=256)
+-36.809389  kernel: s32-dwmac 4033c000.ethernet: Using 32/32 bits DMA host/device width
+-36.807695  kernel: s32-dwmac 4033c000.ethernet: MDIO bus is disabled
+-36.799317  kernel: s32-dwmac 4033c000.ethernet end0: renamed from eth0
+-34.870109  systemd[1]: Listening on systemd-hostnamed.socket - Hostname Service Socket.
+-34.640093  systemd[1]: Starting NetworkManager.service - Network Manager...
+-34.616606  systemd[1]: Starting chronyd.service - NTP client/server...
+-34.573754  systemd[1]: sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation was skipped because no trigger condition checks were met.
+-34.572617  systemd[1]: sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation was skipped because no trigger condition checks were met.
+-34.571500  systemd[1]: sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation was skipped because no trigger condition checks were met.
+-34.570469  systemd[1]: Reached target sshd-keygen.target.
+-34.292626  chronyd[343]: chronyd version 4.8 starting (+CMDMON +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +NTS +SECHASH +IPV6 +DEBUG)
+-34.258565  chronyd[343]: Could not open command socket on [::1]:323
+-34.256537  chronyd[343]: Frequency -64.707 +/- 2.422 ppm read from /var/lib/chrony/drift
+-34.255374  chronyd[343]: Loaded seccomp filter (level 2)
+-34.253629  systemd[1]: Started chronyd.service - NTP client/server.
+-34.247389  NetworkManager[342]: <info> [1789067831.3761] NetworkManager (version 1.58.0-1.el10) is starting... (boot:886ccb06-2d5d-4afb-bcb2-cb9688cc69a3)
+-34.247273  NetworkManager[342]: <info> [1789067831.3770] Read config: /etc/NetworkManager/NetworkManager.conf
+-34.188422  NetworkManager[342]: <info> [1789067831.4358] manager[0xaaaaf633e170]: monitoring kernel firmware directory '/lib/firmware'.
+-34.154419  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+-32.718880  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+-32.699694  NetworkManager[342]: <info> [1789067832.9242] hostname: hostname: using hostnamed
+-32.699592  NetworkManager[342]: <info> [1789067832.9247] hostname: static hostname changed from (none) to "localhost"
+-32.697912  NetworkManager[342]: <info> [1789067832.9263] dns-mgr: init: dns=default,systemd-resolved rc-manager=symlink (auto)
+-32.667761  NetworkManager[342]: <info> [1789067832.9564] manager[0xaaaaf633e170]: rfkill: Wi-Fi hardware radio set enabled
+-32.667563  NetworkManager[342]: <info> [1789067832.9567] manager[0xaaaaf633e170]: rfkill: WWAN hardware radio set enabled
+-32.649785  NetworkManager[342]: <info> [1789067832.9744] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+-32.649374  NetworkManager[342]: <info> [1789067832.9749] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+-32.649125  NetworkManager[342]: <info> [1789067832.9751] manager: Networking is enabled by state file
+-32.647302  NetworkManager[342]: <info> [1789067832.9769] settings: Loaded settings plugin: keyfile (internal)
+-32.634163  NetworkManager[342]: <info> [1789067832.9900] dhcp: init: Using DHCP client 'internal'
+-32.632696  NetworkManager[342]: <info> [1789067832.9915] manager: (lo): new Loopback device (/org/freedesktop/NetworkManager/Devices/1)
+-32.619321  NetworkManager[342]: <info> [1789067833.0049] device (lo): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+-32.617958  NetworkManager[342]: <info> [1789067833.0063] device (lo): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+-32.611983  NetworkManager[342]: <info> [1789067833.0122] device (lo): Activation: starting connection 'lo' (4ffe6e55-a202-4000-acf3-8d095cf5dd64)
+-32.606799  NetworkManager[342]: <info> [1789067833.0174] manager: (can0): new Generic device (/org/freedesktop/NetworkManager/Devices/2)
+-32.600523  NetworkManager[342]: <info> [1789067833.0237] manager: (can1): new Generic device (/org/freedesktop/NetworkManager/Devices/3)
+-32.593130  NetworkManager[342]: <info> [1789067833.0311] manager: (end0): new Ethernet device (/org/freedesktop/NetworkManager/Devices/4)
+-32.587626  NetworkManager[342]: <info> [1789067833.0366] settings: (end0): created default wired connection 'Wired connection 1'
+-32.587392  NetworkManager[342]: <info> [1789067833.0369] device (end0): state change: unmanaged -> unavailable (reason 'managed', managed-type: 'external')
+-32.576338  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-0
+-32.573076  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-1
+-32.571095  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-2
+-32.569230  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-3
+-32.567389  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-4
+-32.565546  kernel: s32-dwmac 4033c000.ethernet end0: Enabling Safety Features
+-32.563853  kernel: s32-dwmac 4033c000.ethernet end0: IEEE 1588-2008 Advanced Timestamp supported
+-32.562226  kernel: s32-dwmac 4033c000.ethernet end0: registered PTP clock
+ -0.117449  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ -0.105955  kernel: s32-dwmac 4033c000.ethernet end0: configuring for fixed/rgmii-id link mode
+ -0.103493  kernel: s32-dwmac 4033c000.ethernet end0: Link is Up - 1Gbps/Full - flow control off
+ -0.103978  systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+ -0.086186  NetworkManager[342]: <info> [1789067865.5378] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+ -0.086022  systemd[1]: Started NetworkManager.service - Network Manager.
+ -0.083975  NetworkManager[342]: <info> [1789067865.5402] device (lo): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+ -0.082887  NetworkManager[342]: <info> [1789067865.5413] device (lo): state change: prepare -> config (reason 'none', managed-type: 'external')
+ -0.081893  NetworkManager[342]: <info> [1789067865.5424] device (lo): state change: config -> ip-config (reason 'none', managed-type: 'external')
+ -0.080516  NetworkManager[342]: <info> [1789067865.5437] device (end0): carrier: link connected
+ -0.078662  NetworkManager[342]: <info> [1789067865.5456] device (lo): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+ -0.075926  NetworkManager[342]: <info> [1789067865.5482] device (end0): state change: unavailable -> disconnected (reason 'carrier-changed', managed-type: 'full')
+ -0.074294  NetworkManager[342]: <info> [1789067865.5499] policy: auto-activating connection 'Wired connection 1' (70d39bb7-aa40-3e81-840e-d710fff10b85)
+ -0.072137  NetworkManager[342]: <info> [1789067865.5521] device (end0): Activation: starting connection 'Wired connection 1' (70d39bb7-aa40-3e81-840e-d710fff10b85)
+ -0.071760  NetworkManager[342]: <info> [1789067865.5525] device (end0): state change: disconnected -> prepare (reason 'none', managed-type: 'full')
+ -0.070587  NetworkManager[342]: <info> [1789067865.5537] manager: NetworkManager state is now CONNECTING
+ -0.069920  NetworkManager[342]: <info> [1789067865.5543] device (end0): state change: prepare -> config (reason 'none', managed-type: 'full')
+ -0.067181  NetworkManager[342]: <info> [1789067865.5570] device (end0): state change: config -> ip-config (reason 'none', managed-type: 'full')
+ -0.064698  NetworkManager[342]: <info> [1789067865.5595] dhcp4 (end0): activation: beginning transaction (timeout in 45 seconds)
+ -0.037600  systemd[1]: Starting sshd.service - OpenSSH server daemon...
+ -0.029585  NetworkManager[342]: <info> [1789067865.5944] dhcp4 (end0): state changed new lease, address=192.168.100.125, acd pending
+  0.000000  systemd[1]: Starting qm.service...
+  0.031132  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+  0.054313  NetworkManager[342]: <info> [1789067865.6785] device (lo): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+  0.055172  NetworkManager[342]: <info> [1789067865.6794] device (lo): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+  0.057957  NetworkManager[342]: <info> [1789067865.6821] device (lo): Activation: successful, device activated.
+  0.154296  NetworkManager[342]: <info> [1789067865.7784] dhcp4 (end0): state changed new lease, address=192.168.100.125
+  0.160696  NetworkManager[342]: <info> [1789067865.7849] policy: set 'Wired connection 1' (end0) as default for IPv4 routing and DNS
+  0.185227  NetworkManager[342]: <info> [1789067865.8094] device (end0): state change: ip-config -> ip-check (reason 'none', managed-type: 'full')
+  0.192908  NetworkManager[342]: <info> [1789067865.8171] device (end0): state change: ip-check -> secondaries (reason 'none', managed-type: 'full')
+  0.193976  NetworkManager[342]: <info> [1789067865.8182] device (end0): state change: secondaries -> activated (reason 'none', managed-type: 'full')
+  0.196057  NetworkManager[342]: <info> [1789067865.8203] manager: NetworkManager state is now CONNECTED_SITE
+  0.197291  NetworkManager[342]: <info> [1789067865.8215] device (end0): Activation: successful, device activated.
+  0.199832  NetworkManager[342]: <info> [1789067865.8240] manager: NetworkManager state is now CONNECTED_GLOBAL
+  0.201127  NetworkManager[342]: <info> [1789067865.8253] manager: startup complete
+  0.260864  sshd[377]: Server listening on 0.0.0.0 port 22.
+  0.274376  systemd[1]: Started sshd.service - OpenSSH server daemon.
+  1.734145  podman[379]: 2026-09-10 19:17:47.356483799 +0000 UTC m=+1.247657046 system refresh
+  2.074262  podman[379]: 2026-09-10 19:17:47.698297643 +0000 UTC m=+1.589470595 container create 04d03055afa9dc0f818b707ae101ecca2335843655bfb106e4a126d6e0920d65 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  2.330075  NetworkManager[342]: <info> [1789067867.9541] manager: (podman0): new Bridge device (/org/freedesktop/NetworkManager/Devices/5)
+  2.389462  NetworkManager[342]: <info> [1789067868.0137] device (podman0): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+  2.391400  NetworkManager[342]: <info> [1789067868.0156] device (podman0): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+  2.394800  NetworkManager[342]: <info> [1789067868.0190] device (podman0): Activation: starting connection 'podman0' (9ab8caee-493c-4a63-9ee7-7293a4239549)
+  2.395314  NetworkManager[342]: <info> [1789067868.0196] device (podman0): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+  2.396475  NetworkManager[342]: <info> [1789067868.0207] device (podman0): state change: prepare -> config (reason 'none', managed-type: 'external')
+  2.397340  NetworkManager[342]: <info> [1789067868.0216] device (podman0): state change: config -> ip-config (reason 'none', managed-type: 'external')
+  2.398265  NetworkManager[342]: <info> [1789067868.0225] device (podman0): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+  2.404314  NetworkManager[342]: <info> [1789067868.0285] device (podman0): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+  2.405009  NetworkManager[342]: <info> [1789067868.0292] device (podman0): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+  2.407329  NetworkManager[342]: <info> [1789067868.0316] device (podman0): Activation: successful, device activated.
+  2.500722  NetworkManager[342]: <info> [1789067868.1249] manager: (veth0): new Veth device (/org/freedesktop/NetworkManager/Devices/6)
+  2.512176  NetworkManager[342]: <info> [1789067868.1363] device (veth0): carrier: link connected
+  2.513332  NetworkManager[342]: <info> [1789067868.1375] device (podman0): carrier: link connected
+  3.345743  sshd-session[522]: Accepted publickey for root from 10.26.24.218 port 47948 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  3.448093  systemd-logind[348]: New session 1 of user root.
+  3.479549  systemd[1]: Starting user-runtime-dir@0.service - User Runtime Directory /run/user/0...
+  3.622658  systemd[1]: Finished user-runtime-dir@0.service - User Runtime Directory /run/user/0.
+  3.718543  systemd-logind[348]: New session 2 of user root.
+  3.785717  podman[379]: 2026-09-10 19:17:49.408551135 +0000 UTC m=+3.299724798 container init 04d03055afa9dc0f818b707ae101ecca2335843655bfb106e4a126d6e0920d65 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  3.807018  systemd[1]: Started qm.service.
+  3.814175  podman[379]: 2026-09-10 19:17:49.427365154 +0000 UTC m=+3.318539309 container start 04d03055afa9dc0f818b707ae101ecca2335843655bfb106e4a126d6e0920d65 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  5.129310  chronyd[343]: Selected source 23.141.40.123 (2.centos.pool.ntp.org)
+  5.829709  sshd-session[522]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+  6.044582  sshd-session[617]: Received disconnect from 10.26.24.218 port 47948:11: disconnected by user
+  6.045822  sshd-session[617]: Disconnected from user root 10.26.24.218 port 47948
+  6.054737  sshd-session[522]: pam_unix(sshd:session): session closed for user root
+  8.131469  sshd-session[651]: Accepted publickey for root from 10.26.24.218 port 47952 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  8.170854  systemd-logind[348]: New session 3 of user root.
+  8.251690  sshd-session[651]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+  8.425338  sshd-session[659]: Received disconnect from 10.26.24.218 port 47952:11: disconnected by user
+  8.426424  sshd-session[659]: Disconnected from user root 10.26.24.218 port 47952
+  8.434774  sshd-session[651]: pam_unix(sshd:session): session closed for user root
+  8.668039  sshd-session[673]: Accepted publickey for root from 10.26.24.218 port 47960 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  8.703656  systemd-logind[348]: New session 4 of user root.
+  8.800708  sshd-session[673]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 11.933068  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ 12.506401  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ 13.470104  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ 21.011306  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+
+qm-run-1.json boot 15
+ -7.627712  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+ -7.624349  systemd[1]: Created slice system-sshd\x2dkeygen.slice - Slice /system/sshd-keygen.
+ -6.968621  systemd-sysusers[228]: /usr/lib/sysusers.d/openssh-server.conf:2: Conflict with earlier configuration for user 'sshd' in /usr/lib/sysusers.d/00-base-users.conf:15, ignoring line.
+ -5.114077  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_wake_irq not found
+ -5.068580  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_lpi not found
+ -4.990918  kernel: s32-dwmac 4033c000.ethernet: IRQ sfty not found
+ -4.951589  kernel: s32-dwmac 4033c000.ethernet: User ID: 0x10, Synopsys ID: 0x52
+ -4.949374  kernel: s32-dwmac 4033c000.ethernet: DWMAC4/5
+ -4.947422  kernel: s32-dwmac 4033c000.ethernet: DMA HW capability register supported
+ -4.945587  kernel: s32-dwmac 4033c000.ethernet: RX Checksum Offload Engine supported
+ -4.940911  kernel: s32-dwmac 4033c000.ethernet: TX Checksum insertion supported
+ -4.817350  kernel: s32-dwmac 4033c000.ethernet: Wake-Up On Lan supported
+ -4.466328  kernel: s32-dwmac 4033c000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+ -4.395422  kernel: s32-dwmac 4033c000.ethernet: Enabled L3L4 Flow TC (entries=8)
+ -4.392576  kernel: s32-dwmac 4033c000.ethernet: Enabled RFS Flow TC (entries=10)
+ -4.390148  kernel: s32-dwmac 4033c000.ethernet: Enabling HW TC (entries=256, max_off=256)
+ -4.387920  kernel: s32-dwmac 4033c000.ethernet: Using 32/32 bits DMA host/device width
+ -4.385827  kernel: s32-dwmac 4033c000.ethernet: MDIO bus is disabled
+ -4.332697  kernel: s32-dwmac 4033c000.ethernet end0: renamed from eth0
+ -2.457428  systemd[1]: Listening on systemd-hostnamed.socket - Hostname Service Socket.
+ -2.228777  systemd[1]: Starting NetworkManager.service - Network Manager...
+ -2.205410  systemd[1]: Starting chronyd.service - NTP client/server...
+ -2.156484  systemd[1]: sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation was skipped because no trigger condition checks were met.
+ -2.155264  systemd[1]: sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation was skipped because no trigger condition checks were met.
+ -2.153828  systemd[1]: sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation was skipped because no trigger condition checks were met.
+ -2.152711  systemd[1]: Reached target sshd-keygen.target.
+ -1.839902  chronyd[344]: chronyd version 4.8 starting (+CMDMON +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +NTS +SECHASH +IPV6 +DEBUG)
+ -1.803783  chronyd[344]: Could not open command socket on [::1]:323
+ -1.802437  chronyd[344]: Frequency -59.366 +/- 15.178 ppm read from /var/lib/chrony/drift
+ -1.801347  chronyd[344]: Loaded seccomp filter (level 2)
+ -1.799776  systemd[1]: Started chronyd.service - NTP client/server.
+ -1.793027  NetworkManager[343]: <info> [1789068631.4234] NetworkManager (version 1.58.0-1.el10) is starting... (boot:b37eb36c-1c0d-4529-9c62-efb0ef40452b)
+ -1.792922  NetworkManager[343]: <info> [1789068631.4243] Read config: /etc/NetworkManager/NetworkManager.conf
+ -1.734299  NetworkManager[343]: <info> [1789068631.4829] manager[0xaaaafd1fa170]: monitoring kernel firmware directory '/lib/firmware'.
+ -1.700317  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ -0.332145  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ -0.312985  NetworkManager[343]: <info> [1789068632.9039] hostname: hostname: using hostnamed
+ -0.312872  NetworkManager[343]: <info> [1789068632.9043] hostname: static hostname changed from (none) to "localhost"
+ -0.311245  NetworkManager[343]: <info> [1789068632.9059] dns-mgr: init: dns=default,systemd-resolved rc-manager=symlink (auto)
+ -0.280823  NetworkManager[343]: <info> [1789068632.9363] manager[0xaaaafd1fa170]: rfkill: Wi-Fi hardware radio set enabled
+ -0.280562  NetworkManager[343]: <info> [1789068632.9366] manager[0xaaaafd1fa170]: rfkill: WWAN hardware radio set enabled
+ -0.263052  NetworkManager[343]: <info> [1789068632.9541] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+ -0.262654  NetworkManager[343]: <info> [1789068632.9546] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+ -0.262402  NetworkManager[343]: <info> [1789068632.9548] manager: Networking is enabled by state file
+ -0.260661  NetworkManager[343]: <info> [1789068632.9565] settings: Loaded settings plugin: keyfile (internal)
+ -0.248675  NetworkManager[343]: <info> [1789068632.9684] dhcp: init: Using DHCP client 'internal'
+ -0.247164  NetworkManager[343]: <info> [1789068632.9700] manager: (lo): new Loopback device (/org/freedesktop/NetworkManager/Devices/1)
+ -0.232820  NetworkManager[343]: <info> [1789068632.9843] device (lo): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+ -0.231240  NetworkManager[343]: <info> [1789068632.9859] device (lo): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+ -0.228706  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ -0.225005  NetworkManager[343]: <info> [1789068632.9921] device (lo): Activation: starting connection 'lo' (04498e96-e8d1-405d-9c39-59f81a87e930)
+ -0.219667  NetworkManager[343]: <info> [1789068632.9975] manager: (can0): new Generic device (/org/freedesktop/NetworkManager/Devices/2)
+ -0.213647  NetworkManager[343]: <info> [1789068633.0035] manager: (can1): new Generic device (/org/freedesktop/NetworkManager/Devices/3)
+ -0.206488  NetworkManager[343]: <info> [1789068633.0107] manager: (end0): new Ethernet device (/org/freedesktop/NetworkManager/Devices/4)
+ -0.200798  NetworkManager[343]: <info> [1789068633.0164] settings: (end0): created default wired connection 'Wired connection 1'
+ -0.200549  NetworkManager[343]: <info> [1789068633.0166] device (end0): state change: unmanaged -> unavailable (reason 'managed', managed-type: 'external')
+ -0.194062  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-0
+ -0.191321  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-1
+ -0.189333  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-2
+ -0.187008  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-3
+ -0.184915  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-4
+ -0.182800  kernel: s32-dwmac 4033c000.ethernet end0: Enabling Safety Features
+ -0.180914  kernel: s32-dwmac 4033c000.ethernet end0: IEEE 1588-2008 Advanced Timestamp supported
+ -0.179152  kernel: s32-dwmac 4033c000.ethernet end0: registered PTP clock
+ -0.123989  kernel: s32-dwmac 4033c000.ethernet end0: configuring for fixed/rgmii-id link mode
+ -0.121409  kernel: s32-dwmac 4033c000.ethernet end0: Link is Up - 1Gbps/Full - flow control off
+ -0.111285  systemd[1]: Started NetworkManager.service - Network Manager.
+ -0.110660  NetworkManager[343]: <info> [1789068633.1063] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+ -0.108614  NetworkManager[343]: <info> [1789068633.1085] device (lo): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+ -0.107385  NetworkManager[343]: <info> [1789068633.1098] device (lo): state change: prepare -> config (reason 'none', managed-type: 'external')
+ -0.106303  NetworkManager[343]: <info> [1789068633.1109] device (lo): state change: config -> ip-config (reason 'none', managed-type: 'external')
+ -0.105367  NetworkManager[343]: <info> [1789068633.1118] device (end0): carrier: link connected
+ -0.103412  NetworkManager[343]: <info> [1789068633.1137] device (lo): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+ -0.100611  NetworkManager[343]: <info> [1789068633.1165] device (end0): state change: unavailable -> disconnected (reason 'carrier-changed', managed-type: 'full')
+ -0.098972  NetworkManager[343]: <info> [1789068633.1182] policy: auto-activating connection 'Wired connection 1' (70d39bb7-aa40-3e81-840e-d710fff10b85)
+ -0.097091  NetworkManager[343]: <info> [1789068633.1201] device (end0): Activation: starting connection 'Wired connection 1' (70d39bb7-aa40-3e81-840e-d710fff10b85)
+ -0.096648  NetworkManager[343]: <info> [1789068633.1205] device (end0): state change: disconnected -> prepare (reason 'none', managed-type: 'full')
+ -0.095689  systemd[1]: Starting sshd.service - OpenSSH server daemon...
+ -0.095556  NetworkManager[343]: <info> [1789068633.1216] manager: NetworkManager state is now CONNECTING
+ -0.094689  NetworkManager[343]: <info> [1789068633.1225] device (end0): state change: prepare -> config (reason 'none', managed-type: 'full')
+ -0.091334  NetworkManager[343]: <info> [1789068633.1258] device (end0): state change: config -> ip-config (reason 'none', managed-type: 'full')
+ -0.089635  NetworkManager[343]: <info> [1789068633.1275] dhcp4 (end0): activation: beginning transaction (timeout in 45 seconds)
+ -0.070384  NetworkManager[343]: <info> [1789068633.1467] device (lo): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+ -0.069414  NetworkManager[343]: <info> [1789068633.1478] device (lo): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+ -0.066951  NetworkManager[343]: <info> [1789068633.1502] device (lo): Activation: successful, device activated.
+ -0.055813  NetworkManager[343]: <info> [1789068633.1613] dhcp4 (end0): state changed new lease, address=192.168.100.125, acd pending
+  0.000000  systemd[1]: Starting qm.service...
+  0.006007  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+  0.106504  NetworkManager[343]: <info> [1789068633.3236] dhcp4 (end0): state changed new lease, address=192.168.100.125
+  0.112783  NetworkManager[343]: <info> [1789068633.3299] policy: set 'Wired connection 1' (end0) as default for IPv4 routing and DNS
+  0.131732  NetworkManager[343]: <info> [1789068633.3488] device (end0): state change: ip-config -> ip-check (reason 'none', managed-type: 'full')
+  0.143592  sshd[373]: Server listening on 0.0.0.0 port 22.
+  0.144718  NetworkManager[343]: <info> [1789068633.3616] device (end0): state change: ip-check -> secondaries (reason 'none', managed-type: 'full')
+  0.145778  NetworkManager[343]: <info> [1789068633.3629] device (end0): state change: secondaries -> activated (reason 'none', managed-type: 'full')
+  0.148239  NetworkManager[343]: <info> [1789068633.3654] manager: NetworkManager state is now CONNECTED_SITE
+  0.149589  NetworkManager[343]: <info> [1789068633.3668] device (end0): Activation: successful, device activated.
+  0.152321  NetworkManager[343]: <info> [1789068633.3695] manager: NetworkManager state is now CONNECTED_GLOBAL
+  0.153718  NetworkManager[343]: <info> [1789068633.3709] manager: startup complete
+  0.160402  systemd[1]: Started sshd.service - OpenSSH server daemon.
+ 10.446957  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ 15.117331  sshd-session[453]: Accepted publickey for root from 10.26.24.218 port 39546 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 27.102924  sshd-session[457]: Accepted publickey for root from 10.26.24.218 port 43104 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 32.621239  chronyd[344]: Forward time jump detected!
+ 32.640423  sshd-session[448]: Accepted publickey for root from 10.26.24.218 port 60262 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 32.654295  systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+ 32.678968  systemd[1]: qm.service: start operation timed out. Terminating.
+ 32.778193  systemd-logind[349]: New session 2 of user root.
+ 32.812989  systemd[1]: Starting user-runtime-dir@0.service - User Runtime Directory /run/user/0...
+ 32.838378  systemd-logind[349]: New session 1 of user root.
+ 32.861352  systemd-logind[349]: New session 3 of user root.
+ 32.896897  systemd[1]: Finished user-runtime-dir@0.service - User Runtime Directory /run/user/0.
+ 32.989075  systemd-logind[349]: New session 4 of user root.
+ 33.536915  podman[468]: 2026-09-10 19:31:06.751805447 +0000 UTC m=+0.706073753 system refresh
+ 33.712258  systemd[1]: qm.service: Failed with result 'timeout'.
+ 33.715259  systemd[1]: Failed to start qm.service.
+ 35.026812  sshd-session[453]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 35.032469  sshd-session[457]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 35.041647  sshd-session[448]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 35.049775  sshd-session[500]: Received disconnect from 10.26.24.218 port 39546:11: disconnected by user
+ 35.051900  sshd-session[500]: Disconnected from user root 10.26.24.218 port 39546
+ 35.057048  sshd-session[502]: fatal: ssh_packet_send_debug: send DEBUG: Broken pipe
+ 35.061810  sshd-session[453]: pam_unix(sshd:session): session closed for user root
+ 35.065172  sshd-session[448]: pam_unix(sshd:session): session closed for user root
+ 35.245183  sshd-session[501]: Received disconnect from 10.26.24.218 port 43104:11: disconnected by user
+ 35.246713  sshd-session[501]: Disconnected from user root 10.26.24.218 port 43104
+ 35.255699  sshd-session[457]: pam_unix(sshd:session): session closed for user root
+ 36.718538  chronyd[344]: Selected source 44.190.5.123 (2.centos.pool.ntp.org)
+ 37.120807  chronyd[344]: Selected source 198.137.202.56 (2.centos.pool.ntp.org)
+ 37.442158  sshd-session[519]: Accepted publickey for root from 10.26.24.218 port 40530 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 37.480358  systemd-logind[349]: New session 5 of user root.
+ 37.583090  sshd-session[519]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 37.757349  sshd-session[523]: Received disconnect from 10.26.24.218 port 40530:11: disconnected by user
+ 37.759228  sshd-session[523]: Disconnected from user root 10.26.24.218 port 40530
+ 37.766835  sshd-session[519]: pam_unix(sshd:session): session closed for user root
+ 37.990349  sshd-session[538]: Accepted publickey for root from 10.26.24.218 port 40542 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 38.023947  systemd-logind[349]: New session 6 of user root.
+ 38.102803  sshd-session[538]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 38.524276  chronyd[344]: Selected source 40.160.28.79 (2.centos.pool.ntp.org)
+ 39.142081  chronyd[344]: Selected source 198.137.202.56 (2.centos.pool.ntp.org)
+ 41.116548  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ 42.476217  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ 45.439217  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+
+qm-run-1.json boot 42
+ -7.463368  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+ -7.459814  systemd[1]: Created slice system-sshd\x2dkeygen.slice - Slice /system/sshd-keygen.
+ -6.821804  systemd-sysusers[228]: /usr/lib/sysusers.d/openssh-server.conf:2: Conflict with earlier configuration for user 'sshd' in /usr/lib/sysusers.d/00-base-users.conf:15, ignoring line.
+ -4.583586  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_wake_irq not found
+ -4.543922  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_lpi not found
+ -4.541362  kernel: s32-dwmac 4033c000.ethernet: IRQ sfty not found
+ -4.513558  kernel: s32-dwmac 4033c000.ethernet: User ID: 0x10, Synopsys ID: 0x52
+ -4.499908  kernel: s32-dwmac 4033c000.ethernet: DWMAC4/5
+ -4.497805  kernel: s32-dwmac 4033c000.ethernet: DMA HW capability register supported
+ -4.495887  kernel: s32-dwmac 4033c000.ethernet: RX Checksum Offload Engine supported
+ -4.493985  kernel: s32-dwmac 4033c000.ethernet: TX Checksum insertion supported
+ -4.491749  kernel: s32-dwmac 4033c000.ethernet: Wake-Up On Lan supported
+ -4.441467  kernel: s32-dwmac 4033c000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+ -4.436578  kernel: s32-dwmac 4033c000.ethernet: Enabled L3L4 Flow TC (entries=8)
+ -4.383056  kernel: s32-dwmac 4033c000.ethernet: Enabled RFS Flow TC (entries=10)
+ -4.294314  kernel: s32-dwmac 4033c000.ethernet: Enabling HW TC (entries=256, max_off=256)
+ -4.291446  kernel: s32-dwmac 4033c000.ethernet: Using 32/32 bits DMA host/device width
+ -4.289279  kernel: s32-dwmac 4033c000.ethernet: MDIO bus is disabled
+ -4.278923  kernel: s32-dwmac 4033c000.ethernet end0: renamed from eth0
+ -2.332616  systemd[1]: Listening on systemd-hostnamed.socket - Hostname Service Socket.
+ -2.104619  systemd[1]: Starting NetworkManager.service - Network Manager...
+ -2.080890  systemd[1]: Starting chronyd.service - NTP client/server...
+ -2.032863  systemd[1]: sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation was skipped because no trigger condition checks were met.
+ -2.031372  systemd[1]: sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation was skipped because no trigger condition checks were met.
+ -2.030356  systemd[1]: sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation was skipped because no trigger condition checks were met.
+ -2.029397  systemd[1]: Reached target sshd-keygen.target.
+ -1.778888  chronyd[341]: chronyd version 4.8 starting (+CMDMON +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +NTS +SECHASH +IPV6 +DEBUG)
+ -1.745271  chronyd[341]: Could not open command socket on [::1]:323
+ -1.743027  chronyd[341]: Frequency -57.596 +/- 4.927 ppm read from /var/lib/chrony/drift
+ -1.741907  chronyd[341]: Loaded seccomp filter (level 2)
+ -1.740384  systemd[1]: Started chronyd.service - NTP client/server.
+ -1.733823  NetworkManager[340]: <info> [1789070124.2019] NetworkManager (version 1.58.0-1.el10) is starting... (boot:454619d6-220b-4d65-ab9d-22859fa69406)
+ -1.733713  NetworkManager[340]: <info> [1789070124.2027] Read config: /etc/NetworkManager/NetworkManager.conf
+ -1.675672  NetworkManager[340]: <info> [1789070124.2607] manager[0xaaaac7b80170]: monitoring kernel firmware directory '/lib/firmware'.
+ -1.641274  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ -0.248930  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ -0.229531  NetworkManager[340]: <info> [1789070125.7066] hostname: hostname: using hostnamed
+ -0.229426  NetworkManager[340]: <info> [1789070125.7070] hostname: static hostname changed from (none) to "localhost"
+ -0.227905  NetworkManager[340]: <info> [1789070125.7085] dns-mgr: init: dns=default,systemd-resolved rc-manager=symlink (auto)
+ -0.197368  NetworkManager[340]: <info> [1789070125.7390] manager[0xaaaac7b80170]: rfkill: Wi-Fi hardware radio set enabled
+ -0.197053  NetworkManager[340]: <info> [1789070125.7393] manager[0xaaaac7b80170]: rfkill: WWAN hardware radio set enabled
+ -0.179564  NetworkManager[340]: <info> [1789070125.7568] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+ -0.179193  NetworkManager[340]: <info> [1789070125.7572] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+ -0.178941  NetworkManager[340]: <info> [1789070125.7575] manager: Networking is enabled by state file
+ -0.177214  NetworkManager[340]: <info> [1789070125.7592] settings: Loaded settings plugin: keyfile (internal)
+ -0.165826  NetworkManager[340]: <info> [1789070125.7705] dhcp: init: Using DHCP client 'internal'
+ -0.164476  NetworkManager[340]: <info> [1789070125.7719] manager: (lo): new Loopback device (/org/freedesktop/NetworkManager/Devices/1)
+ -0.151090  NetworkManager[340]: <info> [1789070125.7853] device (lo): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+ -0.149640  NetworkManager[340]: <info> [1789070125.7868] device (lo): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+ -0.145611  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ -0.143582  NetworkManager[340]: <info> [1789070125.7928] device (lo): Activation: starting connection 'lo' (62e56a31-93dd-4478-97bd-fc121d5978c2)
+ -0.137950  NetworkManager[340]: <info> [1789070125.7984] manager: (can0): new Generic device (/org/freedesktop/NetworkManager/Devices/2)
+ -0.131079  NetworkManager[340]: <info> [1789070125.8053] manager: (can1): new Generic device (/org/freedesktop/NetworkManager/Devices/3)
+ -0.123615  NetworkManager[340]: <info> [1789070125.8128] manager: (end0): new Ethernet device (/org/freedesktop/NetworkManager/Devices/4)
+ -0.117894  NetworkManager[340]: <info> [1789070125.8185] settings: (end0): created default wired connection 'Wired connection 1'
+ -0.117712  NetworkManager[340]: <info> [1789070125.8187] device (end0): state change: unmanaged -> unavailable (reason 'managed', managed-type: 'external')
+ -0.111987  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-0
+ -0.108988  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-1
+ -0.107277  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-2
+ -0.105164  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-3
+ -0.102927  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-4
+ -0.100928  kernel: s32-dwmac 4033c000.ethernet end0: Enabling Safety Features
+ -0.099036  kernel: s32-dwmac 4033c000.ethernet end0: IEEE 1588-2008 Advanced Timestamp supported
+ -0.097328  kernel: s32-dwmac 4033c000.ethernet end0: registered PTP clock
+ -0.051998  kernel: s32-dwmac 4033c000.ethernet end0: configuring for fixed/rgmii-id link mode
+ -0.049663  kernel: s32-dwmac 4033c000.ethernet end0: Link is Up - 1Gbps/Full - flow control off
+ -0.037049  systemd[1]: Started NetworkManager.service - Network Manager.
+ -0.036514  NetworkManager[340]: <info> [1789070125.8997] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+ -0.034635  NetworkManager[340]: <info> [1789070125.9018] device (lo): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+ -0.033445  NetworkManager[340]: <info> [1789070125.9030] device (lo): state change: prepare -> config (reason 'none', managed-type: 'external')
+ -0.032466  NetworkManager[340]: <info> [1789070125.9040] device (lo): state change: config -> ip-config (reason 'none', managed-type: 'external')
+ -0.031235  NetworkManager[340]: <info> [1789070125.9052] device (end0): carrier: link connected
+ -0.029397  NetworkManager[340]: <info> [1789070125.9070] device (lo): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+ -0.026640  NetworkManager[340]: <info> [1789070125.9097] device (end0): state change: unavailable -> disconnected (reason 'carrier-changed', managed-type: 'full')
+ -0.025020  NetworkManager[340]: <info> [1789070125.9114] policy: auto-activating connection 'Wired connection 1' (70d39bb7-aa40-3e81-840e-d710fff10b85)
+ -0.022903  NetworkManager[340]: <info> [1789070125.9135] device (end0): Activation: starting connection 'Wired connection 1' (70d39bb7-aa40-3e81-840e-d710fff10b85)
+ -0.022486  NetworkManager[340]: <info> [1789070125.9139] device (end0): state change: disconnected -> prepare (reason 'none', managed-type: 'full')
+ -0.021264  NetworkManager[340]: <info> [1789070125.9151] manager: NetworkManager state is now CONNECTING
+ -0.020805  systemd[1]: Starting sshd.service - OpenSSH server daemon...
+ -0.020528  NetworkManager[340]: <info> [1789070125.9159] device (end0): state change: prepare -> config (reason 'none', managed-type: 'full')
+ -0.017455  NetworkManager[340]: <info> [1789070125.9189] device (end0): state change: config -> ip-config (reason 'none', managed-type: 'full')
+ -0.015756  NetworkManager[340]: <info> [1789070125.9206] dhcp4 (end0): activation: beginning transaction (timeout in 45 seconds)
+  0.000000  systemd[1]: Starting qm.service...
+  0.014583  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+  0.018136  NetworkManager[340]: <info> [1789070125.9545] dhcp4 (end0): state changed new lease, address=192.168.100.125, acd pending
+  0.046738  NetworkManager[340]: <info> [1789070125.9831] device (lo): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+  0.047686  NetworkManager[340]: <info> [1789070125.9841] device (lo): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+  0.050452  NetworkManager[340]: <info> [1789070125.9868] device (lo): Activation: successful, device activated.
+  0.131674  sshd[369]: Server listening on 0.0.0.0 port 22.
+  0.146429  systemd[1]: Started sshd.service - OpenSSH server daemon.
+  0.218665  NetworkManager[340]: <info> [1789070126.1548] dhcp4 (end0): state changed new lease, address=192.168.100.125
+  0.224735  NetworkManager[340]: <info> [1789070126.1611] policy: set 'Wired connection 1' (end0) as default for IPv4 routing and DNS
+  0.241883  NetworkManager[340]: <info> [1789070126.1782] device (end0): state change: ip-config -> ip-check (reason 'none', managed-type: 'full')
+  0.251858  NetworkManager[340]: <info> [1789070126.1882] device (end0): state change: ip-check -> secondaries (reason 'none', managed-type: 'full')
+  0.252729  NetworkManager[340]: <info> [1789070126.1891] device (end0): state change: secondaries -> activated (reason 'none', managed-type: 'full')
+  0.254402  NetworkManager[340]: <info> [1789070126.1908] manager: NetworkManager state is now CONNECTED_SITE
+  0.255548  NetworkManager[340]: <info> [1789070126.1920] device (end0): Activation: successful, device activated.
+  0.258183  NetworkManager[340]: <info> [1789070126.1943] manager: NetworkManager state is now CONNECTED_GLOBAL
+  0.259416  NetworkManager[340]: <info> [1789070126.1958] manager: startup complete
+  5.203755  chronyd[341]: Selected source 23.143.196.201 (2.centos.pool.ntp.org)
+  6.397882  chronyd[341]: System clock wrong by -1.193943 seconds
+ 32.714162  systemd[1]: qm.service: start operation timed out. Terminating.
+  5.204036  chronyd[341]: System clock was stepped by -1.193943 seconds
+ 32.759919  systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+  6.613392  chronyd[341]: Selected source 173.255.230.96 (2.centos.pool.ntp.org)
+ 32.928754  sshd-session[405]: ssh_dispatch_run_fatal: Connection from 10.26.24.218 port 47058: Broken pipe [preauth]
+ 32.928758  sshd-session[404]: ssh_dispatch_run_fatal: Connection from 10.26.24.218 port 52346: Broken pipe [preauth]
+ 32.928847  sshd-session[407]: ssh_dispatch_run_fatal: Connection from 10.26.24.218 port 33684: Broken pipe [preauth]
+ 32.929275  sshd-session[406]: ssh_dispatch_run_fatal: Connection from 10.26.24.218 port 33674: Broken pipe [preauth]
+ 33.255213  sshd-session[408]: Accepted publickey for root from 10.26.24.218 port 55908 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 33.377990  systemd-logind[346]: New session 1 of user root.
+ 33.401492  systemd[1]: Starting user-runtime-dir@0.service - User Runtime Directory /run/user/0...
+ 33.551994  systemd[1]: Finished user-runtime-dir@0.service - User Runtime Directory /run/user/0.
+ 33.701430  systemd-logind[346]: New session 2 of user root.
+ 34.361944  podman[416]: 2026-09-10 19:55:59.102537622 +0000 UTC m=+1.277695078 system refresh
+ 34.525854  systemd[1]: qm.service: Failed with result 'timeout'.
+ 34.528651  systemd[1]: Failed to start qm.service.
+ 35.728184  sshd-session[408]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 35.951364  sshd-session[476]: Received disconnect from 10.26.24.218 port 55908:11: disconnected by user
+ 35.953030  sshd-session[476]: Disconnected from user root 10.26.24.218 port 55908
+ 35.962861  sshd-session[408]: pam_unix(sshd:session): session closed for user root
+ 38.224371  sshd-session[491]: Accepted publickey for root from 10.26.24.218 port 53996 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 38.265260  systemd-logind[346]: New session 3 of user root.
+ 38.336396  sshd-session[491]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 38.521856  sshd-session[495]: Received disconnect from 10.26.24.218 port 53996:11: disconnected by user
+ 38.523731  sshd-session[495]: Disconnected from user root 10.26.24.218 port 53996
+ 38.531960  sshd-session[491]: pam_unix(sshd:session): session closed for user root
+ 38.792147  sshd-session[509]: Accepted publickey for root from 10.26.24.218 port 53998 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 38.829063  systemd-logind[346]: New session 4 of user root.
+ 38.905582  sshd-session[509]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 42.145518  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ 43.035488  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ 43.605562  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ 51.572835  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+
+qm-run-1.json boot 63
+-39.627216  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+-39.623804  systemd[1]: Created slice system-sshd\x2dkeygen.slice - Slice /system/sshd-keygen.
+-38.985935  systemd-sysusers[232]: /usr/lib/sysusers.d/openssh-server.conf:2: Conflict with earlier configuration for user 'sshd' in /usr/lib/sysusers.d/00-base-users.conf:15, ignoring line.
+-37.065984  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_wake_irq not found
+-37.064072  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_lpi not found
+-36.979144  kernel: s32-dwmac 4033c000.ethernet: IRQ sfty not found
+-36.794045  kernel: s32-dwmac 4033c000.ethernet: User ID: 0x10, Synopsys ID: 0x52
+-36.763642  kernel: s32-dwmac 4033c000.ethernet: DWMAC4/5
+-36.656221  kernel: s32-dwmac 4033c000.ethernet: DMA HW capability register supported
+-36.654171  kernel: s32-dwmac 4033c000.ethernet: RX Checksum Offload Engine supported
+-36.635726  kernel: s32-dwmac 4033c000.ethernet: TX Checksum insertion supported
+-36.633690  kernel: s32-dwmac 4033c000.ethernet: Wake-Up On Lan supported
+-36.619882  kernel: s32-dwmac 4033c000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+-36.617842  kernel: s32-dwmac 4033c000.ethernet: Enabled L3L4 Flow TC (entries=8)
+-36.615961  kernel: s32-dwmac 4033c000.ethernet: Enabled RFS Flow TC (entries=10)
+-36.614118  kernel: s32-dwmac 4033c000.ethernet: Enabling HW TC (entries=256, max_off=256)
+-36.598478  kernel: s32-dwmac 4033c000.ethernet: Using 32/32 bits DMA host/device width
+-36.596415  kernel: s32-dwmac 4033c000.ethernet: MDIO bus is disabled
+-36.492825  kernel: s32-dwmac 4033c000.ethernet end0: renamed from eth0
+-34.517114  systemd[1]: Listening on systemd-hostnamed.socket - Hostname Service Socket.
+-34.287518  systemd[1]: Starting NetworkManager.service - Network Manager...
+-34.264085  systemd[1]: Starting chronyd.service - NTP client/server...
+-34.215435  systemd[1]: sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation was skipped because no trigger condition checks were met.
+-34.214206  systemd[1]: sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation was skipped because no trigger condition checks were met.
+-34.213132  systemd[1]: sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation was skipped because no trigger condition checks were met.
+-34.211914  systemd[1]: Reached target sshd-keygen.target.
+-33.919170  chronyd[343]: chronyd version 4.8 starting (+CMDMON +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +NTS +SECHASH +IPV6 +DEBUG)
+-33.885577  chronyd[343]: Could not open command socket on [::1]:323
+-33.884284  chronyd[343]: Frequency -59.493 +/- 6.364 ppm read from /var/lib/chrony/drift
+-33.883198  chronyd[343]: Loaded seccomp filter (level 2)
+-33.881534  systemd[1]: Started chronyd.service - NTP client/server.
+-33.872735  NetworkManager[342]: <info> [1785110410.7431] NetworkManager (version 1.58.0-1.el10) is starting... (boot:16bd3f4d-530e-43f1-a7f6-137282ed9c1c)
+-33.872612  NetworkManager[342]: <info> [1785110410.7442] Read config: /etc/NetworkManager/NetworkManager.conf
+-33.811927  NetworkManager[342]: <info> [1785110410.8048] manager[0xaaab0319b170]: monitoring kernel firmware directory '/lib/firmware'.
+-33.777681  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ -8.779760  NetworkManager[342]: <info> [1785110435.8368] hostname: hostname: hostnamed not used as proxy creation failed with: Error calling StartServiceByName for org.freedesktop.hostname1: Timeout was reached
+ -8.778942  NetworkManager[342]: <info> [1785110435.8379] hostname: static hostname changed from (none) to "localhost"
+ -8.777446  NetworkManager[342]: <info> [1785110435.8394] dns-mgr: init: dns=default,systemd-resolved rc-manager=symlink (auto)
+ -0.530825  systemd[1]: systemd-hostnamed.service: start operation timed out. Terminating.
+ -0.482078  NetworkManager[342]: <info> [1785110444.1345] manager[0xaaab0319b170]: rfkill: Wi-Fi hardware radio set enabled
+ -0.481864  NetworkManager[342]: <info> [1785110444.1350] manager[0xaaab0319b170]: rfkill: WWAN hardware radio set enabled
+ -0.456288  NetworkManager[342]: <info> [1785110444.1605] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+ -0.455855  NetworkManager[342]: <info> [1785110444.1610] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+ -0.455597  NetworkManager[342]: <info> [1785110444.1612] manager: Networking is enabled by state file
+ -0.453747  NetworkManager[342]: <info> [1785110444.1631] settings: Loaded settings plugin: keyfile (internal)
+ -0.442045  systemd[1]: systemd-hostnamed.service: Failed with result 'timeout'.
+ -0.440713  NetworkManager[342]: <info> [1785110444.1761] dhcp: init: Using DHCP client 'internal'
+ -0.440248  systemd[1]: Failed to start systemd-hostnamed.service - Hostname Service.
+ -0.439221  NetworkManager[342]: <info> [1785110444.1776] manager: (lo): new Loopback device (/org/freedesktop/NetworkManager/Devices/1)
+ -0.424728  NetworkManager[342]: <info> [1785110444.1921] device (lo): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+ -0.423347  NetworkManager[342]: <info> [1785110444.1935] device (lo): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+ -0.417449  NetworkManager[342]: <info> [1785110444.1993] device (lo): Activation: starting connection 'lo' (397d3370-4796-4c5a-a68f-8518dddd98cf)
+ -0.411702  NetworkManager[342]: <info> [1785110444.2050] manager: (can0): new Generic device (/org/freedesktop/NetworkManager/Devices/2)
+ -0.405682  NetworkManager[342]: <info> [1785110444.2111] manager: (can1): new Generic device (/org/freedesktop/NetworkManager/Devices/3)
+ -0.397986  NetworkManager[342]: <info> [1785110444.2188] manager: (end0): new Ethernet device (/org/freedesktop/NetworkManager/Devices/4)
+ -0.392078  NetworkManager[342]: <info> [1785110444.2247] settings: (end0): created default wired connection 'Wired connection 1'
+ -0.391863  NetworkManager[342]: <info> [1785110444.2250] device (end0): state change: unmanaged -> unavailable (reason 'managed', managed-type: 'external')
+ -0.382855  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-0
+ -0.379753  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-1
+ -0.377656  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-2
+ -0.375352  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-3
+ -0.373120  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-4
+ -0.370498  kernel: s32-dwmac 4033c000.ethernet end0: Enabling Safety Features
+ -0.368099  kernel: s32-dwmac 4033c000.ethernet end0: IEEE 1588-2008 Advanced Timestamp supported
+ -0.366090  kernel: s32-dwmac 4033c000.ethernet end0: registered PTP clock
+ -0.369348  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ -0.292877  kernel: s32-dwmac 4033c000.ethernet end0: configuring for fixed/rgmii-id link mode
+ -0.290464  kernel: s32-dwmac 4033c000.ethernet end0: Link is Up - 1Gbps/Full - flow control off
+ -0.237855  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+ -0.121364  systemd[1]: Started NetworkManager.service - Network Manager.
+ -0.120476  NetworkManager[342]: <info> [1785110444.4959] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+ -0.117594  NetworkManager[342]: <info> [1785110444.4991] device (lo): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+ -0.115844  NetworkManager[342]: <info> [1785110444.5009] device (lo): state change: prepare -> config (reason 'none', managed-type: 'external')
+ -0.114471  NetworkManager[342]: <info> [1785110444.5023] device (lo): state change: config -> ip-config (reason 'none', managed-type: 'external')
+ -0.112563  NetworkManager[342]: <info> [1785110444.5042] device (end0): carrier: link connected
+ -0.109997  NetworkManager[342]: <info> [1785110444.5067] device (lo): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+ -0.105775  NetworkManager[342]: <info> [1785110444.5110] device (end0): state change: unavailable -> disconnected (reason 'carrier-changed', managed-type: 'full')
+ -0.103358  NetworkManager[342]: <info> [1785110444.5134] policy: auto-activating connection 'Wired connection 1' (70d39bb7-aa40-3e81-840e-d710fff10b85)
+ -0.101057  NetworkManager[342]: <info> [1785110444.5157] device (end0): Activation: starting connection 'Wired connection 1' (70d39bb7-aa40-3e81-840e-d710fff10b85)
+ -0.100925  NetworkManager[342]: <info> [1785110444.5159] device (lo): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+ -0.100047  NetworkManager[342]: <info> [1785110444.5168] device (end0): state change: disconnected -> prepare (reason 'none', managed-type: 'full')
+ -0.099036  NetworkManager[342]: <info> [1785110444.5178] manager: NetworkManager state is now CONNECTING
+ -0.098416  NetworkManager[342]: <info> [1785110444.5184] device (end0): state change: prepare -> config (reason 'none', managed-type: 'full')
+ -0.093965  NetworkManager[342]: <info> [1785110444.5228] device (lo): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+ -0.091262  NetworkManager[342]: <info> [1785110444.5255] device (lo): Activation: successful, device activated.
+ -0.087358  NetworkManager[342]: <info> [1785110444.5294] device (end0): state change: config -> ip-config (reason 'none', managed-type: 'full')
+ -0.084259  systemd[1]: Starting sshd.service - OpenSSH server daemon...
+ -0.083967  NetworkManager[342]: <info> [1785110444.5315] dhcp4 (end0): activation: beginning transaction (timeout in 45 seconds)
+ -0.047958  NetworkManager[342]: <info> [1785110444.5688] dhcp4 (end0): state changed new lease, address=192.168.100.125, acd pending
+  0.000000  systemd[1]: Starting qm.service...
+  0.116514  sshd[392]: Server listening on 0.0.0.0 port 22.
+  0.134397  systemd[1]: Started sshd.service - OpenSSH server daemon.
+  0.177731  NetworkManager[342]: <info> [1785110444.7944] dhcp4 (end0): state changed new lease, address=192.168.100.125
+  0.183824  NetworkManager[342]: <info> [1785110444.8005] policy: set 'Wired connection 1' (end0) as default for IPv4 routing and DNS
+  0.200782  NetworkManager[342]: <info> [1785110444.8175] device (end0): state change: ip-config -> ip-check (reason 'none', managed-type: 'full')
+  0.212839  NetworkManager[342]: <info> [1785110444.8296] device (end0): state change: ip-check -> secondaries (reason 'none', managed-type: 'full')
+  0.213857  NetworkManager[342]: <info> [1785110444.8307] device (end0): state change: secondaries -> activated (reason 'none', managed-type: 'full')
+  0.215701  NetworkManager[342]: <info> [1785110444.8325] manager: NetworkManager state is now CONNECTED_SITE
+  0.217149  NetworkManager[342]: <info> [1785110444.8338] device (end0): Activation: successful, device activated.
+  0.219498  NetworkManager[342]: <info> [1785110444.8363] manager: NetworkManager state is now CONNECTED_GLOBAL
+  0.220636  NetworkManager[342]: <info> [1785110444.8375] manager: startup complete
+  1.646508  podman[399]: 2026-07-27 00:00:46.261559871 +0000 UTC m=+1.177206582 system refresh
+  1.941705  podman[399]: 2026-07-27 00:00:46.558350848 +0000 UTC m=+1.473997286 container create 31a5d824f3f265f01682621bfb6c542ba6bcdde0633f8171638a71fd41b44521 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  2.192728  NetworkManager[342]: <info> [1785110446.8093] manager: (podman0): new Bridge device (/org/freedesktop/NetworkManager/Devices/5)
+  2.254099  NetworkManager[342]: <info> [1785110446.8709] device (podman0): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+  2.256029  NetworkManager[342]: <info> [1785110446.8728] device (podman0): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+  2.259405  NetworkManager[342]: <info> [1785110446.8762] device (podman0): Activation: starting connection 'podman0' (5c93f66f-d0fd-4855-8c2f-75af6904a9d8)
+  2.259885  NetworkManager[342]: <info> [1785110446.8767] device (podman0): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+  2.260993  NetworkManager[342]: <info> [1785110446.8778] device (podman0): state change: prepare -> config (reason 'none', managed-type: 'external')
+  2.261814  NetworkManager[342]: <info> [1785110446.8786] device (podman0): state change: config -> ip-config (reason 'none', managed-type: 'external')
+  2.262671  NetworkManager[342]: <info> [1785110446.8795] device (podman0): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+  2.268829  NetworkManager[342]: <info> [1785110446.8856] device (podman0): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+  2.269546  NetworkManager[342]: <info> [1785110446.8864] device (podman0): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+  2.271830  NetworkManager[342]: <info> [1785110446.8887] device (podman0): Activation: successful, device activated.
+  2.364777  NetworkManager[342]: <info> [1785110446.9814] manager: (veth0): new Veth device (/org/freedesktop/NetworkManager/Devices/6)
+  2.369925  NetworkManager[342]: <info> [1785110446.9867] device (veth0): carrier: link connected
+  2.371247  NetworkManager[342]: <info> [1785110446.9880] device (podman0): carrier: link connected
+  2.584838  sshd-session[464]: Accepted publickey for root from 10.26.24.218 port 33754 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  2.680857  systemd[1]: Starting user-runtime-dir@0.service - User Runtime Directory /run/user/0...
+  2.718590  systemd-logind[348]: New session 1 of user root.
+  2.820892  systemd[1]: Finished user-runtime-dir@0.service - User Runtime Directory /run/user/0.
+  3.009787  systemd-logind[348]: New session 2 of user root.
+  3.659521  podman[399]: 2026-07-27 00:00:48.274384114 +0000 UTC m=+3.190031974 container init 31a5d824f3f265f01682621bfb6c542ba6bcdde0633f8171638a71fd41b44521 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  3.674085  podman[399]: 2026-07-27 00:00:48.29067158 +0000 UTC m=+3.206318745 container start 31a5d824f3f265f01682621bfb6c542ba6bcdde0633f8171638a71fd41b44521 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  3.677581  systemd[1]: Started qm.service.
+  5.179691  sshd-session[464]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+  5.228908  chronyd[343]: Selected source 159.89.153.100 (2.centos.pool.ntp.org)
+-45.543022  chronyd[343]: System clock wrong by 3960956.110239 seconds
+  5.229271  chronyd[343]: System clock was stepped by 3960956.110239 seconds
+  5.451005  sshd-session[590]: Received disconnect from 10.26.24.218 port 33754:11: disconnected by user
+  5.452541  sshd-session[590]: Disconnected from user root 10.26.24.218 port 33754
+  5.466615  sshd-session[464]: pam_unix(sshd:session): session closed for user root
+  6.600937  chronyd[343]: Selected source 72.14.186.59 (2.centos.pool.ntp.org)
+  7.734639  sshd-session[634]: Accepted publickey for root from 10.26.24.218 port 46470 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  7.777421  systemd-logind[348]: New session 3 of user root.
+  7.843840  sshd-session[634]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+  8.031235  sshd-session[647]: Received disconnect from 10.26.24.218 port 46470:11: disconnected by user
+  8.033477  sshd-session[647]: Disconnected from user root 10.26.24.218 port 46470
+  8.042796  sshd-session[634]: pam_unix(sshd:session): session closed for user root
+  8.299869  sshd-session[662]: Accepted publickey for root from 10.26.24.218 port 46476 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  8.338289  systemd-logind[348]: New session 4 of user root.
+  8.402572  sshd-session[662]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 12.374999  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ 40.567750  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+
+qm-run-1.json boot 81
+ -7.576338  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+ -7.573025  systemd[1]: Created slice system-sshd\x2dkeygen.slice - Slice /system/sshd-keygen.
+ -6.964618  systemd-sysusers[226]: /usr/lib/sysusers.d/openssh-server.conf:2: Conflict with earlier configuration for user 'sshd' in /usr/lib/sysusers.d/00-base-users.conf:15, ignoring line.
+ -5.071995  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_wake_irq not found
+ -5.070036  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_lpi not found
+ -4.951982  kernel: s32-dwmac 4033c000.ethernet: IRQ sfty not found
+ -4.916917  kernel: s32-dwmac 4033c000.ethernet: User ID: 0x10, Synopsys ID: 0x52
+ -4.914929  kernel: s32-dwmac 4033c000.ethernet: DWMAC4/5
+ -4.913076  kernel: s32-dwmac 4033c000.ethernet: DMA HW capability register supported
+ -4.911200  kernel: s32-dwmac 4033c000.ethernet: RX Checksum Offload Engine supported
+ -4.877340  kernel: s32-dwmac 4033c000.ethernet: TX Checksum insertion supported
+ -4.757401  kernel: s32-dwmac 4033c000.ethernet: Wake-Up On Lan supported
+ -4.755336  kernel: s32-dwmac 4033c000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+ -4.753415  kernel: s32-dwmac 4033c000.ethernet: Enabled L3L4 Flow TC (entries=8)
+ -4.751516  kernel: s32-dwmac 4033c000.ethernet: Enabled RFS Flow TC (entries=10)
+ -4.734232  kernel: s32-dwmac 4033c000.ethernet: Enabling HW TC (entries=256, max_off=256)
+ -4.630365  kernel: s32-dwmac 4033c000.ethernet: Using 32/32 bits DMA host/device width
+ -4.585762  kernel: s32-dwmac 4033c000.ethernet: MDIO bus is disabled
+ -4.363799  kernel: s32-dwmac 4033c000.ethernet end0: renamed from eth0
+ -2.385021  systemd[1]: Listening on systemd-hostnamed.socket - Hostname Service Socket.
+ -2.153998  systemd[1]: Starting NetworkManager.service - Network Manager...
+ -2.130469  systemd[1]: Starting chronyd.service - NTP client/server...
+ -2.087108  systemd[1]: sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation was skipped because no trigger condition checks were met.
+ -2.085993  systemd[1]: sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation was skipped because no trigger condition checks were met.
+ -2.084772  systemd[1]: sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation was skipped because no trigger condition checks were met.
+ -2.083810  systemd[1]: Reached target sshd-keygen.target.
+ -1.789297  chronyd[340]: chronyd version 4.8 starting (+CMDMON +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +NTS +SECHASH +IPV6 +DEBUG)
+ -1.754776  chronyd[340]: Could not open command socket on [::1]:323
+ -1.753475  chronyd[340]: Frequency -57.584 +/- 28.401 ppm read from /var/lib/chrony/drift
+ -1.752448  chronyd[340]: Loaded seccomp filter (level 2)
+ -1.750941  systemd[1]: Started chronyd.service - NTP client/server.
+ -1.742183  NetworkManager[339]: <info> [1789072461.3059] NetworkManager (version 1.58.0-1.el10) is starting... (boot:4d9ff85b-aaaf-4c0e-87af-5d221782c826)
+ -1.742082  NetworkManager[339]: <info> [1789072461.3067] Read config: /etc/NetworkManager/NetworkManager.conf
+ -1.683814  NetworkManager[339]: <info> [1789072461.3649] manager[0xaaaafe2ba170]: monitoring kernel firmware directory '/lib/firmware'.
+ -1.649955  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ -0.237245  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ -0.217651  NetworkManager[339]: <info> [1789072462.8308] hostname: hostname: using hostnamed
+ -0.217544  NetworkManager[339]: <info> [1789072462.8312] hostname: static hostname changed from (none) to "localhost"
+ -0.216007  NetworkManager[339]: <info> [1789072462.8328] dns-mgr: init: dns=default,systemd-resolved rc-manager=symlink (auto)
+ -0.185429  NetworkManager[339]: <info> [1789072462.8632] manager[0xaaaafe2ba170]: rfkill: Wi-Fi hardware radio set enabled
+ -0.185176  NetworkManager[339]: <info> [1789072462.8636] manager[0xaaaafe2ba170]: rfkill: WWAN hardware radio set enabled
+ -0.168022  NetworkManager[339]: <info> [1789072462.8807] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+ -0.167646  NetworkManager[339]: <info> [1789072462.8811] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+ -0.167409  NetworkManager[339]: <info> [1789072462.8814] manager: Networking is enabled by state file
+ -0.165564  NetworkManager[339]: <info> [1789072462.8832] settings: Loaded settings plugin: keyfile (internal)
+ -0.153897  NetworkManager[339]: <info> [1789072462.8948] dhcp: init: Using DHCP client 'internal'
+ -0.152513  NetworkManager[339]: <info> [1789072462.8962] manager: (lo): new Loopback device (/org/freedesktop/NetworkManager/Devices/1)
+ -0.138690  NetworkManager[339]: <info> [1789072462.9100] device (lo): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+ -0.137215  NetworkManager[339]: <info> [1789072462.9115] device (lo): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+ -0.134773  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ -0.131007  NetworkManager[339]: <info> [1789072462.9177] device (lo): Activation: starting connection 'lo' (d84340ae-2e8b-4835-82fb-2ca894814751)
+ -0.125128  NetworkManager[339]: <info> [1789072462.9236] manager: (can0): new Generic device (/org/freedesktop/NetworkManager/Devices/2)
+ -0.118315  NetworkManager[339]: <info> [1789072462.9304] manager: (can1): new Generic device (/org/freedesktop/NetworkManager/Devices/3)
+ -0.111000  NetworkManager[339]: <info> [1789072462.9377] manager: (end0): new Ethernet device (/org/freedesktop/NetworkManager/Devices/4)
+ -0.105256  NetworkManager[339]: <info> [1789072462.9435] settings: (end0): created default wired connection 'Wired connection 1'
+ -0.105081  NetworkManager[339]: <info> [1789072462.9437] device (end0): state change: unmanaged -> unavailable (reason 'managed', managed-type: 'external')
+ -0.099688  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-0
+ -0.096715  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-1
+ -0.094882  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-2
+ -0.092470  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-3
+ -0.090191  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-4
+ -0.088152  kernel: s32-dwmac 4033c000.ethernet end0: Enabling Safety Features
+ -0.086224  kernel: s32-dwmac 4033c000.ethernet end0: IEEE 1588-2008 Advanced Timestamp supported
+ -0.084287  kernel: s32-dwmac 4033c000.ethernet end0: registered PTP clock
+ -0.049627  kernel: s32-dwmac 4033c000.ethernet end0: configuring for fixed/rgmii-id link mode
+ -0.047038  kernel: s32-dwmac 4033c000.ethernet end0: Link is Up - 1Gbps/Full - flow control off
+ -0.037069  systemd[1]: Started NetworkManager.service - Network Manager.
+ -0.036475  NetworkManager[339]: <info> [1789072463.0121] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+ -0.034467  NetworkManager[339]: <info> [1789072463.0143] device (lo): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+ -0.033242  NetworkManager[339]: <info> [1789072463.0155] device (lo): state change: prepare -> config (reason 'none', managed-type: 'external')
+ -0.032176  NetworkManager[339]: <info> [1789072463.0166] device (lo): state change: config -> ip-config (reason 'none', managed-type: 'external')
+ -0.031219  NetworkManager[339]: <info> [1789072463.0175] device (end0): carrier: link connected
+ -0.029272  NetworkManager[339]: <info> [1789072463.0195] device (lo): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+ -0.026657  NetworkManager[339]: <info> [1789072463.0221] device (end0): state change: unavailable -> disconnected (reason 'carrier-changed', managed-type: 'full')
+ -0.025049  NetworkManager[339]: <info> [1789072463.0237] policy: auto-activating connection 'Wired connection 1' (70d39bb7-aa40-3e81-840e-d710fff10b85)
+ -0.023106  NetworkManager[339]: <info> [1789072463.0256] device (end0): Activation: starting connection 'Wired connection 1' (70d39bb7-aa40-3e81-840e-d710fff10b85)
+ -0.022535  NetworkManager[339]: <info> [1789072463.0262] device (end0): state change: disconnected -> prepare (reason 'none', managed-type: 'full')
+ -0.021496  systemd[1]: Starting sshd.service - OpenSSH server daemon...
+ -0.021444  NetworkManager[339]: <info> [1789072463.0273] manager: NetworkManager state is now CONNECTING
+ -0.020773  NetworkManager[339]: <info> [1789072463.0280] device (end0): state change: prepare -> config (reason 'none', managed-type: 'full')
+ -0.017647  NetworkManager[339]: <info> [1789072463.0311] device (end0): state change: config -> ip-config (reason 'none', managed-type: 'full')
+ -0.016047  NetworkManager[339]: <info> [1789072463.0327] dhcp4 (end0): activation: beginning transaction (timeout in 45 seconds)
+  0.000000  systemd[1]: Starting qm.service...
+  0.011735  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+  0.020941  NetworkManager[339]: <info> [1789072463.0696] dhcp4 (end0): state changed new lease, address=192.168.100.125, acd pending
+  0.028662  NetworkManager[339]: <info> [1789072463.0774] device (lo): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+  0.029764  NetworkManager[339]: <info> [1789072463.0785] device (lo): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+  0.032602  NetworkManager[339]: <info> [1789072463.0813] device (lo): Activation: successful, device activated.
+  0.146938  sshd[368]: Server listening on 0.0.0.0 port 22.
+  0.161540  systemd[1]: Started sshd.service - OpenSSH server daemon.
+  0.260941  NetworkManager[339]: <info> [1789072463.3094] dhcp4 (end0): state changed new lease, address=192.168.100.125
+  0.266995  NetworkManager[339]: <info> [1789072463.3157] policy: set 'Wired connection 1' (end0) as default for IPv4 routing and DNS
+  0.284034  NetworkManager[339]: <info> [1789072463.3327] device (end0): state change: ip-config -> ip-check (reason 'none', managed-type: 'full')
+  0.296021  NetworkManager[339]: <info> [1789072463.3447] device (end0): state change: ip-check -> secondaries (reason 'none', managed-type: 'full')
+  0.296980  NetworkManager[339]: <info> [1789072463.3457] device (end0): state change: secondaries -> activated (reason 'none', managed-type: 'full')
+  0.298788  NetworkManager[339]: <info> [1789072463.3475] manager: NetworkManager state is now CONNECTED_SITE
+  0.300067  NetworkManager[339]: <info> [1789072463.3488] device (end0): Activation: successful, device activated.
+  0.302449  NetworkManager[339]: <info> [1789072463.3512] manager: NetworkManager state is now CONNECTED_GLOBAL
+  0.303686  NetworkManager[339]: <info> [1789072463.3524] manager: startup complete
+  1.692802  podman[370]: 2026-09-10 20:34:24.739675262 +0000 UTC m=+1.280746182 system refresh
+  1.930918  sshd-session[447]: Accepted publickey for root from 10.26.24.218 port 36780 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  1.992115  podman[370]: 2026-09-10 20:34:25.039428503 +0000 UTC m=+1.580499053 container create 9c55ab5bc9bf74963dcead7cdb6fc9e126d379f0e82d362e2097f61b52c57975 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  2.037054  systemd-logind[345]: New session 1 of user root.
+  2.061585  systemd[1]: Starting user-runtime-dir@0.service - User Runtime Directory /run/user/0...
+  2.207814  systemd[1]: Finished user-runtime-dir@0.service - User Runtime Directory /run/user/0.
+  2.278737  NetworkManager[339]: <info> [1789072465.3273] manager: (podman0): new Bridge device (/org/freedesktop/NetworkManager/Devices/5)
+  2.297597  systemd-logind[345]: New session 2 of user root.
+  2.335667  NetworkManager[339]: <info> [1789072465.3844] device (podman0): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+  2.337550  NetworkManager[339]: <info> [1789072465.3863] device (podman0): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+  2.340888  NetworkManager[339]: <info> [1789072465.3896] device (podman0): Activation: starting connection 'podman0' (bc11f8dc-7ca5-4825-adb3-7ac12cfbcd32)
+  2.341383  NetworkManager[339]: <info> [1789072465.3902] device (podman0): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+  2.342449  NetworkManager[339]: <info> [1789072465.3912] device (podman0): state change: prepare -> config (reason 'none', managed-type: 'external')
+  2.343265  NetworkManager[339]: <info> [1789072465.3920] device (podman0): state change: config -> ip-config (reason 'none', managed-type: 'external')
+  2.344109  NetworkManager[339]: <info> [1789072465.3929] device (podman0): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+  2.350126  NetworkManager[339]: <info> [1789072465.3988] device (podman0): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+  2.351786  NetworkManager[339]: <info> [1789072465.4005] device (podman0): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+  2.354040  NetworkManager[339]: <info> [1789072465.4028] device (podman0): Activation: successful, device activated.
+  2.446696  NetworkManager[339]: <info> [1789072465.4953] manager: (veth0): new Veth device (/org/freedesktop/NetworkManager/Devices/6)
+  2.453555  NetworkManager[339]: <info> [1789072465.5023] device (veth0): carrier: link connected
+  2.455183  NetworkManager[339]: <info> [1789072465.5039] device (podman0): carrier: link connected
+  3.741760  podman[370]: 2026-09-10 20:34:26.788668705 +0000 UTC m=+3.329740116 container init 9c55ab5bc9bf74963dcead7cdb6fc9e126d379f0e82d362e2097f61b52c57975 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  3.756508  podman[370]: 2026-09-10 20:34:26.805062775 +0000 UTC m=+3.346133627 container start 9c55ab5bc9bf74963dcead7cdb6fc9e126d379f0e82d362e2097f61b52c57975 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  3.759977  systemd[1]: Started qm.service.
+  4.368200  sshd-session[447]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+  4.619805  sshd-session[542]: Received disconnect from 10.26.24.218 port 36780:11: disconnected by user
+  4.621890  sshd-session[542]: Disconnected from user root 10.26.24.218 port 36780
+  4.632772  sshd-session[447]: pam_unix(sshd:session): session closed for user root
+  5.349603  chronyd[340]: Selected source 173.255.230.96 (2.centos.pool.ntp.org)
+  6.770016  sshd-session[596]: Accepted publickey for root from 10.26.24.218 port 56736 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  6.815132  systemd-logind[345]: New session 3 of user root.
+  6.884682  sshd-session[596]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+  7.058879  sshd-session[606]: Received disconnect from 10.26.24.218 port 56736:11: disconnected by user
+  7.061242  sshd-session[606]: Disconnected from user root 10.26.24.218 port 56736
+  7.070045  sshd-session[596]: pam_unix(sshd:session): session closed for user root
+  7.185830  chronyd[340]: Selected source 23.155.72.147 (2.centos.pool.ntp.org)
+  7.310832  sshd-session[620]: Accepted publickey for root from 10.26.24.218 port 56740 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  7.346373  systemd-logind[345]: New session 4 of user root.
+  7.407523  sshd-session[620]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 11.151543  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+ 12.463723  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ 42.620259  kernel: watchdog: BUG: soft lockup - CPU#0 stuck for 30s! [swapper/0:0]
+ 42.701858  kernel: pc : default_idle_call+0x3c/0x170
+ 42.702016  kernel: lr : default_idle_call+0x30/0x170
+ 42.703711  kernel: Call trace:
+ 42.703845  kernel: default_idle_call+0x3c/0x170 (P)
+ 42.703988  kernel: cpuidle_idle_call+0x1a8/0x248
+ 42.704130  kernel: do_idle+0xa4/0x118
+ 42.659481  systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+
+qm-run-2.json boot 66
+ -7.468137  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+ -7.460160  systemd[1]: Created slice system-sshd\x2dkeygen.slice - Slice /system/sshd-keygen.
+ -6.848669  systemd-sysusers[225]: /usr/lib/sysusers.d/openssh-server.conf:2: Conflict with earlier configuration for user 'sshd' in /usr/lib/sysusers.d/00-base-users.conf:15, ignoring line.
+ -4.899386  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_wake_irq not found
+ -4.897360  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_lpi not found
+ -4.865208  kernel: s32-dwmac 4033c000.ethernet: IRQ sfty not found
+ -4.818897  kernel: s32-dwmac 4033c000.ethernet: User ID: 0x10, Synopsys ID: 0x52
+ -4.816922  kernel: s32-dwmac 4033c000.ethernet: DWMAC4/5
+ -4.486964  kernel: s32-dwmac 4033c000.ethernet: DMA HW capability register supported
+ -4.364158  kernel: s32-dwmac 4033c000.ethernet: RX Checksum Offload Engine supported
+ -4.361362  kernel: s32-dwmac 4033c000.ethernet: TX Checksum insertion supported
+ -4.358854  kernel: s32-dwmac 4033c000.ethernet: Wake-Up On Lan supported
+ -4.356651  kernel: s32-dwmac 4033c000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+ -4.354152  kernel: s32-dwmac 4033c000.ethernet: Enabled L3L4 Flow TC (entries=8)
+ -4.351778  kernel: s32-dwmac 4033c000.ethernet: Enabled RFS Flow TC (entries=10)
+ -4.349677  kernel: s32-dwmac 4033c000.ethernet: Enabling HW TC (entries=256, max_off=256)
+ -4.347756  kernel: s32-dwmac 4033c000.ethernet: Using 32/32 bits DMA host/device width
+ -4.345825  kernel: s32-dwmac 4033c000.ethernet: MDIO bus is disabled
+ -4.337434  kernel: s32-dwmac 4033c000.ethernet end0: renamed from eth0
+ -2.425912  systemd[1]: Listening on systemd-hostnamed.socket - Hostname Service Socket.
+ -2.195189  systemd[1]: Starting NetworkManager.service - Network Manager...
+ -2.172209  systemd[1]: Starting chronyd.service - NTP client/server...
+ -2.113488  systemd[1]: Starting sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation...
+ -2.103283  systemd[1]: Starting sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation...
+ -2.091745  systemd[1]: Starting sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation...
+ -1.918784  systemd[1]: sshd-keygen@ecdsa.service: Deactivated successfully.
+ -1.916772  systemd[1]: Finished sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation.
+ -1.910763  systemd[1]: sshd-keygen@ed25519.service: Deactivated successfully.
+ -1.908881  systemd[1]: Finished sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation.
+ -1.802399  chronyd[338]: chronyd version 4.8 starting (+CMDMON +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +NTS +SECHASH +IPV6 +DEBUG)
+ -1.769281  chronyd[338]: Could not open command socket on [::1]:323
+ -1.766227  chronyd[338]: Frequency -54.354 +/- 20.577 ppm read from /var/lib/chrony/drift
+ -1.765121  chronyd[338]: Loaded seccomp filter (level 2)
+ -1.763630  systemd[1]: Started chronyd.service - NTP client/server.
+ -1.757074  NetworkManager[337]: <info> [1790105929.4681] NetworkManager (version 1.58.0-1.el10) is starting... (boot:8223a8dd-4faf-4694-9274-472769972e5e)
+ -1.756968  NetworkManager[337]: <info> [1790105929.4690] Read config: /etc/NetworkManager/NetworkManager.conf
+ -1.698074  NetworkManager[337]: <info> [1790105929.5278] manager[0xaaaaf5bc0170]: monitoring kernel firmware directory '/lib/firmware'.
+ -1.661846  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ -0.365518  systemd[1]: sshd-keygen@rsa.service: Deactivated successfully.
+ -0.363653  systemd[1]: Finished sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation.
+ -0.362478  systemd[1]: sshd-keygen@rsa.service: Consumed 1.699s CPU time, 2.6M memory peak.
+ -0.359282  systemd[1]: Reached target sshd-keygen.target.
+ -0.242098  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ -0.223484  NetworkManager[337]: <info> [1790105931.0022] hostname: hostname: using hostnamed
+ -0.223376  NetworkManager[337]: <info> [1790105931.0025] hostname: static hostname changed from (none) to "localhost"
+ -0.221842  NetworkManager[337]: <info> [1790105931.0041] dns-mgr: init: dns=default,systemd-resolved rc-manager=symlink (auto)
+ -0.190905  NetworkManager[337]: <info> [1790105931.0349] manager[0xaaaaf5bc0170]: rfkill: Wi-Fi hardware radio set enabled
+ -0.190727  NetworkManager[337]: <info> [1790105931.0352] manager[0xaaaaf5bc0170]: rfkill: WWAN hardware radio set enabled
+ -0.172929  NetworkManager[337]: <info> [1790105931.0529] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+ -0.172590  NetworkManager[337]: <info> [1790105931.0533] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+ -0.172353  NetworkManager[337]: <info> [1790105931.0536] manager: Networking is enabled by state file
+ -0.170544  NetworkManager[337]: <info> [1790105931.0553] settings: Loaded settings plugin: keyfile (internal)
+ -0.158838  NetworkManager[337]: <info> [1790105931.0670] dhcp: init: Using DHCP client 'internal'
+ -0.157345  NetworkManager[337]: <info> [1790105931.0686] manager: (lo): new Loopback device (/org/freedesktop/NetworkManager/Devices/1)
+ -0.142980  NetworkManager[337]: <info> [1790105931.0829] device (lo): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+ -0.141555  NetworkManager[337]: <info> [1790105931.0843] device (lo): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+ -0.138782  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ -0.135499  NetworkManager[337]: <info> [1790105931.0903] device (lo): Activation: starting connection 'lo' (8b16c341-2f43-4c52-84d0-b84df7da8f42)
+ -0.130227  NetworkManager[337]: <info> [1790105931.0956] manager: (can0): new Generic device (/org/freedesktop/NetworkManager/Devices/2)
+ -0.124409  NetworkManager[337]: <info> [1790105931.1015] manager: (can1): new Generic device (/org/freedesktop/NetworkManager/Devices/3)
+ -0.117107  NetworkManager[337]: <info> [1790105931.1088] manager: (end0): new Ethernet device (/org/freedesktop/NetworkManager/Devices/4)
+ -0.111648  NetworkManager[337]: <info> [1790105931.1142] settings: (end0): created default wired connection 'Wired connection 1'
+ -0.111419  NetworkManager[337]: <info> [1790105931.1145] device (end0): state change: unmanaged -> unavailable (reason 'managed', managed-type: 'external')
+ -0.106509  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-0
+ -0.103737  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-1
+ -0.101981  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-2
+ -0.100104  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-3
+ -0.097848  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-4
+ -0.095627  kernel: s32-dwmac 4033c000.ethernet end0: Enabling Safety Features
+ -0.093808  kernel: s32-dwmac 4033c000.ethernet end0: IEEE 1588-2008 Advanced Timestamp supported
+ -0.091876  kernel: s32-dwmac 4033c000.ethernet end0: registered PTP clock
+ -0.046428  kernel: s32-dwmac 4033c000.ethernet end0: configuring for fixed/rgmii-id link mode
+ -0.044005  kernel: s32-dwmac 4033c000.ethernet end0: Link is Up - 1Gbps/Full - flow control off
+ -0.034871  systemd[1]: Started NetworkManager.service - Network Manager.
+ -0.034459  NetworkManager[337]: <info> [1790105931.1914] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+ -0.032496  NetworkManager[337]: <info> [1790105931.1934] device (lo): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+ -0.031314  NetworkManager[337]: <info> [1790105931.1946] device (lo): state change: prepare -> config (reason 'none', managed-type: 'external')
+ -0.030262  NetworkManager[337]: <info> [1790105931.1956] device (lo): state change: config -> ip-config (reason 'none', managed-type: 'external')
+ -0.029350  NetworkManager[337]: <info> [1790105931.1966] device (end0): carrier: link connected
+ -0.027584  NetworkManager[337]: <info> [1790105931.1983] device (lo): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+ -0.024581  NetworkManager[337]: <info> [1790105931.2013] device (end0): state change: unavailable -> disconnected (reason 'carrier-changed', managed-type: 'full')
+ -0.022847  NetworkManager[337]: <info> [1790105931.2030] policy: auto-activating connection 'Wired connection 1' (001752ff-38aa-3d38-ac3d-bb98b52764b7)
+ -0.022014  systemd[1]: Starting sshd.service - OpenSSH server daemon...
+ -0.020452  NetworkManager[337]: <info> [1790105931.2054] device (end0): Activation: starting connection 'Wired connection 1' (001752ff-38aa-3d38-ac3d-bb98b52764b7)
+ -0.019975  NetworkManager[337]: <info> [1790105931.2059] device (end0): state change: disconnected -> prepare (reason 'none', managed-type: 'full')
+ -0.018751  NetworkManager[337]: <info> [1790105931.2071] manager: NetworkManager state is now CONNECTING
+ -0.017972  NetworkManager[337]: <info> [1790105931.2079] device (end0): state change: prepare -> config (reason 'none', managed-type: 'full')
+ -0.014505  NetworkManager[337]: <info> [1790105931.2113] device (end0): state change: config -> ip-config (reason 'none', managed-type: 'full')
+ -0.012450  NetworkManager[337]: <info> [1790105931.2134] dhcp4 (end0): activation: beginning transaction (timeout in 45 seconds)
+  0.000000  systemd[1]: Starting qm.service...
+  0.015830  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+  0.022108  NetworkManager[337]: <info> [1790105931.2479] dhcp4 (end0): state changed new lease, address=192.168.100.125, acd pending
+  0.034079  NetworkManager[337]: <info> [1790105931.2599] device (lo): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+  0.035026  NetworkManager[337]: <info> [1790105931.2609] device (lo): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+  0.037725  NetworkManager[337]: <info> [1790105931.2636] device (lo): Activation: successful, device activated.
+  0.097162  sshd[388]: Server listening on 0.0.0.0 port 22.
+  0.111747  systemd[1]: Started sshd.service - OpenSSH server daemon.
+  0.244081  NetworkManager[337]: <info> [1790105931.4698] dhcp4 (end0): state changed new lease, address=192.168.100.125
+  0.250247  NetworkManager[337]: <info> [1790105931.4761] policy: set 'Wired connection 1' (end0) as default for IPv4 routing and DNS
+  0.269059  NetworkManager[337]: <info> [1790105931.4949] device (end0): state change: ip-config -> ip-check (reason 'none', managed-type: 'full')
+  0.279466  NetworkManager[337]: <info> [1790105931.5053] device (end0): state change: ip-check -> secondaries (reason 'none', managed-type: 'full')
+  0.280250  NetworkManager[337]: <info> [1790105931.5062] device (end0): state change: secondaries -> activated (reason 'none', managed-type: 'full')
+  0.281860  NetworkManager[337]: <info> [1790105931.5078] manager: NetworkManager state is now CONNECTED_SITE
+  0.282993  NetworkManager[337]: <info> [1790105931.5089] device (end0): Activation: successful, device activated.
+  0.285646  NetworkManager[337]: <info> [1790105931.5115] manager: NetworkManager state is now CONNECTED_GLOBAL
+  0.286756  NetworkManager[337]: <info> [1790105931.5127] manager: startup complete
+  1.654761  podman[390]: 2026-09-22 19:38:52.878582054 +0000 UTC m=+1.235077683 system refresh
+  2.015968  podman[390]: 2026-09-22 19:38:53.241723155 +0000 UTC m=+1.598218565 container create 939cb53c638a26832fc9b836da5ea1d1a21869d18476fdd2ae8e44ef4a2c2436 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  2.064354  sshd-session[467]: Accepted publickey for root from 10.26.24.218 port 39886 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  2.216279  systemd-logind[348]: New session 1 of user root.
+  2.238965  systemd[1]: Starting user-runtime-dir@0.service - User Runtime Directory /run/user/0...
+  2.329720  NetworkManager[337]: <info> [1790105933.5553] manager: (podman0): new Bridge device (/org/freedesktop/NetworkManager/Devices/5)
+  2.386073  NetworkManager[337]: <info> [1790105933.6120] device (podman0): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+  2.387913  NetworkManager[337]: <info> [1790105933.6138] device (podman0): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+  2.390924  NetworkManager[337]: <info> [1790105933.6168] device (podman0): Activation: starting connection 'podman0' (783a1a67-25e4-4f33-8920-fb96fb06dd6d)
+  2.391402  NetworkManager[337]: <info> [1790105933.6173] device (podman0): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+  2.392484  NetworkManager[337]: <info> [1790105933.6184] device (podman0): state change: prepare -> config (reason 'none', managed-type: 'external')
+  2.393314  NetworkManager[337]: <info> [1790105933.6192] device (podman0): state change: config -> ip-config (reason 'none', managed-type: 'external')
+  2.394265  NetworkManager[337]: <info> [1790105933.6202] device (podman0): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+  2.400275  NetworkManager[337]: <info> [1790105933.6262] device (podman0): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+  2.400964  NetworkManager[337]: <info> [1790105933.6269] device (podman0): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+  2.403317  NetworkManager[337]: <info> [1790105933.6292] device (podman0): Activation: successful, device activated.
+  5.280582  chronyd[338]: Selected source 216.144.228.179 (2.centos.pool.ntp.org)
+  6.536136  chronyd[338]: System clock wrong by -1.255375 seconds
+  5.280857  chronyd[338]: System clock was stepped by -1.255375 seconds
+ 12.502731  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ 34.756098  systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+ 34.778223  systemd[1]: qm.service: start operation timed out. Terminating.
+ 34.817695  systemd[1]: Finished user-runtime-dir@0.service - User Runtime Directory /run/user/0.
+ 34.835190  NetworkManager[337]: <info> [1790105964.8055] manager: (veth0): new Veth device (/org/freedesktop/NetworkManager/Devices/6)
+ 34.877134  sshd-session[497]: ssh_dispatch_run_fatal: Connection from 10.26.24.218 port 36724: Broken pipe [preauth]
+ 34.877653  sshd-session[499]: ssh_dispatch_run_fatal: Connection from 10.26.24.218 port 50358: Broken pipe [preauth]
+ 34.879402  sshd-session[498]: ssh_dispatch_run_fatal: Connection from 10.26.24.218 port 58400: Broken pipe [preauth]
+ 34.908975  systemd-logind[348]: New session 2 of user root.
+ 34.999541  NetworkManager[337]: <info> [1790105964.9699] device (veth0): carrier: link connected
+ 35.001181  NetworkManager[337]: <info> [1790105964.9717] device (podman0): carrier: link connected
+ 35.211097  sshd-session[502]: Accepted publickey for root from 10.26.24.218 port 50370 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 35.255776  systemd-logind[348]: New session 3 of user root.
+ 36.120126  systemd[1]: qm.service: Main process exited, code=exited, status=1/FAILURE
+ 36.970481  sshd-session[467]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 36.976894  sshd-session[502]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 37.284790  NetworkManager[337]: <info> [1790105967.2550] device (podman0): state change: activated -> unmanaged (reason 'unmanaged', managed-type: 'removed')
+ 37.296463  sshd-session[575]: Received disconnect from 10.26.24.218 port 39886:11: disconnected by user
+ 37.299310  sshd-session[575]: Disconnected from user root 10.26.24.218 port 39886
+ 37.309767  sshd-session[467]: pam_unix(sshd:session): session closed for user root
+ 37.322662  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ 37.453147  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+ 37.509105  sshd-session[576]: Received disconnect from 10.26.24.218 port 50370:11: disconnected by user
+ 37.510742  sshd-session[576]: Disconnected from user root 10.26.24.218 port 50370
+ 37.521510  sshd-session[502]: pam_unix(sshd:session): session closed for user root
+ 37.646176  podman[561]: 2026-09-22 19:39:27.613045502 +0000 UTC m=+1.394395983 container remove 939cb53c638a26832fc9b836da5ea1d1a21869d18476fdd2ae8e44ef4a2c2436 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+ 37.749456  systemd[1]: qm.service: Failed with result 'timeout'.
+ 37.752094  systemd[1]: Failed to start qm.service.
+ 37.753071  systemd[1]: qm.service: Consumed 1.385s CPU time, 64.5M memory peak.
+ 39.786999  sshd-session[615]: Accepted publickey for root from 10.26.24.218 port 49444 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 39.828997  systemd-logind[348]: New session 4 of user root.
+ 39.912227  sshd-session[615]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 40.102005  sshd-session[619]: Received disconnect from 10.26.24.218 port 49444:11: disconnected by user
+ 40.104288  sshd-session[619]: Disconnected from user root 10.26.24.218 port 49444
+ 40.113537  sshd-session[615]: pam_unix(sshd:session): session closed for user root
+ 40.362777  sshd-session[633]: Accepted publickey for root from 10.26.24.218 port 49448 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 40.400427  systemd-logind[348]: New session 5 of user root.
+ 40.481150  sshd-session[633]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 43.777673  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ 45.209559  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ 45.432323  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+ 47.535962  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+
+qm-run-2.json boot 83
+ -7.581331  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+ -7.577992  systemd[1]: Created slice system-sshd\x2dkeygen.slice - Slice /system/sshd-keygen.
+ -6.944750  systemd-sysusers[228]: /usr/lib/sysusers.d/openssh-server.conf:2: Conflict with earlier configuration for user 'sshd' in /usr/lib/sysusers.d/00-base-users.conf:15, ignoring line.
+ -4.817365  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_wake_irq not found
+ -4.750242  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_lpi not found
+ -4.712330  kernel: s32-dwmac 4033c000.ethernet: IRQ sfty not found
+ -4.710255  kernel: s32-dwmac 4033c000.ethernet: User ID: 0x10, Synopsys ID: 0x52
+ -4.708372  kernel: s32-dwmac 4033c000.ethernet: DWMAC4/5
+ -4.704220  kernel: s32-dwmac 4033c000.ethernet: DMA HW capability register supported
+ -4.702147  kernel: s32-dwmac 4033c000.ethernet: RX Checksum Offload Engine supported
+ -4.700261  kernel: s32-dwmac 4033c000.ethernet: TX Checksum insertion supported
+ -4.698427  kernel: s32-dwmac 4033c000.ethernet: Wake-Up On Lan supported
+ -4.693761  kernel: s32-dwmac 4033c000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+ -4.596981  kernel: s32-dwmac 4033c000.ethernet: Enabled L3L4 Flow TC (entries=8)
+ -4.553512  kernel: s32-dwmac 4033c000.ethernet: Enabled RFS Flow TC (entries=10)
+ -4.550343  kernel: s32-dwmac 4033c000.ethernet: Enabling HW TC (entries=256, max_off=256)
+ -4.547364  kernel: s32-dwmac 4033c000.ethernet: Using 32/32 bits DMA host/device width
+ -4.544037  kernel: s32-dwmac 4033c000.ethernet: MDIO bus is disabled
+ -4.368431  kernel: s32-dwmac 4033c000.ethernet end0: renamed from eth0
+ -2.434840  systemd[1]: Listening on systemd-hostnamed.socket - Hostname Service Socket.
+ -2.203808  systemd[1]: Starting NetworkManager.service - Network Manager...
+ -2.181282  systemd[1]: Starting chronyd.service - NTP client/server...
+ -2.125524  systemd[1]: Starting sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation...
+ -2.115470  systemd[1]: Starting sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation...
+ -2.104957  systemd[1]: Starting sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation...
+ -1.934298  systemd[1]: sshd-keygen@ecdsa.service: Deactivated successfully.
+ -1.932383  systemd[1]: Finished sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation.
+ -1.928006  systemd[1]: sshd-keygen@ed25519.service: Deactivated successfully.
+ -1.926014  systemd[1]: Finished sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation.
+ -1.812340  chronyd[346]: chronyd version 4.8 starting (+CMDMON +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +NTS +SECHASH +IPV6 +DEBUG)
+ -1.779586  chronyd[346]: Could not open command socket on [::1]:323
+ -1.776879  chronyd[346]: Frequency -60.509 +/- 34.958 ppm read from /var/lib/chrony/drift
+ -1.775751  chronyd[346]: Loaded seccomp filter (level 2)
+ -1.774508  systemd[1]: Started chronyd.service - NTP client/server.
+ -1.765002  NetworkManager[345]: <info> [1790107011.2471] NetworkManager (version 1.58.0-1.el10) is starting... (boot:e8d1aed4-51cb-4ada-9962-9ee4cb0d783b)
+ -1.764900  NetworkManager[345]: <info> [1790107011.2479] Read config: /etc/NetworkManager/NetworkManager.conf
+ -1.704816  NetworkManager[345]: <info> [1790107011.3080] manager[0xaaaaf0260170]: monitoring kernel firmware directory '/lib/firmware'.
+ -1.667836  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ -0.257397  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ -0.238508  NetworkManager[345]: <info> [1790107012.7741] hostname: hostname: using hostnamed
+ -0.238401  NetworkManager[345]: <info> [1790107012.7744] hostname: static hostname changed from (none) to "localhost"
+ -0.236682  NetworkManager[345]: <info> [1790107012.7761] dns-mgr: init: dns=default,systemd-resolved rc-manager=symlink (auto)
+ -0.205035  NetworkManager[345]: <info> [1790107012.8077] manager[0xaaaaf0260170]: rfkill: Wi-Fi hardware radio set enabled
+ -0.204842  NetworkManager[345]: <info> [1790107012.8080] manager[0xaaaaf0260170]: rfkill: WWAN hardware radio set enabled
+ -0.186928  NetworkManager[345]: <info> [1790107012.8258] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+ -0.186435  NetworkManager[345]: <info> [1790107012.8264] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+ -0.186175  NetworkManager[345]: <info> [1790107012.8267] manager: Networking is enabled by state file
+ -0.184353  NetworkManager[345]: <info> [1790107012.8285] settings: Loaded settings plugin: keyfile (internal)
+ -0.172821  NetworkManager[345]: <info> [1790107012.8400] dhcp: init: Using DHCP client 'internal'
+ -0.171383  NetworkManager[345]: <info> [1790107012.8414] manager: (lo): new Loopback device (/org/freedesktop/NetworkManager/Devices/1)
+ -0.157940  NetworkManager[345]: <info> [1790107012.8549] device (lo): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+ -0.156480  NetworkManager[345]: <info> [1790107012.8563] device (lo): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+ -0.151899  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ -0.150792  NetworkManager[345]: <info> [1790107012.8620] device (lo): Activation: starting connection 'lo' (96860b78-f898-4845-9107-5326e8311f1d)
+ -0.148023  systemd[1]: sshd-keygen@rsa.service: Deactivated successfully.
+ -0.145839  systemd[1]: Finished sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation.
+ -0.145416  NetworkManager[345]: <info> [1790107012.8674] manager: (can0): new Generic device (/org/freedesktop/NetworkManager/Devices/2)
+ -0.144722  systemd[1]: sshd-keygen@rsa.service: Consumed 1.853s CPU time, 2.3M memory peak.
+ -0.139230  NetworkManager[345]: <info> [1790107012.8735] manager: (can1): new Generic device (/org/freedesktop/NetworkManager/Devices/3)
+ -0.138964  systemd[1]: Reached target sshd-keygen.target.
+ -0.130853  NetworkManager[345]: <info> [1790107012.8819] manager: (end0): new Ethernet device (/org/freedesktop/NetworkManager/Devices/4)
+ -0.125403  NetworkManager[345]: <info> [1790107012.8874] settings: (end0): created default wired connection 'Wired connection 1'
+ -0.125161  NetworkManager[345]: <info> [1790107012.8877] device (end0): state change: unmanaged -> unavailable (reason 'managed', managed-type: 'external')
+ -0.116676  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-0
+ -0.113785  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-1
+ -0.111608  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-2
+ -0.109567  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-3
+ -0.107742  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-4
+ -0.105497  kernel: s32-dwmac 4033c000.ethernet end0: Enabling Safety Features
+ -0.103718  kernel: s32-dwmac 4033c000.ethernet end0: IEEE 1588-2008 Advanced Timestamp supported
+ -0.101965  kernel: s32-dwmac 4033c000.ethernet end0: registered PTP clock
+ -0.046653  kernel: s32-dwmac 4033c000.ethernet end0: configuring for fixed/rgmii-id link mode
+ -0.044084  kernel: s32-dwmac 4033c000.ethernet end0: Link is Up - 1Gbps/Full - flow control off
+ -0.034515  systemd[1]: Started NetworkManager.service - Network Manager.
+ -0.034263  NetworkManager[345]: <info> [1790107012.9785] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+ -0.032319  NetworkManager[345]: <info> [1790107012.9805] device (lo): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+ -0.031025  NetworkManager[345]: <info> [1790107012.9818] device (lo): state change: prepare -> config (reason 'none', managed-type: 'external')
+ -0.029540  NetworkManager[345]: <info> [1790107012.9832] device (lo): state change: config -> ip-config (reason 'none', managed-type: 'external')
+ -0.028473  NetworkManager[345]: <info> [1790107012.9843] device (end0): carrier: link connected
+ -0.026402  NetworkManager[345]: <info> [1790107012.9864] device (lo): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+ -0.023791  NetworkManager[345]: <info> [1790107012.9890] device (end0): state change: unavailable -> disconnected (reason 'carrier-changed', managed-type: 'full')
+ -0.021976  NetworkManager[345]: <info> [1790107012.9907] policy: auto-activating connection 'Wired connection 1' (001752ff-38aa-3d38-ac3d-bb98b52764b7)
+ -0.021376  systemd[1]: Starting sshd.service - OpenSSH server daemon...
+ -0.019877  NetworkManager[345]: <info> [1790107012.9929] device (end0): Activation: starting connection 'Wired connection 1' (001752ff-38aa-3d38-ac3d-bb98b52764b7)
+ -0.019189  NetworkManager[345]: <info> [1790107012.9936] device (end0): state change: disconnected -> prepare (reason 'none', managed-type: 'full')
+ -0.017825  NetworkManager[345]: <info> [1790107012.9949] manager: NetworkManager state is now CONNECTING
+ -0.017019  NetworkManager[345]: <info> [1790107012.9958] device (end0): state change: prepare -> config (reason 'none', managed-type: 'full')
+ -0.013485  NetworkManager[345]: <info> [1790107012.9993] device (end0): state change: config -> ip-config (reason 'none', managed-type: 'full')
+ -0.011443  NetworkManager[345]: <info> [1790107013.0013] dhcp4 (end0): activation: beginning transaction (timeout in 45 seconds)
+ -0.003708  NetworkManager[345]: <info> [1790107013.0091] device (lo): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+ -0.002613  NetworkManager[345]: <info> [1790107013.0102] device (lo): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+ -0.000056  NetworkManager[345]: <info> [1790107013.0127] device (lo): Activation: successful, device activated.
+  0.000000  systemd[1]: Starting qm.service...
+  0.005165  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+  0.021390  NetworkManager[345]: <info> [1790107013.0342] dhcp4 (end0): state changed new lease, address=192.168.100.125, acd pending
+  0.100614  sshd[399]: Server listening on 0.0.0.0 port 22.
+  0.118472  systemd[1]: Started sshd.service - OpenSSH server daemon.
+  0.266237  NetworkManager[345]: <info> [1790107013.2786] dhcp4 (end0): state changed new lease, address=192.168.100.125
+  0.272877  NetworkManager[345]: <info> [1790107013.2856] policy: set 'Wired connection 1' (end0) as default for IPv4 routing and DNS
+  0.291134  NetworkManager[345]: <info> [1790107013.3039] device (end0): state change: ip-config -> ip-check (reason 'none', managed-type: 'full')
+  0.302373  NetworkManager[345]: <info> [1790107013.3151] device (end0): state change: ip-check -> secondaries (reason 'none', managed-type: 'full')
+  0.303129  NetworkManager[345]: <info> [1790107013.3160] device (end0): state change: secondaries -> activated (reason 'none', managed-type: 'full')
+  0.304918  NetworkManager[345]: <info> [1790107013.3178] manager: NetworkManager state is now CONNECTED_SITE
+  0.306105  NetworkManager[345]: <info> [1790107013.3189] device (end0): Activation: successful, device activated.
+  0.308312  NetworkManager[345]: <info> [1790107013.3211] manager: NetworkManager state is now CONNECTED_GLOBAL
+  0.309462  NetworkManager[345]: <info> [1790107013.3223] manager: startup complete
+ 10.589947  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ 32.762331  chronyd[346]: Forward time jump detected!
+ 32.801197  systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+ 32.862548  systemd[1]: qm.service: start operation timed out. Terminating.
+ 33.152051  sshd-session[471]: ssh_dispatch_run_fatal: Connection from 10.26.24.218 port 56770: Broken pipe [preauth]
+ 33.152052  sshd-session[470]: ssh_dispatch_run_fatal: Connection from 10.26.24.218 port 56764: Broken pipe [preauth]
+ 33.152192  sshd-session[467]: ssh_dispatch_run_fatal: Connection from 10.26.24.218 port 57682: Broken pipe [preauth]
+ 33.152200  sshd-session[468]: ssh_dispatch_run_fatal: Connection from 10.26.24.218 port 37990: Broken pipe [preauth]
+ 33.452731  sshd-session[472]: Accepted publickey for root from 10.26.24.218 port 55852 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 33.571302  systemd-logind[355]: New session 1 of user root.
+ 33.593908  systemd[1]: Starting user-runtime-dir@0.service - User Runtime Directory /run/user/0...
+ 33.743174  systemd[1]: Finished user-runtime-dir@0.service - User Runtime Directory /run/user/0.
+ 33.883958  systemd-logind[355]: New session 2 of user root.
+ 34.436979  podman[488]: 2026-09-22 19:57:27.447959278 +0000 UTC m=+1.424368896 system refresh
+ 34.610318  systemd[1]: qm.service: Failed with result 'timeout'.
+ 34.613329  systemd[1]: Failed to start qm.service.
+ 35.914641  sshd-session[472]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 36.136646  sshd-session[531]: Received disconnect from 10.26.24.218 port 55852:11: disconnected by user
+ 36.137843  sshd-session[531]: Disconnected from user root 10.26.24.218 port 55852
+ 36.147857  sshd-session[472]: pam_unix(sshd:session): session closed for user root
+ 36.824587  chronyd[346]: Selected source 144.202.62.209 (2.centos.pool.ntp.org)
+ 38.282892  sshd-session[546]: Accepted publickey for root from 10.26.24.218 port 50682 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 38.320623  systemd-logind[355]: New session 3 of user root.
+ 38.390615  sshd-session[546]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 38.565026  sshd-session[550]: Received disconnect from 10.26.24.218 port 50682:11: disconnected by user
+ 38.566324  sshd-session[550]: Disconnected from user root 10.26.24.218 port 50682
+ 38.574056  sshd-session[546]: pam_unix(sshd:session): session closed for user root
+ 38.647462  chronyd[346]: Selected source 149.248.12.167 (2.centos.pool.ntp.org)
+ 38.810197  sshd-session[564]: Accepted publickey for root from 10.26.24.218 port 50686 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 38.843922  systemd-logind[355]: New session 4 of user root.
+ 38.910390  sshd-session[564]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 64.796667  systemd[1]: qm.service: Scheduled restart job, restart counter is at 1.
+ 64.809284  systemd[1]: Starting qm.service...
+ 72.183123  podman[583]: 2026-09-22 19:58:05.193975251 +0000 UTC m=+0.435233128 container create a3d09c88ceba5f79b1f7dbb30cba335f120960a0cd3cc40908b8f8d924487c85 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+ 72.314827  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ 72.473162  NetworkManager[345]: <info> [1790107085.4856] manager: (podman0): new Bridge device (/org/freedesktop/NetworkManager/Devices/5)
+ 72.532564  NetworkManager[345]: <info> [1790107085.5454] device (podman0): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+ 72.534579  NetworkManager[345]: <info> [1790107085.5474] device (podman0): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+ 72.537602  NetworkManager[345]: <info> [1790107085.5504] device (podman0): Activation: starting connection 'podman0' (4294deca-4ac2-4c3b-8032-a9d49d5c54a0)
+ 72.538085  NetworkManager[345]: <info> [1790107085.5509] device (podman0): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+ 72.539207  NetworkManager[345]: <info> [1790107085.5521] device (podman0): state change: prepare -> config (reason 'none', managed-type: 'external')
+ 72.540075  NetworkManager[345]: <info> [1790107085.5529] device (podman0): state change: config -> ip-config (reason 'none', managed-type: 'external')
+ 72.540995  NetworkManager[345]: <info> [1790107085.5538] device (podman0): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+ 72.574421  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ 72.639808  NetworkManager[345]: <info> [1790107085.6525] manager: (veth0): new Veth device (/org/freedesktop/NetworkManager/Devices/6)
+ 72.645048  NetworkManager[345]: <info> [1790107085.6578] device (veth0): carrier: link connected
+ 72.646459  NetworkManager[345]: <info> [1790107085.6593] device (podman0): carrier: link connected
+ 72.671745  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+ 72.675770  NetworkManager[345]: <info> [1790107085.6885] device (podman0): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+ 72.676682  NetworkManager[345]: <info> [1790107085.6895] device (podman0): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+ 72.679379  NetworkManager[345]: <info> [1790107085.6922] device (podman0): Activation: successful, device activated.
+ 73.885789  podman[583]: 2026-09-22 19:58:06.896531044 +0000 UTC m=+2.137789533 container init a3d09c88ceba5f79b1f7dbb30cba335f120960a0cd3cc40908b8f8d924487c85 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+ 73.900143  podman[583]: 2026-09-22 19:58:06.912831976 +0000 UTC m=+2.154090239 container start a3d09c88ceba5f79b1f7dbb30cba335f120960a0cd3cc40908b8f8d924487c85 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+ 73.903416  systemd[1]: Started qm.service.
+ 73.984136  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ 81.067696  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+ 82.810964  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+
+qm-run-2.json boot 94
+ -7.839186  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+ -7.836043  systemd[1]: Created slice system-sshd\x2dkeygen.slice - Slice /system/sshd-keygen.
+ -7.184092  systemd-sysusers[229]: /usr/lib/sysusers.d/openssh-server.conf:2: Conflict with earlier configuration for user 'sshd' in /usr/lib/sysusers.d/00-base-users.conf:15, ignoring line.
+ -5.152654  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_wake_irq not found
+ -5.032007  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_lpi not found
+ -5.029854  kernel: s32-dwmac 4033c000.ethernet: IRQ sfty not found
+ -5.027973  kernel: s32-dwmac 4033c000.ethernet: User ID: 0x10, Synopsys ID: 0x52
+ -5.015550  kernel: s32-dwmac 4033c000.ethernet: DWMAC4/5
+ -5.013555  kernel: s32-dwmac 4033c000.ethernet: DMA HW capability register supported
+ -5.011709  kernel: s32-dwmac 4033c000.ethernet: RX Checksum Offload Engine supported
+ -4.974378  kernel: s32-dwmac 4033c000.ethernet: TX Checksum insertion supported
+ -4.972254  kernel: s32-dwmac 4033c000.ethernet: Wake-Up On Lan supported
+ -4.970324  kernel: s32-dwmac 4033c000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+ -4.968474  kernel: s32-dwmac 4033c000.ethernet: Enabled L3L4 Flow TC (entries=8)
+ -4.966456  kernel: s32-dwmac 4033c000.ethernet: Enabled RFS Flow TC (entries=10)
+ -4.733042  kernel: s32-dwmac 4033c000.ethernet: Enabling HW TC (entries=256, max_off=256)
+ -4.685197  kernel: s32-dwmac 4033c000.ethernet: Using 32/32 bits DMA host/device width
+ -4.654235  kernel: s32-dwmac 4033c000.ethernet: MDIO bus is disabled
+ -4.639602  kernel: s32-dwmac 4033c000.ethernet end0: renamed from eth0
+ -2.558783  systemd[1]: Listening on systemd-hostnamed.socket - Hostname Service Socket.
+ -2.332946  systemd[1]: Starting NetworkManager.service - Network Manager...
+ -2.309780  systemd[1]: Starting chronyd.service - NTP client/server...
+ -2.251896  systemd[1]: Starting sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation...
+ -2.239277  systemd[1]: Starting sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation...
+ -2.227931  systemd[1]: Starting sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation...
+ -2.072382  systemd[1]: sshd-keygen@ed25519.service: Deactivated successfully.
+ -2.070376  systemd[1]: Finished sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation.
+ -2.059789  systemd[1]: sshd-keygen@ecdsa.service: Deactivated successfully.
+ -2.057783  systemd[1]: Finished sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation.
+ -1.942822  chronyd[343]: chronyd version 4.8 starting (+CMDMON +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +NTS +SECHASH +IPV6 +DEBUG)
+ -1.910833  chronyd[343]: Could not open command socket on [::1]:323
+ -1.908438  chronyd[343]: Frequency -63.615 +/- 60.572 ppm read from /var/lib/chrony/drift
+ -1.907411  chronyd[343]: Loaded seccomp filter (level 2)
+ -1.905380  systemd[1]: Started chronyd.service - NTP client/server.
+ -1.899045  NetworkManager[342]: <info> [1790107788.4675] NetworkManager (version 1.58.0-1.el10) is starting... (boot:92eb2226-8994-4d82-a265-2e4d3f56ee64)
+ -1.898935  NetworkManager[342]: <info> [1790107788.4684] Read config: /etc/NetworkManager/NetworkManager.conf
+ -1.840345  NetworkManager[342]: <info> [1790107788.5269] manager[0xaaaac423a170]: monitoring kernel firmware directory '/lib/firmware'.
+ -1.803683  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ -0.234170  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ -0.215229  NetworkManager[342]: <info> [1790107790.1518] hostname: hostname: using hostnamed
+ -0.215120  NetworkManager[342]: <info> [1790107790.1522] hostname: static hostname changed from (none) to "localhost"
+ -0.213422  NetworkManager[342]: <info> [1790107790.1538] dns-mgr: init: dns=default,systemd-resolved rc-manager=symlink (auto)
+ -0.182693  NetworkManager[342]: <info> [1790107790.1846] manager[0xaaaac423a170]: rfkill: Wi-Fi hardware radio set enabled
+ -0.182534  NetworkManager[342]: <info> [1790107790.1848] manager[0xaaaac423a170]: rfkill: WWAN hardware radio set enabled
+ -0.165605  NetworkManager[342]: <info> [1790107790.2016] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+ -0.165229  NetworkManager[342]: <info> [1790107790.2021] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+ -0.164974  NetworkManager[342]: <info> [1790107790.2023] manager: Networking is enabled by state file
+ -0.163360  NetworkManager[342]: <info> [1790107790.2039] settings: Loaded settings plugin: keyfile (internal)
+ -0.152089  NetworkManager[342]: <info> [1790107790.2152] dhcp: init: Using DHCP client 'internal'
+ -0.150689  NetworkManager[342]: <info> [1790107790.2166] manager: (lo): new Loopback device (/org/freedesktop/NetworkManager/Devices/1)
+ -0.137220  NetworkManager[342]: <info> [1790107790.2300] device (lo): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+ -0.135646  NetworkManager[342]: <info> [1790107790.2316] device (lo): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+ -0.133099  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ -0.129850  NetworkManager[342]: <info> [1790107790.2374] device (lo): Activation: starting connection 'lo' (9e13e352-ae08-4ade-bf20-0e3b09d2dd9e)
+ -0.124547  NetworkManager[342]: <info> [1790107790.2427] manager: (can0): new Generic device (/org/freedesktop/NetworkManager/Devices/2)
+ -0.118516  NetworkManager[342]: <info> [1790107790.2487] manager: (can1): new Generic device (/org/freedesktop/NetworkManager/Devices/3)
+ -0.111047  NetworkManager[342]: <info> [1790107790.2562] manager: (end0): new Ethernet device (/org/freedesktop/NetworkManager/Devices/4)
+ -0.105273  NetworkManager[342]: <info> [1790107790.2620] settings: (end0): created default wired connection 'Wired connection 1'
+ -0.105095  NetworkManager[342]: <info> [1790107790.2622] device (end0): state change: unmanaged -> unavailable (reason 'managed', managed-type: 'external')
+ -0.096505  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-0
+ -0.093250  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-1
+ -0.090772  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-2
+ -0.088897  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-3
+ -0.087028  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-4
+ -0.085071  kernel: s32-dwmac 4033c000.ethernet end0: Enabling Safety Features
+ -0.083386  kernel: s32-dwmac 4033c000.ethernet end0: IEEE 1588-2008 Advanced Timestamp supported
+ -0.081711  kernel: s32-dwmac 4033c000.ethernet end0: registered PTP clock
+ -0.036493  kernel: s32-dwmac 4033c000.ethernet end0: configuring for fixed/rgmii-id link mode
+ -0.033927  kernel: s32-dwmac 4033c000.ethernet end0: Link is Up - 1Gbps/Full - flow control off
+ -0.024861  systemd[1]: Started NetworkManager.service - Network Manager.
+ -0.024337  NetworkManager[342]: <info> [1790107790.3428] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+ -0.022393  NetworkManager[342]: <info> [1790107790.3449] device (lo): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+ -0.021278  NetworkManager[342]: <info> [1790107790.3460] device (lo): state change: prepare -> config (reason 'none', managed-type: 'external')
+ -0.020322  NetworkManager[342]: <info> [1790107790.3470] device (lo): state change: config -> ip-config (reason 'none', managed-type: 'external')
+ -0.019286  NetworkManager[342]: <info> [1790107790.3480] device (end0): carrier: link connected
+ -0.017444  NetworkManager[342]: <info> [1790107790.3498] device (lo): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+ -0.014389  NetworkManager[342]: <info> [1790107790.3529] device (end0): state change: unavailable -> disconnected (reason 'carrier-changed', managed-type: 'full')
+ -0.012758  NetworkManager[342]: <info> [1790107790.3545] policy: auto-activating connection 'Wired connection 1' (001752ff-38aa-3d38-ac3d-bb98b52764b7)
+ -0.010524  NetworkManager[342]: <info> [1790107790.3567] device (end0): Activation: starting connection 'Wired connection 1' (001752ff-38aa-3d38-ac3d-bb98b52764b7)
+ -0.010121  NetworkManager[342]: <info> [1790107790.3572] device (end0): state change: disconnected -> prepare (reason 'none', managed-type: 'full')
+ -0.009033  NetworkManager[342]: <info> [1790107790.3583] manager: NetworkManager state is now CONNECTING
+ -0.008347  NetworkManager[342]: <info> [1790107790.3589] device (end0): state change: prepare -> config (reason 'none', managed-type: 'full')
+ -0.005061  NetworkManager[342]: <info> [1790107790.3622] device (end0): state change: config -> ip-config (reason 'none', managed-type: 'full')
+ -0.003406  NetworkManager[342]: <info> [1790107790.3639] dhcp4 (end0): activation: beginning transaction (timeout in 45 seconds)
+  0.000000  systemd[1]: Starting qm.service...
+  0.023643  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+  0.032114  NetworkManager[342]: <info> [1790107790.3993] dhcp4 (end0): state changed new lease, address=192.168.100.125, acd pending
+  0.039322  NetworkManager[342]: <info> [1790107790.4064] device (lo): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+  0.040284  NetworkManager[342]: <info> [1790107790.4076] device (lo): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+  0.042923  NetworkManager[342]: <info> [1790107790.4102] device (lo): Activation: successful, device activated.
+  0.243895  NetworkManager[342]: <info> [1790107790.6111] dhcp4 (end0): state changed new lease, address=192.168.100.125
+  0.249927  NetworkManager[342]: <info> [1790107790.6172] policy: set 'Wired connection 1' (end0) as default for IPv4 routing and DNS
+  0.273817  NetworkManager[342]: <info> [1790107790.6410] device (end0): state change: ip-config -> ip-check (reason 'none', managed-type: 'full')
+  0.284748  NetworkManager[342]: <info> [1790107790.6520] device (end0): state change: ip-check -> secondaries (reason 'none', managed-type: 'full')
+  0.285622  NetworkManager[342]: <info> [1790107790.6529] device (end0): state change: secondaries -> activated (reason 'none', managed-type: 'full')
+  0.287290  NetworkManager[342]: <info> [1790107790.6546] manager: NetworkManager state is now CONNECTED_SITE
+  0.288449  NetworkManager[342]: <info> [1790107790.6558] device (end0): Activation: successful, device activated.
+  0.290694  NetworkManager[342]: <info> [1790107790.6580] manager: NetworkManager state is now CONNECTED_GLOBAL
+  0.291764  NetworkManager[342]: <info> [1790107790.6591] manager: startup complete
+  1.694595  podman[390]: 2026-09-22 20:09:52.059782024 +0000 UTC m=+1.301293896 system refresh
+  2.046123  podman[390]: 2026-09-22 20:09:52.4132322 +0000 UTC m=+1.654743738 container create d646c38d0679bae59f139ace4738ba4ad17d799405dad9e2347cd92bb439c354 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  2.335857  NetworkManager[342]: <info> [1790107792.7029] manager: (podman0): new Bridge device (/org/freedesktop/NetworkManager/Devices/5)
+  2.389182  NetworkManager[342]: <info> [1790107792.7564] device (podman0): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+  2.391095  NetworkManager[342]: <info> [1790107792.7584] device (podman0): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+  2.394158  NetworkManager[342]: <info> [1790107792.7614] device (podman0): Activation: starting connection 'podman0' (fa62d7c7-04e8-47fe-b8dc-218cdbe86c26)
+  2.394672  NetworkManager[342]: <info> [1790107792.7620] device (podman0): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+  2.395800  NetworkManager[342]: <info> [1790107792.7631] device (podman0): state change: prepare -> config (reason 'none', managed-type: 'external')
+  2.396671  NetworkManager[342]: <info> [1790107792.7640] device (podman0): state change: config -> ip-config (reason 'none', managed-type: 'external')
+  2.397573  NetworkManager[342]: <info> [1790107792.7649] device (podman0): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+  2.403714  NetworkManager[342]: <info> [1790107792.7710] device (podman0): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+  2.404497  NetworkManager[342]: <info> [1790107792.7718] device (podman0): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+  2.406776  NetworkManager[342]: <info> [1790107792.7741] device (podman0): Activation: successful, device activated.
+  2.511066  NetworkManager[342]: <info> [1790107792.8782] manager: (veth0): new Veth device (/org/freedesktop/NetworkManager/Devices/6)
+  2.521420  NetworkManager[342]: <info> [1790107792.8887] device (veth0): carrier: link connected
+  2.522704  NetworkManager[342]: <info> [1790107792.8900] device (podman0): carrier: link connected
+  2.637175  systemd[1]: sshd-keygen@rsa.service: Deactivated successfully.
+  2.638987  systemd[1]: Finished sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation.
+  2.640562  systemd[1]: sshd-keygen@rsa.service: Consumed 4.792s CPU time, 2.6M memory peak.
+  2.643872  systemd[1]: Reached target sshd-keygen.target.
+  2.655781  systemd[1]: Starting sshd.service - OpenSSH server daemon...
+  2.809023  sshd[494]: Server listening on 0.0.0.0 port 22.
+  2.822606  systemd[1]: Started sshd.service - OpenSSH server daemon.
+  3.741643  sshd-session[513]: Accepted publickey for root from 10.26.24.218 port 49212 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  3.841534  podman[390]: 2026-09-22 20:09:54.206720298 +0000 UTC m=+3.448232676 container init d646c38d0679bae59f139ace4738ba4ad17d799405dad9e2347cd92bb439c354 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  3.842792  systemd-logind[355]: New session 1 of user root.
+  3.867186  podman[390]: 2026-09-22 20:09:54.234091569 +0000 UTC m=+3.475603773 container start d646c38d0679bae59f139ace4738ba4ad17d799405dad9e2347cd92bb439c354 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  3.868076  systemd[1]: Starting user-runtime-dir@0.service - User Runtime Directory /run/user/0...
+  3.872686  systemd[1]: Started qm.service.
+  4.036212  systemd[1]: Finished user-runtime-dir@0.service - User Runtime Directory /run/user/0.
+  4.135221  systemd-logind[355]: New session 2 of user root.
+  5.301800  chronyd[343]: Selected source 155.248.202.205 (2.centos.pool.ntp.org)
+  6.241899  sshd-session[513]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+  6.485603  sshd-session[602]: Received disconnect from 10.26.24.218 port 49212:11: disconnected by user
+  6.486705  sshd-session[602]: Disconnected from user root 10.26.24.218 port 49212
+  6.495496  sshd-session[513]: pam_unix(sshd:session): session closed for user root
+  6.713537  chronyd[343]: Selected source 172.233.157.223 (2.centos.pool.ntp.org)
+  8.514485  sshd-session[617]: Accepted publickey for root from 10.26.24.218 port 54338 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 29.407152  sshd-session[621]: Accepted publickey for root from 10.26.24.218 port 45116 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 38.448645  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ 38.495133  systemd-logind[355]: New session 3 of user root.
+ 38.500076  systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+ 38.532192  systemd-logind[355]: New session 4 of user root.
+ 39.493512  kernel: watchdog: BUG: soft lockup - CPU#7 stuck for 32s! [swapper/7:0]
+ 39.520326  kernel: pc : default_idle_call+0x3c/0x170
+ 39.520489  kernel: lr : default_idle_call+0x30/0x170
+ 39.522175  kernel: Call trace:
+ 39.522296  kernel: default_idle_call+0x3c/0x170 (P)
+ 39.522436  kernel: cpuidle_idle_call+0x1a8/0x248
+ 39.522575  kernel: do_idle+0xa4/0x118
+ 39.732946  systemd-logind[355]: New session 5 of user root.
+ 41.676590  sshd-session[617]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 41.682910  sshd-session[621]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 41.695554  sshd-session[671]: Connection closed by 10.26.24.218 port 54338
+ 41.701918  sshd-session[617]: pam_unix(sshd:session): session closed for user root
+ 41.874128  sshd-session[672]: Received disconnect from 10.26.24.218 port 45116:11: disconnected by user
+ 41.875362  sshd-session[672]: Disconnected from user root 10.26.24.218 port 45116
+ 41.883879  sshd-session[621]: pam_unix(sshd:session): session closed for user root
+ 42.138721  sshd-session[687]: Accepted publickey for root from 10.26.24.218 port 46804 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 42.180757  systemd-logind[355]: New session 6 of user root.
+ 42.262081  sshd-session[687]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 45.545712  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ 46.979959  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ 47.181657  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+
+qm-run-3.json boot 26
+ -7.531891  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+ -7.528745  systemd[1]: Created slice system-sshd\x2dkeygen.slice - Slice /system/sshd-keygen.
+ -6.907915  systemd-sysusers[227]: /usr/lib/sysusers.d/openssh-server.conf:2: Conflict with earlier configuration for user 'sshd' in /usr/lib/sysusers.d/00-base-users.conf:15, ignoring line.
+ -5.004728  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_wake_irq not found
+ -4.946996  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_lpi not found
+ -4.816585  kernel: s32-dwmac 4033c000.ethernet: IRQ sfty not found
+ -4.690539  kernel: s32-dwmac 4033c000.ethernet: User ID: 0x10, Synopsys ID: 0x52
+ -4.688445  kernel: s32-dwmac 4033c000.ethernet: DWMAC4/5
+ -4.686516  kernel: s32-dwmac 4033c000.ethernet: DMA HW capability register supported
+ -4.496126  kernel: s32-dwmac 4033c000.ethernet: RX Checksum Offload Engine supported
+ -4.435545  kernel: s32-dwmac 4033c000.ethernet: TX Checksum insertion supported
+ -4.432610  kernel: s32-dwmac 4033c000.ethernet: Wake-Up On Lan supported
+ -4.430405  kernel: s32-dwmac 4033c000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+ -4.428135  kernel: s32-dwmac 4033c000.ethernet: Enabled L3L4 Flow TC (entries=8)
+ -4.425964  kernel: s32-dwmac 4033c000.ethernet: Enabled RFS Flow TC (entries=10)
+ -4.423625  kernel: s32-dwmac 4033c000.ethernet: Enabling HW TC (entries=256, max_off=256)
+ -4.421490  kernel: s32-dwmac 4033c000.ethernet: Using 32/32 bits DMA host/device width
+ -4.419596  kernel: s32-dwmac 4033c000.ethernet: MDIO bus is disabled
+ -4.411329  kernel: s32-dwmac 4033c000.ethernet end0: renamed from eth0
+ -2.380369  systemd[1]: Listening on systemd-hostnamed.socket - Hostname Service Socket.
+ -2.149891  systemd[1]: Starting NetworkManager.service - Network Manager...
+ -2.126322  systemd[1]: Starting chronyd.service - NTP client/server...
+ -2.081941  systemd[1]: sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation was skipped because no trigger condition checks were met.
+ -2.080718  systemd[1]: sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation was skipped because no trigger condition checks were met.
+ -2.079642  systemd[1]: sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation was skipped because no trigger condition checks were met.
+ -2.078697  systemd[1]: Reached target sshd-keygen.target.
+ -1.787979  chronyd[342]: chronyd version 4.8 starting (+CMDMON +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +NTS +SECHASH +IPV6 +DEBUG)
+ -1.755589  chronyd[342]: Could not open command socket on [::1]:323
+ -1.752730  chronyd[342]: Frequency -53.299 +/- 49.944 ppm read from /var/lib/chrony/drift
+ -1.751664  chronyd[342]: Loaded seccomp filter (level 2)
+ -1.750191  systemd[1]: Started chronyd.service - NTP client/server.
+ -1.741685  NetworkManager[341]: <info> [1790172919.4367] NetworkManager (version 1.58.0-1.el10) is starting... (boot:25a5fe4d-00ed-4ff8-ab84-ac1a7b7b1bf0)
+ -1.741573  NetworkManager[341]: <info> [1790172919.4376] Read config: /etc/NetworkManager/NetworkManager.conf
+ -1.683639  NetworkManager[341]: <info> [1790172919.4954] manager[0xaaaaefa57170]: monitoring kernel firmware directory '/lib/firmware'.
+ -1.649097  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ -0.248341  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ -0.228442  NetworkManager[341]: <info> [1790172920.9504] hostname: hostname: using hostnamed
+ -0.228332  NetworkManager[341]: <info> [1790172920.9508] hostname: static hostname changed from (none) to "localhost"
+ -0.226714  NetworkManager[341]: <info> [1790172920.9524] dns-mgr: init: dns=default,systemd-resolved rc-manager=symlink (auto)
+ -0.195721  NetworkManager[341]: <info> [1790172920.9834] manager[0xaaaaefa57170]: rfkill: Wi-Fi hardware radio set enabled
+ -0.195413  NetworkManager[341]: <info> [1790172920.9837] manager[0xaaaaefa57170]: rfkill: WWAN hardware radio set enabled
+ -0.178220  NetworkManager[341]: <info> [1790172921.0009] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+ -0.177848  NetworkManager[341]: <info> [1790172921.0013] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+ -0.177592  NetworkManager[341]: <info> [1790172921.0015] manager: Networking is enabled by state file
+ -0.175938  NetworkManager[341]: <info> [1790172921.0032] settings: Loaded settings plugin: keyfile (internal)
+ -0.164526  NetworkManager[341]: <info> [1790172921.0145] dhcp: init: Using DHCP client 'internal'
+ -0.163020  NetworkManager[341]: <info> [1790172921.0161] manager: (lo): new Loopback device (/org/freedesktop/NetworkManager/Devices/1)
+ -0.149881  NetworkManager[341]: <info> [1790172921.0292] device (lo): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+ -0.148531  NetworkManager[341]: <info> [1790172921.0306] device (lo): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+ -0.144817  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ -0.142846  NetworkManager[341]: <info> [1790172921.0362] device (lo): Activation: starting connection 'lo' (297327e0-2a64-4abf-ba04-febc76ec2a3f)
+ -0.137735  NetworkManager[341]: <info> [1790172921.0413] manager: (can0): new Generic device (/org/freedesktop/NetworkManager/Devices/2)
+ -0.131974  NetworkManager[341]: <info> [1790172921.0471] manager: (can1): new Generic device (/org/freedesktop/NetworkManager/Devices/3)
+ -0.125166  NetworkManager[341]: <info> [1790172921.0539] manager: (end0): new Ethernet device (/org/freedesktop/NetworkManager/Devices/4)
+ -0.119635  NetworkManager[341]: <info> [1790172921.0595] settings: (end0): created default wired connection 'Wired connection 1'
+ -0.119404  NetworkManager[341]: <info> [1790172921.0597] device (end0): state change: unmanaged -> unavailable (reason 'managed', managed-type: 'external')
+ -0.113466  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-0
+ -0.110622  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-1
+ -0.108872  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-2
+ -0.106771  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-3
+ -0.104550  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-4
+ -0.102633  kernel: s32-dwmac 4033c000.ethernet end0: Enabling Safety Features
+ -0.100742  kernel: s32-dwmac 4033c000.ethernet end0: IEEE 1588-2008 Advanced Timestamp supported
+ -0.098927  kernel: s32-dwmac 4033c000.ethernet end0: registered PTP clock
+ -0.053439  kernel: s32-dwmac 4033c000.ethernet end0: configuring for fixed/rgmii-id link mode
+ -0.051064  kernel: s32-dwmac 4033c000.ethernet end0: Link is Up - 1Gbps/Full - flow control off
+ -0.039056  systemd[1]: Started NetworkManager.service - Network Manager.
+ -0.038378  NetworkManager[341]: <info> [1790172921.1406] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+ -0.036398  NetworkManager[341]: <info> [1790172921.1427] device (lo): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+ -0.035227  NetworkManager[341]: <info> [1790172921.1439] device (lo): state change: prepare -> config (reason 'none', managed-type: 'external')
+ -0.034226  NetworkManager[341]: <info> [1790172921.1449] device (lo): state change: config -> ip-config (reason 'none', managed-type: 'external')
+ -0.033000  NetworkManager[341]: <info> [1790172921.1461] device (end0): carrier: link connected
+ -0.031094  NetworkManager[341]: <info> [1790172921.1480] device (lo): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+ -0.028338  NetworkManager[341]: <info> [1790172921.1507] device (end0): state change: unavailable -> disconnected (reason 'carrier-changed', managed-type: 'full')
+ -0.026654  NetworkManager[341]: <info> [1790172921.1524] policy: auto-activating connection 'Wired connection 1' (3bab53fd-deef-3b9c-b459-c195bb1c5f13)
+ -0.024430  NetworkManager[341]: <info> [1790172921.1546] device (end0): Activation: starting connection 'Wired connection 1' (3bab53fd-deef-3b9c-b459-c195bb1c5f13)
+ -0.024008  NetworkManager[341]: <info> [1790172921.1551] device (end0): state change: disconnected -> prepare (reason 'none', managed-type: 'full')
+ -0.022700  NetworkManager[341]: <info> [1790172921.1564] manager: NetworkManager state is now CONNECTING
+ -0.021949  NetworkManager[341]: <info> [1790172921.1572] device (end0): state change: prepare -> config (reason 'none', managed-type: 'full')
+ -0.021487  systemd[1]: Starting sshd.service - OpenSSH server daemon...
+ -0.018517  NetworkManager[341]: <info> [1790172921.1606] device (end0): state change: config -> ip-config (reason 'none', managed-type: 'full')
+ -0.016770  NetworkManager[341]: <info> [1790172921.1623] dhcp4 (end0): activation: beginning transaction (timeout in 45 seconds)
+  0.000000  systemd[1]: Starting qm.service...
+  0.013130  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+  0.015968  NetworkManager[341]: <info> [1790172921.1951] dhcp4 (end0): state changed new lease, address=192.168.100.125, acd pending
+  0.034397  NetworkManager[341]: <info> [1790172921.2134] device (lo): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+  0.035363  NetworkManager[341]: <info> [1790172921.2145] device (lo): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+  0.038314  NetworkManager[341]: <info> [1790172921.2174] device (lo): Activation: successful, device activated.
+  0.128692  sshd[371]: Server listening on 0.0.0.0 port 22.
+  0.143706  systemd[1]: Started sshd.service - OpenSSH server daemon.
+  0.187339  NetworkManager[341]: <info> [1790172921.3661] dhcp4 (end0): state changed new lease, address=192.168.100.125
+  0.193436  NetworkManager[341]: <info> [1790172921.3725] policy: set 'Wired connection 1' (end0) as default for IPv4 routing and DNS
+  0.215970  NetworkManager[341]: <info> [1790172921.3951] device (end0): state change: ip-config -> ip-check (reason 'none', managed-type: 'full')
+  0.224873  NetworkManager[341]: <info> [1790172921.4040] device (end0): state change: ip-check -> secondaries (reason 'none', managed-type: 'full')
+  0.225779  NetworkManager[341]: <info> [1790172921.4049] device (end0): state change: secondaries -> activated (reason 'none', managed-type: 'full')
+  0.227558  NetworkManager[341]: <info> [1790172921.4066] manager: NetworkManager state is now CONNECTED_SITE
+  0.228767  NetworkManager[341]: <info> [1790172921.4079] device (end0): Activation: successful, device activated.
+  0.231147  NetworkManager[341]: <info> [1790172921.4102] manager: NetworkManager state is now CONNECTED_GLOBAL
+  0.232378  NetworkManager[341]: <info> [1790172921.4115] manager: startup complete
+  1.523298  sshd-session[458]: Accepted publickey for root from 10.26.24.218 port 35982 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  1.622884  systemd-logind[347]: New session 1 of user root.
+  1.645676  systemd[1]: Starting user-runtime-dir@0.service - User Runtime Directory /run/user/0...
+  5.216708  chronyd[342]: Selected source 24.249.17.253 (2.centos.pool.ntp.org)
+ 10.593087  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ 12.864781  sshd-session[465]: Accepted publickey for root from 10.26.24.218 port 37592 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 24.878205  sshd-session[469]: Accepted publickey for root from 10.26.24.218 port 37872 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 32.171310  systemd[1]: qm.service: start operation timed out. Terminating.
+ 32.202838  systemd-logind[347]: New session 3 of user root.
+ 32.208938  systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+ 32.273108  systemd-logind[347]: New session 2 of user root.
+ 32.302690  systemd[1]: Finished user-runtime-dir@0.service - User Runtime Directory /run/user/0.
+ 32.391797  systemd-logind[347]: New session 4 of user root.
+ 33.075019  podman[483]: 2026-09-23 14:15:54.252336355 +0000 UTC m=+0.614473073 system refresh
+ 33.213923  systemd[1]: qm.service: Failed with result 'timeout'.
+ 33.217106  systemd[1]: Failed to start qm.service.
+ 33.218285  systemd[1]: qm.service: Consumed 32.359s CPU time, 47.9M memory peak.
+ 34.439158  sshd-session[458]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 34.445161  sshd-session[465]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 34.452918  sshd-session[469]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 34.466686  sshd-session[512]: Received disconnect from 10.26.24.218 port 37592:11: disconnected by user
+ 34.466694  sshd-session[511]: Received disconnect from 10.26.24.218 port 35982:11: disconnected by user
+ 34.469257  sshd-session[511]: Disconnected from user root 10.26.24.218 port 35982
+ 34.469269  sshd-session[512]: Disconnected from user root 10.26.24.218 port 37592
+ 34.480372  sshd-session[458]: pam_unix(sshd:session): session closed for user root
+ 34.481188  sshd-session[465]: pam_unix(sshd:session): session closed for user root
+ 34.619262  sshd-session[513]: Received disconnect from 10.26.24.218 port 37872:11: disconnected by user
+ 34.620378  sshd-session[513]: Disconnected from user root 10.26.24.218 port 37872
+ 34.629248  sshd-session[469]: pam_unix(sshd:session): session closed for user root
+ 36.876831  sshd-session[530]: Accepted publickey for root from 10.26.24.218 port 43018 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 36.917332  systemd-logind[347]: New session 5 of user root.
+ 36.974300  sshd-session[530]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 37.147912  sshd-session[534]: Received disconnect from 10.26.24.218 port 43018:11: disconnected by user
+ 37.149258  sshd-session[534]: Disconnected from user root 10.26.24.218 port 43018
+ 37.157863  sshd-session[530]: pam_unix(sshd:session): session closed for user root
+ 39.394832  sshd-session[549]: Accepted publickey for root from 10.26.24.218 port 43026 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 39.432541  systemd-logind[347]: New session 6 of user root.
+ 39.524601  sshd-session[549]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 39.711704  sshd-session[553]: Received disconnect from 10.26.24.218 port 43026:11: disconnected by user
+ 39.713060  sshd-session[553]: Disconnected from user root 10.26.24.218 port 43026
+ 39.722174  sshd-session[549]: pam_unix(sshd:session): session closed for user root
+ 39.974361  sshd-session[567]: Accepted publickey for root from 10.26.24.218 port 43032 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 40.011695  systemd-logind[347]: New session 7 of user root.
+ 40.074299  sshd-session[567]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 43.292295  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ 44.743544  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ 50.027505  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+
+qm-run-3.json boot 62
+ -7.612709  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+ -7.609302  systemd[1]: Created slice system-sshd\x2dkeygen.slice - Slice /system/sshd-keygen.
+ -6.959505  systemd-sysusers[229]: /usr/lib/sysusers.d/openssh-server.conf:2: Conflict with earlier configuration for user 'sshd' in /usr/lib/sysusers.d/00-base-users.conf:15, ignoring line.
+ -5.179923  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_wake_irq not found
+ -5.177875  kernel: s32-dwmac 4033c000.ethernet: IRQ eth_lpi not found
+ -5.175932  kernel: s32-dwmac 4033c000.ethernet: IRQ sfty not found
+ -5.174061  kernel: s32-dwmac 4033c000.ethernet: User ID: 0x10, Synopsys ID: 0x52
+ -5.166591  kernel: s32-dwmac 4033c000.ethernet: DWMAC4/5
+ -5.126852  kernel: s32-dwmac 4033c000.ethernet: DMA HW capability register supported
+ -5.124868  kernel: s32-dwmac 4033c000.ethernet: RX Checksum Offload Engine supported
+ -5.039761  kernel: s32-dwmac 4033c000.ethernet: TX Checksum insertion supported
+ -5.013952  kernel: s32-dwmac 4033c000.ethernet: Wake-Up On Lan supported
+ -4.989960  kernel: s32-dwmac 4033c000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+ -4.974651  kernel: s32-dwmac 4033c000.ethernet: Enabled L3L4 Flow TC (entries=8)
+ -4.972641  kernel: s32-dwmac 4033c000.ethernet: Enabled RFS Flow TC (entries=10)
+ -4.880873  kernel: s32-dwmac 4033c000.ethernet: Enabling HW TC (entries=256, max_off=256)
+ -4.878848  kernel: s32-dwmac 4033c000.ethernet: Using 32/32 bits DMA host/device width
+ -4.873825  kernel: s32-dwmac 4033c000.ethernet: MDIO bus is disabled
+ -4.162420  kernel: s32-dwmac 4033c000.ethernet end0: renamed from eth0
+ -2.336955  systemd[1]: Listening on systemd-hostnamed.socket - Hostname Service Socket.
+ -2.114077  systemd[1]: Starting NetworkManager.service - Network Manager...
+ -2.090856  systemd[1]: Starting chronyd.service - NTP client/server...
+ -2.046796  systemd[1]: sshd-keygen@ecdsa.service - OpenSSH ecdsa Server Key Generation was skipped because no trigger condition checks were met.
+ -2.045598  systemd[1]: sshd-keygen@ed25519.service - OpenSSH ed25519 Server Key Generation was skipped because no trigger condition checks were met.
+ -2.044467  systemd[1]: sshd-keygen@rsa.service - OpenSSH rsa Server Key Generation was skipped because no trigger condition checks were met.
+ -2.043509  systemd[1]: Reached target sshd-keygen.target.
+ -1.744622  chronyd[340]: chronyd version 4.8 starting (+CMDMON +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +NTS +SECHASH +IPV6 +DEBUG)
+ -1.713063  chronyd[340]: Could not open command socket on [::1]:323
+ -1.710388  chronyd[340]: Frequency -66.147 +/- 14.643 ppm read from /var/lib/chrony/drift
+ -1.709348  chronyd[340]: Loaded seccomp filter (level 2)
+ -1.707837  systemd[1]: Started chronyd.service - NTP client/server.
+ -1.697089  NetworkManager[339]: <info> [1790174895.4025] NetworkManager (version 1.58.0-1.el10) is starting... (boot:486c49d3-971e-4fa3-b958-6c2e2b9ce5f4)
+ -1.696965  NetworkManager[339]: <info> [1790174895.4034] Read config: /etc/NetworkManager/NetworkManager.conf
+ -1.636628  NetworkManager[339]: <info> [1790174895.4637] manager[0xaaab1d3cd170]: monitoring kernel firmware directory '/lib/firmware'.
+ -1.601086  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ -0.266567  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ -0.246401  NetworkManager[339]: <info> [1790174896.8536] hostname: hostname: using hostnamed
+ -0.246296  NetworkManager[339]: <info> [1790174896.8541] hostname: static hostname changed from (none) to "localhost"
+ -0.244751  NetworkManager[339]: <info> [1790174896.8556] dns-mgr: init: dns=default,systemd-resolved rc-manager=symlink (auto)
+ -0.214343  NetworkManager[339]: <info> [1790174896.8859] manager[0xaaab1d3cd170]: rfkill: Wi-Fi hardware radio set enabled
+ -0.214130  NetworkManager[339]: <info> [1790174896.8862] manager[0xaaab1d3cd170]: rfkill: WWAN hardware radio set enabled
+ -0.197124  NetworkManager[339]: <info> [1790174896.9032] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+ -0.196756  NetworkManager[339]: <info> [1790174896.9036] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+ -0.196499  NetworkManager[339]: <info> [1790174896.9038] manager: Networking is enabled by state file
+ -0.194696  NetworkManager[339]: <info> [1790174896.9056] settings: Loaded settings plugin: keyfile (internal)
+ -0.182901  NetworkManager[339]: <info> [1790174896.9173] dhcp: init: Using DHCP client 'internal'
+ -0.181357  NetworkManager[339]: <info> [1790174896.9190] manager: (lo): new Loopback device (/org/freedesktop/NetworkManager/Devices/1)
+ -0.167190  NetworkManager[339]: <info> [1790174896.9331] device (lo): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+ -0.165746  NetworkManager[339]: <info> [1790174896.9346] device (lo): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+ -0.162845  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ -0.159545  NetworkManager[339]: <info> [1790174896.9407] device (lo): Activation: starting connection 'lo' (5db2c7dc-a00b-47dd-a398-c0c7369e8978)
+ -0.154341  NetworkManager[339]: <info> [1790174896.9460] manager: (can0): new Generic device (/org/freedesktop/NetworkManager/Devices/2)
+ -0.148346  NetworkManager[339]: <info> [1790174896.9520] manager: (can1): new Generic device (/org/freedesktop/NetworkManager/Devices/3)
+ -0.141051  NetworkManager[339]: <info> [1790174896.9592] manager: (end0): new Ethernet device (/org/freedesktop/NetworkManager/Devices/4)
+ -0.135615  NetworkManager[339]: <info> [1790174896.9647] settings: (end0): created default wired connection 'Wired connection 1'
+ -0.135426  NetworkManager[339]: <info> [1790174896.9649] device (end0): state change: unmanaged -> unavailable (reason 'managed', managed-type: 'external')
+ -0.132161  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-0
+ -0.129334  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-1
+ -0.127501  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-2
+ -0.125684  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-3
+ -0.123467  kernel: s32-dwmac 4033c000.ethernet end0: Register MEM_TYPE_PAGE_POOL RxQ-4
+ -0.121284  kernel: s32-dwmac 4033c000.ethernet end0: Enabling Safety Features
+ -0.119521  kernel: s32-dwmac 4033c000.ethernet end0: IEEE 1588-2008 Advanced Timestamp supported
+ -0.117578  kernel: s32-dwmac 4033c000.ethernet end0: registered PTP clock
+ -0.052095  kernel: s32-dwmac 4033c000.ethernet end0: configuring for fixed/rgmii-id link mode
+ -0.049504  kernel: s32-dwmac 4033c000.ethernet end0: Link is Up - 1Gbps/Full - flow control off
+ -0.039776  systemd[1]: Started NetworkManager.service - Network Manager.
+ -0.039231  NetworkManager[339]: <info> [1790174897.0609] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+ -0.037337  NetworkManager[339]: <info> [1790174897.0630] device (lo): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+ -0.036200  NetworkManager[339]: <info> [1790174897.0641] device (lo): state change: prepare -> config (reason 'none', managed-type: 'external')
+ -0.035286  NetworkManager[339]: <info> [1790174897.0651] device (lo): state change: config -> ip-config (reason 'none', managed-type: 'external')
+ -0.031613  NetworkManager[339]: <info> [1790174897.0687] device (end0): carrier: link connected
+ -0.029522  NetworkManager[339]: <info> [1790174897.0708] device (lo): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+ -0.026484  NetworkManager[339]: <info> [1790174897.0738] device (end0): state change: unavailable -> disconnected (reason 'carrier-changed', managed-type: 'full')
+ -0.024810  NetworkManager[339]: <info> [1790174897.0755] policy: auto-activating connection 'Wired connection 1' (3bab53fd-deef-3b9c-b459-c195bb1c5f13)
+ -0.023734  systemd[1]: Starting sshd.service - OpenSSH server daemon...
+ -0.022454  NetworkManager[339]: <info> [1790174897.0778] device (end0): Activation: starting connection 'Wired connection 1' (3bab53fd-deef-3b9c-b459-c195bb1c5f13)
+ -0.021922  NetworkManager[339]: <info> [1790174897.0784] device (end0): state change: disconnected -> prepare (reason 'none', managed-type: 'full')
+ -0.020818  NetworkManager[339]: <info> [1790174897.0795] manager: NetworkManager state is now CONNECTING
+ -0.020103  NetworkManager[339]: <info> [1790174897.0802] device (end0): state change: prepare -> config (reason 'none', managed-type: 'full')
+ -0.017085  NetworkManager[339]: <info> [1790174897.0832] device (end0): state change: config -> ip-config (reason 'none', managed-type: 'full')
+ -0.015245  NetworkManager[339]: <info> [1790174897.0850] dhcp4 (end0): activation: beginning transaction (timeout in 45 seconds)
+ -0.010292  NetworkManager[339]: <info> [1790174897.0900] device (lo): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+ -0.009370  NetworkManager[339]: <info> [1790174897.0909] device (lo): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+ -0.006307  NetworkManager[339]: <info> [1790174897.0940] device (lo): Activation: successful, device activated.
+  0.000000  systemd[1]: Starting qm.service...
+  0.004517  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+  0.158891  NetworkManager[339]: <info> [1790174897.2591] dhcp4 (end0): state changed new lease, address=192.168.100.125, acd pending
+  0.265752  sshd[375]: Server listening on 0.0.0.0 port 22.
+  0.279404  systemd[1]: Started sshd.service - OpenSSH server daemon.
+  0.388465  NetworkManager[339]: <info> [1790174897.4886] dhcp4 (end0): state changed new lease, address=192.168.100.125
+  0.394714  NetworkManager[339]: <info> [1790174897.4950] policy: set 'Wired connection 1' (end0) as default for IPv4 routing and DNS
+  0.521452  NetworkManager[339]: <info> [1790174897.6217] device (end0): state change: ip-config -> ip-check (reason 'none', managed-type: 'full')
+  0.532796  NetworkManager[339]: <info> [1790174897.6331] device (end0): state change: ip-check -> secondaries (reason 'none', managed-type: 'full')
+  0.533767  NetworkManager[339]: <info> [1790174897.6341] device (end0): state change: secondaries -> activated (reason 'none', managed-type: 'full')
+  0.535639  NetworkManager[339]: <info> [1790174897.6360] manager: NetworkManager state is now CONNECTED_SITE
+  0.536963  NetworkManager[339]: <info> [1790174897.6373] device (end0): Activation: successful, device activated.
+  0.539381  NetworkManager[339]: <info> [1790174897.6397] manager: NetworkManager state is now CONNECTED_GLOBAL
+  0.540438  NetworkManager[339]: <info> [1790174897.6408] manager: startup complete
+  3.568967  sshd-session[453]: Accepted publickey for root from 10.26.24.218 port 39278 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  3.697290  systemd-logind[345]: New session 1 of user root.
+  3.720592  systemd[1]: Starting user-runtime-dir@0.service - User Runtime Directory /run/user/0...
+  3.998643  systemd[1]: Finished user-runtime-dir@0.service - User Runtime Directory /run/user/0.
+  4.116219  podman[379]: 2026-09-23 14:48:21.214716822 +0000 UTC m=+3.349396901 system refresh
+  4.129590  systemd-logind[345]: New session 2 of user root.
+  4.794044  podman[379]: 2026-09-23 14:48:21.893942578 +0000 UTC m=+4.028622574 container create c0abe54ee1627b4737801b4a89ae592b7b3fe4f2bc1e567501ee93f11ba59053 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+  5.088535  NetworkManager[339]: <info> [1790174902.1885] manager: (podman0): new Bridge device (/org/freedesktop/NetworkManager/Devices/5)
+  5.148676  NetworkManager[339]: <info> [1790174902.2489] device (podman0): state change: unmanaged -> unavailable (reason 'connection-assumed', managed-type: 'external')
+  5.150614  NetworkManager[339]: <info> [1790174902.2509] device (podman0): state change: unavailable -> disconnected (reason 'connection-assumed', managed-type: 'external')
+  5.153538  NetworkManager[339]: <info> [1790174902.2539] device (podman0): Activation: starting connection 'podman0' (4fb2fb67-07c4-4d0f-99f5-cd526e46acd7)
+  5.154048  NetworkManager[339]: <info> [1790174902.2544] device (podman0): state change: disconnected -> prepare (reason 'none', managed-type: 'external')
+  5.155122  NetworkManager[339]: <info> [1790174902.2555] device (podman0): state change: prepare -> config (reason 'none', managed-type: 'external')
+  5.155988  NetworkManager[339]: <info> [1790174902.2563] device (podman0): state change: config -> ip-config (reason 'none', managed-type: 'external')
+  5.156906  NetworkManager[339]: <info> [1790174902.2573] device (podman0): state change: ip-config -> ip-check (reason 'none', managed-type: 'external')
+  5.163321  NetworkManager[339]: <info> [1790174902.2636] device (podman0): state change: ip-check -> secondaries (reason 'none', managed-type: 'external')
+  5.164124  NetworkManager[339]: <info> [1790174902.2645] device (podman0): state change: secondaries -> activated (reason 'none', managed-type: 'external')
+  5.166514  NetworkManager[339]: <info> [1790174902.2669] device (podman0): Activation: successful, device activated.
+  5.343640  NetworkManager[339]: <info> [1790174902.4438] device (veth0): carrier: link connected
+  5.345284  NetworkManager[339]: <info> [1790174902.4456] manager: (veth0): new Veth device (/org/freedesktop/NetworkManager/Devices/6)
+  5.348207  NetworkManager[339]: <info> [1790174902.4485] device (podman0): carrier: link connected
+  5.541617  chronyd[340]: Selected source 142.248.80.92 (2.centos.pool.ntp.org)
+  6.315070  sshd-session[453]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+  6.527785  sshd-session[543]: Received disconnect from 10.26.24.218 port 39278:11: disconnected by user
+  6.529112  sshd-session[543]: Disconnected from user root 10.26.24.218 port 39278
+  6.538563  sshd-session[453]: pam_unix(sshd:session): session closed for user root
+  8.607735  sshd-session[562]: Accepted publickey for root from 10.26.24.218 port 39286 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  8.645372  systemd-logind[345]: New session 3 of user root.
+  8.662182  sshd-session[562]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+  8.833315  sshd-session[566]: Received disconnect from 10.26.24.218 port 39286:11: disconnected by user
+  8.835097  sshd-session[566]: Disconnected from user root 10.26.24.218 port 39286
+  8.842757  sshd-session[562]: pam_unix(sshd:session): session closed for user root
+  9.071391  sshd-session[580]: Accepted publickey for root from 10.26.24.218 port 39296 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+  9.106601  systemd-logind[345]: New session 4 of user root.
+  9.122861  sshd-session[580]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 30.036862  systemd[1]: qm.service: start operation timed out. Terminating.
+ 38.524147  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ 38.555168  systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+ 38.575667  podman[379]: 2026-09-23 14:48:55.674288785 +0000 UTC m=+37.808968939 container init c0abe54ee1627b4737801b4a89ae592b7b3fe4f2bc1e567501ee93f11ba59053 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+ 38.602110  podman[379]: 2026-09-23 14:48:55.702348793 +0000 UTC m=+37.837028993 container start c0abe54ee1627b4737801b4a89ae592b7b3fe4f2bc1e567501ee93f11ba59053 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+ 60.286393  systemd[1]: qm.service: State 'stop-sigterm' timed out. Killing.
+ 60.286952  systemd[1]: qm.service: Killing process 545 (conmon) with signal SIGKILL.
+ 60.291456  systemd[1]: qm.service: Killing process 551 (systemd) with signal SIGKILL.
+ 60.293401  systemd[1]: qm.service: Killing process 681 (dbus-broker-lau) with signal SIGKILL.
+ 60.294060  systemd[1]: qm.service: Killing process 684 (dbus-broker) with signal SIGKILL.
+ 60.296126  systemd[1]: qm.service: Killing process 636 (systemd-journal) with signal SIGKILL.
+ 60.298230  systemd[1]: qm.service: Killing process 646 (systemd-userdbd) with signal SIGKILL.
+ 60.298958  systemd[1]: qm.service: Killing process 658 (systemd-userwor) with signal SIGKILL.
+ 60.299621  systemd[1]: qm.service: Killing process 659 (systemd-userwor) with signal SIGKILL.
+ 60.300270  systemd[1]: qm.service: Killing process 660 (systemd-userwor) with signal SIGKILL.
+ 60.302376  systemd[1]: qm.service: Killing process 671 (systemd-logind) with signal SIGKILL.
+ 60.329206  systemd[1]: qm.service: Main process exited, code=killed, status=9/KILL
+ 60.704299  podman[686]: 2026-09-23 14:49:17.804092852 +0000 UTC m=+0.231445077 container stop c0abe54ee1627b4737801b4a89ae592b7b3fe4f2bc1e567501ee93f11ba59053 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+ 60.704507  podman[686]: 2026-09-23 14:49:17.804849329 +0000 UTC m=+0.232201251 container died c0abe54ee1627b4737801b4a89ae592b7b3fe4f2bc1e567501ee93f11ba59053 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+ 61.418524  NetworkManager[339]: <info> [1790174958.5185] device (podman0): state change: activated -> unmanaged (reason 'unmanaged', managed-type: 'removed')
+ 61.456230  systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ 61.564922  systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+ 61.721555  podman[686]: 2026-09-23 14:49:18.821221213 +0000 UTC m=+1.248573263 container remove c0abe54ee1627b4737801b4a89ae592b7b3fe4f2bc1e567501ee93f11ba59053 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+ 61.845604  systemd[1]: qm.service: Failed with result 'timeout'.
+ 61.849975  systemd[1]: Failed to start qm.service.
+ 61.851066  systemd[1]: qm.service: Consumed 4.867s CPU time, 104.5M memory peak.
+ 62.489706  systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ 63.933883  systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ 69.720390  systemd[1]: Configuration file /usr/lib/systemd/system/qm.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+ 71.099031  chronyd[340]: Selected source 72.46.53.234 (2.centos.pool.ntp.org)
+ 71.664420  systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.

@@ -1,0 +1,249 @@
+run,boot_index,kind,kernel_s,export_s,message
+1,4,rtc_invalid,8.965156,13.045769,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,4,rtc_invalid,8.96906,13.049673,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,4,rtc_invalid,8.977070000000001,13.057683,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,4,rtc_invalid,8.978624,13.059237,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,9,rtc_invalid,8.939551,13.021075,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,9,rtc_invalid,8.942431000000001,13.023955,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,9,rtc_invalid,8.948115,13.029639,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,9,rtc_invalid,8.950629,13.032153,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,14,rtc_invalid,8.980471,12.066518,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,14,rtc_invalid,8.982797999999999,12.068845,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,14,rtc_invalid,8.988078,12.074125,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,14,rtc_invalid,8.989879,12.075926,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,19,rtc_invalid,10.206045999999999,14.284415,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,19,rtc_invalid,10.253352,14.331721,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,19,rtc_invalid,10.291209,14.369578,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,19,rtc_invalid,10.295804,14.374173,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,24,rtc_invalid,8.955695,12.045783,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,24,rtc_invalid,8.958073,12.048161,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,24,rtc_invalid,8.962221,12.052309,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,24,rtc_invalid,8.963569,12.053657,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,29,rtc_invalid,8.920131,12.999663,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,29,rtc_invalid,8.957055,13.036587,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,29,rtc_invalid,8.965339,13.044871,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,29,rtc_invalid,8.971276999999999,13.050809,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,34,rtc_invalid,9.055112999999999,13.135727,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,34,rtc_invalid,9.061610000000002,13.142224,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,34,rtc_invalid,9.069483000000002,13.150097,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,34,rtc_invalid,9.072385,13.152999,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,39,rtc_invalid,8.798214,12.887036,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,39,rtc_invalid,8.804822,12.893644,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,39,rtc_invalid,8.809209,12.898031,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,39,rtc_invalid,8.864832999999999,12.953655,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,44,rtc_invalid,8.947343,13.030073,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,44,rtc_invalid,8.949564,13.032294,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,44,rtc_invalid,9.008163,13.090893,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,44,rtc_invalid,9.011508000000001,13.094238,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,49,rtc_invalid,8.890137,12.969617,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,49,rtc_invalid,8.955951,13.035431,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,49,rtc_invalid,8.970645,13.050125,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,49,rtc_invalid,8.973742,13.053222,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,54,rtc_invalid,8.963048,13.043097,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,54,rtc_invalid,8.968952999999999,13.049002,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,54,rtc_invalid,8.976581,13.05663,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,54,rtc_invalid,8.978475,13.058524,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,59,rtc_invalid,8.924313,13.006473,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,59,rtc_invalid,8.932449,13.014609,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,59,rtc_invalid,8.94219,13.02435,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,59,rtc_invalid,8.945958,13.028118,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,63,rtc_invalid,8.961904,13.043587,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,63,rtc_invalid,8.973478,13.055161,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,63,rtc_invalid,8.977759,13.059442,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,63,rtc_invalid,8.979183,13.060866,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,68,rtc_invalid,8.945882000000001,13.035173,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,68,rtc_invalid,8.948059999999998,13.037351,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,68,rtc_invalid,8.952646000000001,13.041937,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,68,rtc_invalid,8.954173,13.043464,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,73,rtc_invalid,8.957241,13.046156,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,73,rtc_invalid,8.979687,13.068602,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,73,rtc_invalid,9.03618,13.125095,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,73,rtc_invalid,9.037755,13.12667,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,78,rtc_invalid,9.002731,13.085695,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,78,rtc_invalid,9.004522000000001,13.087486,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,78,rtc_invalid,9.008621000000002,13.091585,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,78,rtc_invalid,9.010131000000001,13.093095,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,81,soft_lockup,56.17011599999999,60.266918,kernel: watchdog: BUG: soft lockup - CPU#0 stuck for 30s! [swapper/0:0]
+1,83,rtc_invalid,8.985226,13.076027,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,83,rtc_invalid,8.989479,13.08028,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,83,rtc_invalid,8.995775000000002,13.086576,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,83,rtc_invalid,8.99726,13.088061,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,88,rtc_invalid,9.031193,13.117255,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,88,rtc_invalid,9.033569,13.119631,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,88,rtc_invalid,9.041673,13.127735,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,88,rtc_invalid,9.043522,13.129584,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,93,rtc_invalid,10.324653999999999,14.408576,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,93,rtc_invalid,10.328906,14.412828,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,93,rtc_invalid,10.350563000000001,14.434485,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,93,rtc_invalid,10.35212,14.436042,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+1,98,rtc_invalid,8.859433,12.938588,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+1,98,rtc_invalid,8.895021,12.974176,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,98,rtc_invalid,8.899332,12.978487,"kernel: rtc rtc0: Power loss detected, invalid time"
+1,98,rtc_invalid,8.933208,13.012363,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,4,rtc_invalid,8.908816000000002,12.966815,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,4,rtc_invalid,8.913845000000002,12.971844,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,4,rtc_invalid,8.921935000000001,12.979934,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,4,rtc_invalid,8.924285999999999,12.982285,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,9,rtc_invalid,8.900776,12.968137,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,9,rtc_invalid,8.903688,12.971049,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,9,rtc_invalid,8.916644,12.984005,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,9,rtc_invalid,8.925379,12.99274,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,10,audit_success,10.910146,14.966482,"kernel: audit: type=1130 audit(1790102631.609:4): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=systemd-update-done comm=""systemd"" exe=""/usr/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'"
+2,14,rtc_invalid,8.89904,12.965317,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,14,rtc_invalid,8.901412,12.967689,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,14,rtc_invalid,8.905964999999998,12.972242,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,14,rtc_invalid,8.90736,12.973637,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,19,rtc_invalid,10.04083,14.098568,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,19,rtc_invalid,10.057976,14.115714,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,19,rtc_invalid,10.186060999999999,14.243799,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,19,rtc_invalid,10.187619999999999,14.245358,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,24,rtc_invalid,8.823611,12.895964,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,24,rtc_invalid,8.825701,12.898054,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,24,rtc_invalid,8.862572,12.934925,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,24,rtc_invalid,8.864145,12.936498,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,29,rtc_invalid,9.093043,13.154969,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,29,rtc_invalid,9.101453000000001,13.163379,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,29,rtc_invalid,9.145048000000001,13.206974,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,29,rtc_invalid,9.14702,13.208946,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,34,rtc_invalid,8.800159,12.857465,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,34,rtc_invalid,8.875869999999999,12.933176,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,34,rtc_invalid,8.934272,12.991578,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,34,rtc_invalid,8.957445,13.014751,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,39,rtc_invalid,10.269725999999999,14.332951,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,39,rtc_invalid,10.310635999999999,14.373861,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,39,rtc_invalid,10.341828,14.405053,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,39,rtc_invalid,10.361754000000001,14.424979,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,44,rtc_invalid,8.681741,12.745312,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,44,rtc_invalid,8.684142,12.747713,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,44,rtc_invalid,8.688339000000001,12.75191,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,44,rtc_invalid,8.689791,12.753362,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,49,rtc_invalid,9.058477,13.119699,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,49,rtc_invalid,9.061295999999999,13.122518,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,49,rtc_invalid,9.068491000000002,13.129713,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,49,rtc_invalid,9.071883,13.133105,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,54,rtc_invalid,8.925795,12.985637,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,54,rtc_invalid,8.928725,12.988567,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,54,rtc_invalid,8.934162,12.994004,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,54,rtc_invalid,8.935915,12.995757,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,59,rtc_invalid,8.840924000000001,12.909867,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,59,rtc_invalid,8.843298,12.912241,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,59,rtc_invalid,8.847411000000001,12.916354,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,59,rtc_invalid,8.889664,12.958607,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,64,rtc_invalid,10.175843,14.22831,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,64,rtc_invalid,10.178314,14.230781,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,64,rtc_invalid,10.196917,14.249384,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,64,rtc_invalid,10.201601,14.254068,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,66,veth_cleanup,49.941764,54.016079,kernel: veth0 (unregistering): left allmulticast mode
+2,66,veth_cleanup,49.94206,54.016375,kernel: veth0 (unregistering): left promiscuous mode
+2,69,rtc_invalid,8.840118,12.90153,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,69,rtc_invalid,8.879234,12.940646,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,69,rtc_invalid,8.927201,12.988613,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,69,rtc_invalid,8.928723000000002,12.990135,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,74,rtc_invalid,8.930126000000001,12.989739,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,74,rtc_invalid,8.991918000000002,13.051531,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,74,rtc_invalid,9.001459,13.061072,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,74,rtc_invalid,9.008697000000002,13.06831,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,79,rtc_invalid,8.986738,13.054458,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,79,rtc_invalid,8.988875,13.056595,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,79,rtc_invalid,9.006730000000001,13.07445,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,79,rtc_invalid,9.008434000000001,13.076154,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,84,rtc_invalid,10.188939000000001,14.256142,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,84,rtc_invalid,10.195122000000001,14.262325,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,84,rtc_invalid,10.199425999999999,14.266629,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,84,rtc_invalid,10.202586,14.269789,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,89,rtc_invalid,9.017014,13.085396,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,89,rtc_invalid,9.01918,13.087562,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,89,rtc_invalid,9.028311,13.096693,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,89,rtc_invalid,9.030967,13.099349,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,93,rtc_invalid,8.921037,12.983924,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,93,rtc_invalid,8.923245,12.986132,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,93,rtc_invalid,8.952089,13.014976,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,93,rtc_invalid,8.953842,13.016729,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+2,94,soft_lockup,53.26016,57.328804,kernel: watchdog: BUG: soft lockup - CPU#7 stuck for 32s! [swapper/7:0]
+2,98,rtc_invalid,8.900144000000001,12.965486,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+2,98,rtc_invalid,9.002455000000001,13.067797,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,98,rtc_invalid,9.034026,13.099368,"kernel: rtc rtc0: Power loss detected, invalid time"
+2,98,rtc_invalid,9.041128,13.10647,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,4,rtc_invalid,10.813095999999998,14.880021,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,4,rtc_invalid,10.815244,14.882169,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,4,rtc_invalid,10.867434,14.934359,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,4,rtc_invalid,10.869039999999998,14.935965,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,9,rtc_invalid,9.038245,13.103668,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,9,rtc_invalid,9.0409,13.106323,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,9,rtc_invalid,9.045431,13.110854,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,9,rtc_invalid,9.047017,13.11244,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,14,rtc_invalid,8.615400999999999,12.685908,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,14,rtc_invalid,8.624882,12.695389,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,14,rtc_invalid,8.756466,12.826973,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,14,rtc_invalid,8.758075999999999,12.828583,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,19,rtc_invalid,8.879513,12.950878,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,19,rtc_invalid,8.881863,12.953228,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,19,rtc_invalid,8.886031,12.957396,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,19,rtc_invalid,8.887494,12.958859,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,24,rtc_invalid,8.990515,13.05513,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,24,rtc_invalid,8.994979,13.059594,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,24,rtc_invalid,8.999408,13.064023,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,24,rtc_invalid,9.00108,13.065695,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,29,rtc_invalid,9.023114,13.087959,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,29,rtc_invalid,9.026429,13.091274,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,29,rtc_invalid,9.033618,13.098463,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,29,rtc_invalid,9.03574,13.100585,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,34,rtc_invalid,9.011697999999999,13.073694,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,34,rtc_invalid,9.021275,13.083271,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,34,rtc_invalid,9.027881,13.089877,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,34,rtc_invalid,9.029769000000002,13.091765,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,34,hrtimer_latency,32.524786,36.586782,kernel: hrtimer: interrupt took 7799 ns
+3,39,rtc_invalid,10.054489,14.112038,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,39,rtc_invalid,10.065811,14.12336,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,39,rtc_invalid,10.081362,14.138911,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,39,rtc_invalid,10.092097,14.149646,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,44,rtc_invalid,8.96192,13.035154,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,44,rtc_invalid,8.964234000000001,13.037468,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,44,rtc_invalid,8.968322999999998,13.041557,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,44,rtc_invalid,8.969839,13.043073,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,49,rtc_invalid,9.023471999999998,13.103836,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,49,rtc_invalid,9.028970999999999,13.109335,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,49,rtc_invalid,9.035829,13.116193,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,49,rtc_invalid,9.037332,13.117696,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,54,rtc_invalid,8.980166,13.054691,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,54,rtc_invalid,8.983607,13.058132,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,54,rtc_invalid,8.990116999999998,13.064642,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,54,rtc_invalid,8.991958,13.066483,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,59,rtc_invalid,8.858929,12.940759,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,59,rtc_invalid,8.8663,12.94813,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,59,rtc_invalid,8.886428,12.968258,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,59,rtc_invalid,8.89995,12.98178,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,62,veth_cleanup,74.330079,78.416363,kernel: veth0 (unregistering): left allmulticast mode
+3,62,veth_cleanup,74.33032299999999,78.416607,kernel: veth0 (unregistering): left promiscuous mode
+3,64,rtc_invalid,10.211196999999999,14.286961,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,64,rtc_invalid,10.213556,14.28932,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,64,rtc_invalid,10.218083,14.293847,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,64,rtc_invalid,10.221809,14.297573,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,69,rtc_invalid,9.037187,13.119609,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,69,rtc_invalid,9.039299,13.121721,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,69,rtc_invalid,9.058983999999999,13.141406,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,69,rtc_invalid,9.063500999999999,13.145923,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,74,rtc_invalid,8.852961,12.937449,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,74,rtc_invalid,8.885423,12.969911,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,74,rtc_invalid,8.913938,12.998426,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,74,rtc_invalid,8.917909,13.002397,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,79,rtc_invalid,8.973482999999998,13.051604,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,79,rtc_invalid,8.976548000000001,13.054669,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,79,rtc_invalid,8.982067999999998,13.060189,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,79,rtc_invalid,8.984725999999998,13.062847,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,84,rtc_invalid,8.808054,11.887524,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,84,rtc_invalid,8.811307,11.890777,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,84,rtc_invalid,8.919609999999999,11.99908,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,84,rtc_invalid,8.973227,12.052697,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,89,rtc_invalid,10.176811,14.247257,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,89,rtc_invalid,10.180451999999999,14.250898,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,89,rtc_invalid,10.195419000000001,14.265865,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,89,rtc_invalid,10.198352,14.268798,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,94,rtc_invalid,8.790137,12.859689,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,94,rtc_invalid,8.874234,12.943786,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,94,rtc_invalid,8.878578000000001,12.94813,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,94,rtc_invalid,8.879997,12.949549,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
+3,99,rtc_invalid,8.977997000000002,13.053736,"kernel: rtc-pcf85063 0-0051: POR issue detected, sending a SW reset"
+3,99,rtc_invalid,8.980743,13.056482,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,99,rtc_invalid,9.004748,13.080487,"kernel: rtc rtc0: Power loss detected, invalid time"
+3,99,rtc_invalid,9.007052999999999,13.082792,kernel: rtc-pcf85063 0-0051: hctosys: unable to read the hardware clock
