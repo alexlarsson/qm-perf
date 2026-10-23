@@ -6,6 +6,8 @@ import re
 import statistics
 from pathlib import Path
 
+from qm_ssh import lifetime_statistics, ssh_connections
+
 SERVICES = [
     "mount-sysroot.service",
     "systemd-udevd.service",
@@ -135,14 +137,6 @@ def auxiliary_intervals(boot):
                 "note": "These messages bracket visible interface setup, not every Podman networking operation. " +
                         ("A container init event follows in this attempt." if initialized is not None else "No container init event is recorded for this attempt; setup completion is unconfirmed.")})
     result["Podman network setup"] = network_spans
-    accepted = next((e for e in journal if "Accepted publickey" in e["name"]), None)
-    if accepted:
-        pid = re.match(r"sshd-session\[(\d+)\]", accepted["name"])[1]
-        pam = next((e for e in journal if e["name"].startswith(f"sshd-session[{pid}]: pam_unix(sshd:session): session opened")), None)
-        if pam:
-            result["First SSH session"] = [{"start": accepted["activating"] / 1e6 - offset,
-                "end": pam["activating"] / 1e6 - offset, "status": "observed",
-                "source": f"accepted key to PAM session, sshd PID {pid}", "pid": pid}]
     return result
 
 
@@ -189,14 +183,15 @@ def session_announcements(boot):
 
 
 def build_model(boots, events, by_boot):
-    tracked = SERVICES + ["NIC bring-up", "Podman network setup", "First SSH session"]
-    spans, phases, seats, sessions = {}, {}, {}, {}
+    tracked = SERVICES + ["NIC bring-up", "Podman network setup"]
+    spans, phases, seats, sessions, ssh = {}, {}, {}, {}, {}
     for key, boot in boots.items():
         phases[key] = boot_phases(boot)
         spans[key] = {unit: service_intervals(boot, unit) for unit in SERVICES}
         spans[key].update(auxiliary_intervals(boot))
         seats[key] = seat_announcements(boot)
         sessions[key] = session_announcements(boot)
+        ssh[key] = boot.get("ssh_connections") or ssh_connections(boot)
     clean_keys = sorted(set(boots) - set(by_boot))
     assert clean_keys
     reference_services = {}
@@ -204,6 +199,24 @@ def build_model(boots, events, by_boot):
         first = [spans[key][unit][0] for key in clean_keys if spans[key].get(unit) and spans[key][unit][0]["status"] != "failed"]
         if first:
             reference_services[unit] = [summarize_spans(first)]
+    reference_ssh = []
+    for index in range(1, max(len(ssh[key]) for key in clean_keys) + 1):
+        connections = [c for key in clean_keys for c in ssh[key] if c["index"] == index]
+        connection = {"index": index, "pid": None, "samples": len(connections), "login": None, "lifetime": None}
+        logins = [c["login"] for c in connections if c["login"]]
+        if logins:
+            connection["login"] = summarize_spans(logins)
+            connection["login"]["source"] = "mean accepted-key-to-PAM-open interval for this connection number"
+        completed = [c["lifetime"] for c in connections if c["lifetime"] and not c["lifetime"]["censored"]]
+        incomplete = [c["lifetime"] for c in connections if c["lifetime"] and c["lifetime"]["censored"]]
+        if completed or incomplete:
+            lifetime = summarize_spans(completed + incomplete)
+            lifetime.update(censored=bool(incomplete), completed_samples=len(completed), incomplete_samples=len(incomplete),
+                source="mean observed session extent (includes capture boundaries)" if incomplete else "mean PAM-open-to-close lifetime",
+                note=f"Averages {len(completed)} completed and {len(incomplete)} incomplete session extents. " +
+                     ("The mean uses each incomplete session's capture boundary; it is a lower bound on the full mean lifetime. Incomplete sessions are excluded from outlier detection." if incomplete else "Both open and close are recorded for every contributing session."))
+            connection["lifetime"] = lifetime
+        reference_ssh.append(connection)
     mean_phase = {field: statistics.mean(phases[key][field] for key in clean_keys)
                   for field in ["kernel_end", "initrd_end", "network_online", "target_reached", "observed_end"]}
     phase_durations = {
@@ -230,7 +243,7 @@ def build_model(boots, events, by_boot):
         "stats": {"samples": len(first_sessions), "time_min": min(first_sessions), "time_max": max(first_sessions)}}] if first_sessions else []
     reference = {"key": "reference", "label": "Average reference", "reference": True,
         "sample_count": len(clean_keys), "phases": {**mean_phase, "target": "graphical.target", "target_source": "mean host target reach time", "network_source": "mean host network-online.target reach time"},
-        "services": reference_services, "seat_announcements": reference_seats, "session_announcements": reference_sessions, "events": [], "logs": []}
+        "services": reference_services, "service_stops": [], "ssh_connections": reference_ssh, "seat_announcements": reference_seats, "session_announcements": reference_sessions, "events": [], "logs": []}
     rows = [reference]
     for key, subset in sorted(by_boot.items()):
         boot = boots[key]
@@ -238,16 +251,18 @@ def build_model(boots, events, by_boot):
         # from it at interaction time rather than duplicating long excerpts.
         rows.append({"key": f"{key[0]}/{key[1]}", "label": f"Run {key[0]} · boot {key[1]}",
             "run": key[0], "boot": key[1], "reference": False,
-            "phases": phases[key], "services": spans[key], "seat_announcements": seats[key], "session_announcements": sessions[key], "events": subset,
+            "phases": phases[key], "services": spans[key], "service_stops": boot.get("service_stops", []), "ssh_connections": ssh[key], "seat_announcements": seats[key], "session_announcements": sessions[key], "events": subset,
             "logs": [{"t": e["activating"] / 1e6 - boot["offset"], "message": e["name"]} for e in boot["journal"]]})
     max_time = max([row["phases"]["observed_end"] for row in rows] + [e["end_kernel_s"] or e["start_kernel_s"] for e in events])
     return {"rows": rows, "tracked": tracked, "axis_max": math.ceil(max_time / 10) * 10,
+            "ssh_lifetime_detection": lifetime_statistics([c for connections in ssh.values() for c in connections]),
             "reference": {"boot_count": len(clean_keys), "excluded_count": len(by_boot),
                 "selection": "All recorded boots with no detected observation in the stall inventory, including moderate observations.",
                 "included_boots": [f"{r}/{b}" for r, b in clean_keys],
                 "phase_boundaries": mean_phase, "phase_durations": phase_durations,
                 "seat_announcements": reference_seats,
                 "session_announcements": reference_sessions,
+                "ssh_connections": reference_ssh,
                 "services": {unit: value[0] for unit, value in reference_services.items()}}}
 
 

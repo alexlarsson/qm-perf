@@ -9,13 +9,14 @@ begin after QM and the ordinary host daemons are already active. This is
 consistent with a shared lower-level problem, but the logs do not prove that
 every delay has one cause or that the entire machine stopped executing.
 
-The full inventory contains 59 observations in 36 boots: 19 service-duration
-outliers, six initial QM timeouts, 19 delayed SSH sessions in 13 boots, eleven
+The full inventory contains 65 observations in 38 boots: 19 service-duration
+outliers, two slow service shutdowns, six initial QM timeouts, 19 delayed SSH logins in 13 boots, four long
+completed SSH session lifetimes in four boots, eleven
 chronyd forward-jump reports, two soft-lockup reports, one NIC milestone gap,
 and one minor hrtimer diagnostic. Multiple observations can describe the same
-episode. Twenty-four boots have a long interval or watchdog/clock-jump signal;
+episode. Twenty-six boots have a long interval or watchdog/clock-jump signal;
 the remainder have smaller startup variation or the microsecond diagnostic.
-This is an inventory of candidates, not 59 confirmed physical CPU lockups.
+This is an inventory of candidates, not 65 confirmed physical CPU lockups.
 
 ## Time coordinate and uncertainty
 
@@ -64,6 +65,14 @@ Podman triggers every incident. In run 2 boot 35, the independent systemd boot
 phase timing reports 33.621 s in InitRD. A `cntvct@basic` message later reads
 47.681 s, whereas that hardware-counter reading is normally around 15 s; the
 large early delay is also visible in that additional timing observation.
+
+The kernel -251 source places run 1 boot 1's PTP and link-mode messages inside
+the same interface-open operation. Between them, reducing the configured TX
+queue count can call `synchronize_net()` and wait for an RCU grace period.
+This gives a concrete kernel-wait candidate; it does not prove an RCU defect
+or identify the delayed call without a stack/trace. The dispatcher startup
+message near recovery is not a required second trigger in this driver path.
+[Version-specific NIC driver trace](nic-driver-run-1-boot-1.md).
 
 Services commonly active in the root-system incidents include journald, udev,
 D-Bus, auditd, chronyd, logind and, in later incidents, NetworkManager, sshd,
@@ -183,7 +192,7 @@ RTC system-clock-setting message. It is a real difference worth recording, but:
 
 - None of the six QM-timeout boots has this RTC-invalid sequence.
 - Neither soft-lockup boot has it.
-- Among the 24 boots with long intervals or watchdog/chronyd signals, only run
+- Among the 26 boots with long intervals or watchdog/chronyd signals, only run
   1 boot 63 has it. Other RTC-invalid boots have smaller startup outliers.
 
 Therefore invalid RTC state is not a necessary condition for the principal
@@ -205,11 +214,66 @@ useful recovery-side markers. They do not establish whether a clock change
 caused the delay, resulted from it, or reflects a shared timekeeping problem.
 None of these eleven boots has the RTC-invalid sequence either.
 
+## Established SSH session lifetimes
+
+All authenticated SSH connections are tracked, including ones whose login is
+healthy. Matching PAM open and close messages by sshd PID gives 620 completed
+lifetimes. A lifetime is flagged when it exceeds max(1 second, Q3 + 3 × IQR),
+which is 1.000 s for these records. The 616 below that threshold have median
+0.222597 s and maximum 0.544616 s. The four outliers are:
+
+| Run / boot | SSH connection number | Open-to-close interval | Duration |
+| --- | ---: | --- | ---: |
+| 1 / 97 | 2 | 20.915675–52.309143 s | 31.393468 s |
+| 2 / 11 | 3 | 22.638092–53.047816 s | 30.409724 s |
+| 2 / 16 | 3 | 21.567842–54.327423 s | 32.759581 s |
+| 3 / 8 | 3 | 20.633689–51.248431 s | 30.614742 s |
+
+Connection numbers follow accepted-key order; logind session IDs use a different
+sequence. Boot 2/11 is newly included by this criterion. The other three boots
+already had chrony signals. Long lifetimes include command execution and client
+waiting and do not, on their own, prove a stall. Another 299 sessions have no
+recorded close, so their observed extents end with the captured log and are
+excluded from detection. [Boot 97 details](ssh-run-1-boot-97.md).
+
+## Late extra SSH connection in run 2 boot 41
+
+The fourth reference connection previously came solely from run 2 boot 41.
+That boot has a long `user@0.service` shutdown: 30.269394–51.739810 s,
+**21.470416 s**, despite normal initial service startup and short completed
+SSH lifetimes. The user manager reaches `exit.target` at 30.289866 s;
+the next journal records are two accepted SSH keys at 51.662054/51.662059 s.
+A replacement user manager starts at 51.892123 s and is ready at 53.989588 s.
+The fourth connection authenticates at 54.470708 s.
+
+Explicit host service shutdowns exceeding 10 seconds are now included in the
+inventory and drawn in amber on the service's existing row. The shutdown can
+include process exit, teardown and job-completion waiting; it does not identify
+where execution was delayed. This criterion adds boot 2/41 independently of its
+unusual SSH count. It also identifies a 19.611081-second stop in already listed
+run 3 boot 35 (31.107250–50.718331 s), ending at the same recovery burst as
+its chrony warning and delayed SSH login. All 17 boots with more than three authenticated connections
+are now outside the reference, leaving 261 boots with exactly three each.
+[Detailed trace](ssh-run-2-boot-41.md).
+
+A complete `user@0.service` sweep found 303 completed starts/restarts and four
+completed shutdowns. Every start/restart takes 1.898–2.845 s. The only shutdowns
+over 10 s are 2/41 and 3/35; the others take 1.156 s (2/94) and 0.167 s (2/20).
+No additional user-manager outliers were found in the captured journals.
+[Complete user-manager sweep](user-manager-report.md),
+[all measured intervals](user-manager-intervals.csv).
+
 ## Files and reproduction
 
+A strict absolute cutoff was also checked across all recorded service starts,
+restarts and explicit shutdowns: 14 startup attempts and two shutdowns exceed
+10 seconds, all already in this inventory. No additional service types or boots
+were found. [Complete >10-second service sweep](service-over-10s-report.md),
+[measured intervals](service-over-10s.csv).
+
 - `stall-timeline.html`: one interactive graph per affected boot, grouping all
-  59 observations in 36 boot rows. The top row is an arithmetic-mean reference
-  from the other 263 boots, which have no detected observations in this report.
+  65 observations in 38 boot rows. The top row is an arithmetic-mean reference
+  from the other 261 boots, which have no detected observations in this report.
   Boot phase backgrounds mark kernel startup, initrd, host startup before
   `network-online.target`, network-online time before the host default target,
   and time after the host default target (`graphical.target`). Cyan switches
@@ -218,8 +282,15 @@ None of these eleven boots has the RTC-invalid sequence either.
   messages do not control these backgrounds. The top legend explains every
   color and line style. Thin dashed intervals show the recorded problematic
   services in every displayed boot, even when their startup is healthy, plus
-  logind startup, NIC milestones, observed Podman bridge/veth setup, and the
-  first SSH session. Orange seat-announcement dots and teal new-session
+  logind startup, NIC milestones and observed Podman bridge/veth setup. Every
+  SSH connection has a separate numbered row showing accepted-key-to-PAM-open
+  login (gray dashes) and PAM-open-to-close lifetime (teal dashes). Amber dashed intervals show explicit service shutdowns, with a solid amber
+  bar for shutdowns exceeding 10 seconds. A solid
+  purple bar marks a long login; a solid teal bar marks a long completed
+  lifetime. An arrow extends an incomplete lifetime only to capture end;
+  incomplete lifetimes never trigger outlier detection. Connection numbers
+  follow authentication order and are not logind session IDs.
+  Orange seat-announcement dots and teal new-session
   announcement dots sit on the logind startup row. Every recorded new session
   is shown on individual boots; the reference averages only the first session
   announcement per boot. The network-setup popup details list each bridge/veth milestone; its
@@ -230,16 +301,23 @@ None of these eleven boots has the RTC-invalid sequence either.
   highlighted journal lines across the relevant interval. Popups stay open
   until closed with Close, Escape, or an outside click; Enter/Space also opens them.
   Run, search and moderate-observation filters preserve the reference cohort.
-- `timeline-reference.json`: the exact 263-boot reference cohort, mean phase
+- `timeline-reference.json`: the exact 261-boot reference cohort, mean phase
   boundaries/durations and per-service means, ranges and contributing counts.
-  RSA key generation has 86 observations in this cohort; the other displayed
-  reference tracks, mean first seat0 announcement and mean first session announcement have 263. Reference
+  RSA key generation has 84 observations in this cohort; the other displayed
+  service/reference tracks, mean first seat0 announcement and mean first session
+  announcement have 261. SSH means are grouped by connection order and show
+  contributing counts. Where closes are missing, the reference averages the
+  observed extent rather than claiming a completed mean lifetime. Reference
   popups show these statistics rather
   than fabricating a log excerpt for an averaged boot. Post-target reference
   coverage ends at the mean last-record time; hatching marks unobserved time.
 - `stall-events.csv`: both absolute time coordinates, interval semantics,
   service context, and the uncertainty attached to each observation.
-- `stall-boots.csv`: all 36 candidate boots, grouped by boot.
+- `stall-boots.csv`: all 38 candidate boots, grouped by boot.
+- `service-stop-intervals.csv`: explicit host service shutdown intervals.
+- `ssh-connections.csv`: all 919 SSH connections, including login, PAM open,
+  PAM close where recorded, and the capture boundary.
+- `ssh-session-lifetimes.csv`: the 620 completed lifetimes used for detection.
 - `stall-context.txt`: nearby original log messages and service snapshots.
 - `kernel-signatures.csv`: every normalized kernel signature and boot count.
 - `kernel-findings.csv`: the exceptional/RTC/cleanup messages with timestamps.

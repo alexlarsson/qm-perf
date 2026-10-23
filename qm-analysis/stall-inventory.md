@@ -22,7 +22,10 @@ Times are reconstructed seconds since kernel start. Intervals are operation boun
 | 1/81 | CPU 0 watchdog report, age 30s | 56.170 (report) | 26.170 | None observed |
 | 1/93 | systemd-journal-flush.service | 7.058–10.256 | 7.058 | systemd-journal-flush.service; systemd-udevd.service |
 | 1/95 | chronyd forward time-jump report | 51.472 (report) | 51.472 | None observed |
+| 1/97 | SSH PID 611: PAM session open to close | 20.916–52.309 | 20.916 | None observed |
 | 1/97 | chronyd forward time-jump report | 52.263 (report) | 52.263 | None observed |
+| 2/11 | SSH PID 659: PAM session open to close | 22.638–53.048 | 22.638 | None observed |
+| 2/16 | SSH PID 626: PAM session open to close | 21.568–54.327 | 21.568 | None observed |
 | 2/16 | chronyd forward time-jump report | 56.017 (report) | 56.017 | None observed |
 | 2/20 | sshd-keygen@rsa.service | 11.354–20.964 | 11.354 | NetworkManager.service; chronyd.service; dracut-shutdown.service; podman-clean-transient-at-shutdown.service; rcu-normal.service; sshd-keygen@ecdsa.service; sshd-keygen@ed25519.service; sshd-keygen@rsa.service |
 | 2/20 | SSH PID 649: accepted key to PAM session | 28.110–60.627 | 28.110 | None observed |
@@ -35,6 +38,7 @@ Times are reconstructed seconds since kernel start. Intervals are operation boun
 | 2/35 | mount-sysroot.service | 1.128–33.495 | 1.128 | mount-sysroot.service |
 | 2/36 | sshd.service | 15.863–17.073 | 15.863 | qm.service; sshd.service |
 | 2/39 | systemd-journal-flush.service | 7.060–10.480 | 7.060 | systemd-journal-flush.service; systemd-udevd.service |
+| 2/41 | user@0.service shutdown | 30.269–51.740 | 30.269 | None observed |
 | 2/60 | sshd-keygen@rsa.service | 11.449–22.450 | 11.449 | NetworkManager.service; chronyd.service; dracut-shutdown.service; podman-clean-transient-at-shutdown.service; rcu-normal.service; sshd-keygen@ecdsa.service; sshd-keygen@ed25519.service; sshd-keygen@rsa.service |
 | 2/66 | qm.service initial attempt | 13.477–48.255 | 13.477 | NetworkManager-dispatcher.service; qm.service; sshd.service; systemd-user-sessions.service |
 | 2/66 | SSH PID 467: accepted key to PAM session | 15.541–50.447 | 15.541 | qm.service |
@@ -48,6 +52,7 @@ Times are reconstructed seconds since kernel start. Intervals are operation boun
 | 2/94 | CPU 7 watchdog report, age 32s | 53.260 (report) | 21.260 | None observed |
 | 3/2 | systemd-udevd.service | 6.998–9.240 | 6.998 | systemd-udevd.service |
 | 3/4 | systemd-udevd.service | 6.902–9.054 | 6.902 | systemd-udevd.service |
+| 3/8 | SSH PID 612: PAM session open to close | 20.634–51.248 | 20.634 | None observed |
 | 3/8 | chronyd forward time-jump report | 52.012 (report) | 52.012 | None observed |
 | 3/10 | SSH PID 596: accepted key to PAM session | 20.836–51.661 | 20.836 | None observed |
 | 3/10 | chronyd forward time-jump report | 51.611 (report) | 51.611 | None observed |
@@ -56,6 +61,7 @@ Times are reconstructed seconds since kernel start. Intervals are operation boun
 | 3/26 | user-runtime-dir@0.service | 15.259–45.916 | 15.259 | qm.service; user-runtime-dir@0.service |
 | 3/26 | SSH PID 465: accepted key to PAM session | 26.478–48.059 | 26.478 | qm.service; user-runtime-dir@0.service |
 | 3/34 | hrtimer: interrupt took 7799 ns | 32.525 (report) | 32.525 | None observed |
+| 3/35 | user@0.service shutdown | 31.107–50.718 | 31.107 | None observed |
 | 3/35 | SSH PID 625: accepted key to PAM session | 39.654–52.705 | 39.654 | None observed |
 | 3/35 | chronyd forward time-jump report | 50.542 (report) | 50.542 | None observed |
 | 3/42 | SSH PID 608: accepted key to PAM session | 20.777–52.390 | 20.777 | None observed |

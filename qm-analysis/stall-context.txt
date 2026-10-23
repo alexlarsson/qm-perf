@@ -3464,6 +3464,15 @@ Nearby evidence (kernel-relative seconds; source journal order preserved):
 
 RUN 1 BOOT 97; offset 4.088960s; RTC invalid: False
 
+ssh_lifetime: SSH PID 611: PAM session open to close
+  kernel interval/report: 20.915675 -> 52.309143
+  context anchor: 20.915675
+  starting: (none observed)
+  nominally started: NetworkManager-dispatcher.service; NetworkManager.service; auditd.service; chronyd.service; dbus-broker.service; getty@tty1.service; qm.service; serial-getty@ttyLF0.service; sshd.service; systemd-hostnamed.service; systemd-journald.service; systemd-logind.service; systemd-udevd.service; user@0.service
+  stopping: (none observed)
+  nearby unit transitions: (none observed)
+  Completed session lifetime exceeds 1.000s outlier threshold (max of 1s and Q3 + 3 × IQR). Includes command execution and client waiting; not a measured kernel stall.
+
 clock_jump: chronyd forward time-jump report
   kernel interval/report: 52.262766 -> None
   context anchor: 52.262766
@@ -3474,6 +3483,11 @@ clock_jump: chronyd forward time-jump report
   Report time only; clock change/earlier stall onset not established.
 
 Nearby evidence (kernel-relative seconds; source journal order preserved):
+ 20.106443  chronyd[344]: Selected source 162.244.81.139 (2.centos.pool.ntp.org)
+ 20.700570  sshd-session[611]: Accepted publickey for root from 10.26.24.218 port 58776 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 20.741211  systemd-logind[349]: New session 3 of user root.
+ 20.907755  systemd[1]: Started session-3.scope - Session 3 of User root.
+ 20.915675  sshd-session[611]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
  52.262766  chronyd[344]: Forward time jump detected!
  52.262894  chronyd[344]: Can't synchronise: no selectable sources (0 unreachable sources)
  52.295628  sshd-session[619]: Received disconnect from 10.26.24.218 port 58776:11: disconnected by user
@@ -3488,7 +3502,49 @@ Nearby evidence (kernel-relative seconds; source journal order preserved):
  52.633336  systemd[1]: Started session-4.scope - Session 4 of User root.
  52.640782  sshd-session[638]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
 
+RUN 2 BOOT 11; offset 4.077843s; RTC invalid: False
+
+ssh_lifetime: SSH PID 659: PAM session open to close
+  kernel interval/report: 22.638092 -> 53.047816
+  context anchor: 22.638092
+  starting: (none observed)
+  nominally started: NetworkManager-dispatcher.service; NetworkManager.service; auditd.service; chronyd.service; dbus-broker.service; getty@tty1.service; qm.service; serial-getty@ttyLF0.service; sshd.service; systemd-hostnamed.service; systemd-journald.service; systemd-logind.service; systemd-udevd.service; user@0.service
+  stopping: (none observed)
+  nearby unit transitions: (none observed)
+  Completed session lifetime exceeds 1.000s outlier threshold (max of 1s and Q3 + 3 × IQR). Includes command execution and client waiting; not a measured kernel stall.
+
+Nearby evidence (kernel-relative seconds; source journal order preserved):
+ 20.662174  chronyd[343]: System clock wrong by -1.699968 seconds
+ 21.925667  sshd-session[640]: Accepted publickey for root from 10.26.24.218 port 55268 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 21.967723  systemd-logind[353]: New session 3 of user root.
+ 22.051370  systemd[1]: Started session-3.scope - Session 3 of User root.
+ 22.058786  sshd-session[640]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 22.249411  sshd-session[645]: Received disconnect from 10.26.24.218 port 55268:11: disconnected by user
+ 22.251477  sshd-session[645]: Disconnected from user root 10.26.24.218 port 55268
+ 22.259918  sshd-session[640]: pam_unix(sshd:session): session closed for user root
+ 22.272985  systemd-logind[353]: Session 3 logged out. Waiting for processes to exit.
+ 22.273992  systemd[1]: session-3.scope: Deactivated successfully.
+ 22.287765  systemd-logind[353]: Removed session 3.
+ 22.523709  sshd-session[659]: Accepted publickey for root from 10.26.24.218 port 55272 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 22.561925  systemd-logind[353]: New session 4 of user root.
+ 22.630876  systemd[1]: Started session-4.scope - Session 4 of User root.
+ 22.638092  sshd-session[659]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 53.036757  sshd-session[664]: Received disconnect from 10.26.24.218 port 55272:11: disconnected by user
+ 53.038226  sshd-session[664]: Disconnected from user root 10.26.24.218 port 55272
+ 53.047816  sshd-session[659]: pam_unix(sshd:session): session closed for user root
+ 53.059950  systemd[1]: session-4.scope: Deactivated successfully.
+ 53.061724  systemd[1]: session-4.scope: Consumed 2.675s CPU time, 49.6M memory peak.
+
 RUN 2 BOOT 16; offset 4.081175s; RTC invalid: False
+
+ssh_lifetime: SSH PID 626: PAM session open to close
+  kernel interval/report: 21.567842 -> 54.327422999999996
+  context anchor: 21.567842
+  starting: (none observed)
+  nominally started: NetworkManager-dispatcher.service; NetworkManager.service; auditd.service; chronyd.service; dbus-broker.service; getty@tty1.service; qm.service; serial-getty@ttyLF0.service; sshd.service; systemd-hostnamed.service; systemd-journald.service; systemd-logind.service; systemd-udevd.service; user@0.service
+  stopping: (none observed)
+  nearby unit transitions: 20.616 Finished systemd-update-utmp-runlevel.service
+  Completed session lifetime exceeds 1.000s outlier threshold (max of 1s and Q3 + 3 × IQR). Includes command execution and client waiting; not a measured kernel stall.
 
 clock_jump: chronyd forward time-jump report
   kernel interval/report: 56.017237 -> None
@@ -3500,6 +3556,30 @@ clock_jump: chronyd forward time-jump report
   Report time only; clock change/earlier stall onset not established.
 
 Nearby evidence (kernel-relative seconds; source journal order preserved):
+ 20.467875  podman[389]: 2026-09-22 18:49:57.045023586 +0000 UTC m=+5.886698189 container init abdeae41270d00e488bdfd8a993c103a2267ed5716b27e9057dfeb1a891f0140 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+ 20.480254  podman[389]: 2026-09-22 18:49:57.057915112 +0000 UTC m=+5.899589590 container start abdeae41270d00e488bdfd8a993c103a2267ed5716b27e9057dfeb1a891f0140 (image=, name=qm, PODMAN_SYSTEMD_UNIT=qm.service)
+ 20.483524  systemd[1]: Started qm.service.
+ 20.485592  qm[389]: abdeae41270d00e488bdfd8a993c103a2267ed5716b27e9057dfeb1a891f0140
+ 20.485923  systemd[1]: Reached target graphical.target - Graphical Interface.
+ 20.495348  systemd[1]: Starting systemd-update-utmp-runlevel.service - Record Runlevel Change in UTMP...
+ 20.503034  systemd[1]: var-lib-containers-storage-overlay.mount: Deactivated successfully.
+ 20.613934  systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+ 20.615579  systemd[1]: Finished systemd-update-utmp-runlevel.service - Record Runlevel Change in UTMP.
+ 20.651523  systemd[1]: Startup finished in 924ms (kernel) + 1.295s (initrd) + 18.431s (userspace) = 20.651s.
+ 20.793290  sshd-session[584]: Accepted publickey for root from 10.26.24.218 port 37004 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 20.835437  systemd-logind[352]: New session 3 of user root.
+ 20.930869  systemd[1]: Started session-3.scope - Session 3 of User root.
+ 20.938793  sshd-session[584]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 21.193792  sshd-session[590]: Received disconnect from 10.26.24.218 port 37004:11: disconnected by user
+ 21.196234  sshd-session[590]: Disconnected from user root 10.26.24.218 port 37004
+ 21.204221  sshd-session[584]: pam_unix(sshd:session): session closed for user root
+ 21.218113  systemd-logind[352]: Session 3 logged out. Waiting for processes to exit.
+ 21.218914  systemd[1]: session-3.scope: Deactivated successfully.
+ 21.229787  systemd-logind[352]: Removed session 3.
+ 21.450535  sshd-session[626]: Accepted publickey for root from 10.26.24.218 port 37014 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 21.486396  systemd-logind[352]: New session 4 of user root.
+ 21.560897  systemd[1]: Started session-4.scope - Session 4 of User root.
+ 21.567842  sshd-session[626]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
  54.315459  sshd-session[631]: Received disconnect from 10.26.24.218 port 37014:11: disconnected by user
  54.317816  sshd-session[631]: Disconnected from user root 10.26.24.218 port 37014
  54.327423  sshd-session[626]: pam_unix(sshd:session): session closed for user root
@@ -4597,6 +4677,44 @@ Nearby evidence (kernel-relative seconds; source journal order preserved):
  12.462834  systemd[1]: ostree-boot-complete.service - OSTree Complete Boot was skipped because no trigger condition checks were met.
  12.470623  systemd[1]: Starting selinux-bools.service - Enable selinux booleans...
  12.470943  systemd[1]: systemd-pcrphase-sysinit.service - TPM PCR Barrier (Initialization) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+
+RUN 2 BOOT 41; offset 4.069610s; RTC invalid: False
+
+service_stop: user@0.service shutdown
+  kernel interval/report: 30.269394 -> 51.739810000000006
+  context anchor: 30.269394
+  starting: (none observed)
+  nominally started: NetworkManager.service; auditd.service; chronyd.service; dbus-broker.service; getty@tty1.service; qm.service; serial-getty@ttyLF0.service; sshd.service; systemd-hostnamed.service; systemd-journald.service; systemd-logind.service; systemd-udevd.service
+  stopping: user@0.service
+  nearby unit transitions: 30.269 Stopping user@0.service
+  Explicit host Stopping-to-Stopped/deactivation interval exceeds 10s. Includes shutdown work and waiting; not a measured kernel-stall duration.
+
+Nearby evidence (kernel-relative seconds; source journal order preserved):
+ 30.269394  systemd[1]: Stopping user@0.service - User Manager for UID 0...
+ 30.282585  systemd[537]: Activating special unit exit.target...
+ 30.283688  systemd[537]: Stopped target default.target - Main User Target.
+ 30.284005  systemd[537]: Stopped target basic.target - Basic System.
+ 30.284236  systemd[537]: Stopped target paths.target - Paths.
+ 30.284454  systemd[537]: Stopped target sockets.target - Sockets.
+ 30.284692  systemd[537]: Stopped target timers.target - Timers.
+ 30.284937  systemd[537]: Stopped systemd-tmpfiles-clean.timer - Daily Cleanup of User's Temporary Directories.
+ 30.285792  systemd[537]: Stopped systemd-tmpfiles-setup.service - Create User Files and Directories.
+ 30.287959  systemd[537]: Removed slice app.slice - User Application Slice.
+ 30.288141  systemd[537]: Reached target shutdown.target - Shutdown.
+ 30.289598  systemd[537]: Finished systemd-exit.service - Exit the Session.
+ 30.289866  systemd[537]: Reached target exit.target - Exit the Session.
+ 51.662054  sshd-session[624]: Accepted publickey for root from 10.26.24.218 port 33194 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 51.662059  sshd-session[628]: Accepted publickey for root from 10.26.24.218 port 39694 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 51.716606  systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+ 51.736754  systemd[1]: user@0.service: Deactivated successfully.
+ 51.739810  systemd[1]: Stopped user@0.service - User Manager for UID 0.
+ 51.740902  systemd[1]: user@0.service: Consumed 2.000s CPU time, 20.9M memory peak.
+ 51.872711  systemd-logind[351]: New session 3 of user root.
+ 51.875612  systemd-logind[351]: Removed session 2.
+ 51.892123  systemd[1]: Starting user@0.service - User Manager for UID 0...
+ 51.909020  systemd-logind[351]: New session 4 of user root.
+ 52.026034  systemd-logind[351]: New session 5 of user root.
+ 52.033504  (systemd)[639]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
 
 RUN 2 BOOT 60; offset 4.072697s; RTC invalid: False
 
@@ -7090,6 +7208,15 @@ Nearby evidence (kernel-relative seconds; source journal order preserved):
 
 RUN 3 BOOT 8; offset 4.081571s; RTC invalid: False
 
+ssh_lifetime: SSH PID 612: PAM session open to close
+  kernel interval/report: 20.633689 -> 51.248431
+  context anchor: 20.633689
+  starting: (none observed)
+  nominally started: NetworkManager-dispatcher.service; NetworkManager.service; auditd.service; chronyd.service; dbus-broker.service; getty@tty1.service; qm.service; serial-getty@ttyLF0.service; sshd.service; systemd-hostnamed.service; systemd-journald.service; systemd-logind.service; systemd-udevd.service; user@0.service
+  stopping: (none observed)
+  nearby unit transitions: (none observed)
+  Completed session lifetime exceeds 1.000s outlier threshold (max of 1s and Q3 + 3 × IQR). Includes command execution and client waiting; not a measured kernel stall.
+
 clock_jump: chronyd forward time-jump report
   kernel interval/report: 52.011927 -> None
   context anchor: 52.011927
@@ -7100,6 +7227,22 @@ clock_jump: chronyd forward time-jump report
   Report time only; clock change/earlier stall onset not established.
 
 Nearby evidence (kernel-relative seconds; source journal order preserved):
+ 18.751779  chronyd[340]: Selected source 170.187.147.56 (2.centos.pool.ntp.org)
+ 20.031941  sshd-session[594]: Accepted publickey for root from 10.26.24.218 port 39172 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 20.070555  systemd-logind[345]: New session 3 of user root.
+ 20.120989  systemd[1]: Started session-3.scope - Session 3 of User root.
+ 20.128121  sshd-session[594]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+ 20.305680  sshd-session[598]: Received disconnect from 10.26.24.218 port 39172:11: disconnected by user
+ 20.307655  sshd-session[598]: Disconnected from user root 10.26.24.218 port 39172
+ 20.316373  sshd-session[594]: pam_unix(sshd:session): session closed for user root
+ 20.327975  systemd[1]: session-3.scope: Deactivated successfully.
+ 20.344201  systemd-logind[345]: Session 3 logged out. Waiting for processes to exit.
+ 20.352584  systemd-logind[345]: Removed session 3.
+ 20.547691  sshd-session[612]: Accepted publickey for root from 10.26.24.218 port 39186 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
+ 20.555376  chronyd[340]: Selected source 137.184.71.242 (2.centos.pool.ntp.org)
+ 20.582714  systemd-logind[345]: New session 4 of user root.
+ 20.626565  systemd[1]: Started session-4.scope - Session 4 of User root.
+ 20.633689  sshd-session[612]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
  51.237942  sshd-session[623]: Received disconnect from 10.26.24.218 port 39186:11: disconnected by user
  51.239620  sshd-session[623]: Disconnected from user root 10.26.24.218 port 39186
  51.248431  sshd-session[612]: pam_unix(sshd:session): session closed for user root
@@ -7362,6 +7505,15 @@ Nearby evidence (kernel-relative seconds; source journal order preserved):
 
 RUN 3 BOOT 35; offset 4.076254s; RTC invalid: False
 
+service_stop: user@0.service shutdown
+  kernel interval/report: 31.107250 -> 50.718331
+  context anchor: 31.107250
+  starting: (none observed)
+  nominally started: NetworkManager-dispatcher.service; NetworkManager.service; auditd.service; chronyd.service; dbus-broker.service; getty@tty1.service; qm.service; serial-getty@ttyLF0.service; sshd.service; systemd-hostnamed.service; systemd-journald.service; systemd-logind.service; systemd-udevd.service
+  stopping: user@0.service
+  nearby unit transitions: 31.107 Stopping user@0.service
+  Explicit host Stopping-to-Stopped/deactivation interval exceeds 10s. Includes shutdown work and waiting; not a measured kernel-stall duration.
+
 ssh_session: SSH PID 625: accepted key to PAM session
   kernel interval/report: 39.653531 -> 52.704683
   context anchor: 39.653531
@@ -7381,6 +7533,19 @@ clock_jump: chronyd forward time-jump report
   Report time only; clock change/earlier stall onset not established.
 
 Nearby evidence (kernel-relative seconds; source journal order preserved):
+ 31.107250  systemd[1]: Stopping user@0.service - User Manager for UID 0...
+ 31.130920  systemd[478]: Activating special unit exit.target...
+ 31.132119  systemd[478]: Stopped target default.target - Main User Target.
+ 31.132436  systemd[478]: Stopped target basic.target - Basic System.
+ 31.132664  systemd[478]: Stopped target paths.target - Paths.
+ 31.132878  systemd[478]: Stopped target sockets.target - Sockets.
+ 31.133093  systemd[478]: Stopped target timers.target - Timers.
+ 31.133321  systemd[478]: Stopped systemd-tmpfiles-clean.timer - Daily Cleanup of User's Temporary Directories.
+ 31.135265  systemd[478]: Stopped systemd-tmpfiles-setup.service - Create User Files and Directories.
+ 31.137168  systemd[478]: Removed slice app.slice - User Application Slice.
+ 31.137370  systemd[478]: Reached target shutdown.target - Shutdown.
+ 31.138888  systemd[478]: Finished systemd-exit.service - Exit the Session.
+ 31.139167  systemd[478]: Reached target exit.target - Exit the Session.
  39.653531  sshd-session[625]: Accepted publickey for root from 10.26.24.218 port 45310 ssh2: RSA SHA256:69NlKkO9VM775SII9cyLIxUpuqH1luQxGFya/WsvVbw
  39.703308  systemd-logind[347]: New session 4 of user root.
  50.542078  chronyd[342]: Forward time jump detected!

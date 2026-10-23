@@ -13,6 +13,8 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from qm_ssh import lifetime_statistics, ssh_connections
+
 OUT = Path("qm-analysis")
 
 
@@ -36,6 +38,33 @@ def normalize_kernel(message):
         text = re.sub(r"Memory: \d+K/", "Memory: AVAILABLE_K/", text)
         text = re.sub(r"\d+K reserved", "RESERVED_K reserved", text)
     return text
+
+
+def service_stop_intervals(boot):
+    """Pair explicit host service stops, preferring the Stopped job message."""
+    spans = []
+    journal = boot["journal"]
+    for index, event in enumerate(journal):
+        match = re.match(r"^systemd\[1\]: Stopping (\S+\.service)(?: - |\.\.\.)", event["name"])
+        if not match:
+            continue
+        unit = match[1]
+        tail = []
+        for entry in journal[index + 1:]:
+            if re.match(rf"^systemd\[1\]: (?:Starting|Stopping) {re.escape(unit)}(?: - |\.\.\.)", entry["name"]):
+                break
+            tail.append(entry)
+        stopped = next((e for e in tail if re.match(rf"^systemd\[1\]: Stopped {re.escape(unit)}(?: - |\.)", e["name"])), None)
+        deactivated = next((e for e in tail if e["name"].startswith(f"systemd[1]: {unit}: Deactivated successfully.")), None)
+        end = stopped or deactivated
+        if not end:
+            continue
+        start_time = event["activating"] / 1e6 - boot["offset"]
+        end_time = end["activating"] / 1e6 - boot["offset"]
+        if 0 <= start_time <= end_time:
+            spans.append({"unit": unit, "start": start_time, "end": end_time,
+                "source": "host journal Stopping to " + ("Stopped" if stopped else "Deactivated successfully")})
+    return spans
 
 
 def service_context(boot, anchor):
@@ -100,6 +129,27 @@ def main():
                 "journal": [e for e in data["boot_logs"] if e["source"] == "journalctl"],
             }
     events = []
+    for boot in boots.values():
+        boot["ssh_connections"] = ssh_connections(boot)
+        boot["service_stops"] = service_stop_intervals(boot)
+    ssh = [c for boot in boots.values() for c in boot["ssh_connections"]]
+    ssh_stats = lifetime_statistics(ssh)
+    ssh_rows = []
+    for key, boot in boots.items():
+        for connection in boot["ssh_connections"]:
+            span = connection["lifetime"]
+            ssh_rows.append({"run": key[0], "boot_index": key[1], "connection_index": connection["index"],
+                "sshd_pid": connection["pid"], "accepted_kernel_s": connection["accepted"],
+                "opened_kernel_s": connection["opened"], "closed_kernel_s": connection["closed"],
+                "observed_end_kernel_s": connection["observed_end"],
+                "open_to_close_s": span["end"] - span["start"] if span and not span["censored"] else None,
+                "incomplete": bool(span and span["censored"])})
+    csv_write("ssh-connections.csv", ssh_rows)
+    csv_write("ssh-session-lifetimes.csv", [row for row in ssh_rows if row["open_to_close_s"] is not None])
+    csv_write("service-stop-intervals.csv", [{"run": key[0], "boot_index": key[1], "unit": span["unit"],
+        "start_kernel_s": span["start"], "end_kernel_s": span["end"],
+        "duration_s": span["end"] - span["start"], "source": span["source"]}
+        for key, boot in boots.items() for span in boot["service_stops"]])
 
     def add(key, category, description, start_export, end_export=None, severity="long", note="", age=None):
         boot = boots[key]
@@ -148,15 +198,27 @@ def main():
         if timeout:
             add(key, "qm_timeout", "qm.service initial attempt", first_attempt[0]["activating"] / 1e6,
                 timeout["activating"] / 1e6, note="Censored by configured startup timeout; not a measured natural stall duration.")
+        for span in boot["service_stops"]:
+            if span["end"] - span["start"] > 10:
+                add(key, "service_stop", span["unit"] + " shutdown", span["start"] + boot["offset"], span["end"] + boot["offset"],
+                    severity="long" if span["end"] - span["start"] >= 20 else "moderate",
+                    note="Explicit host Stopping-to-Stopped/deactivation interval exceeds 10s. Includes shutdown work and waiting; not a measured kernel-stall duration.")
+        for connection in boot["ssh_connections"]:
+            login, lifetime = connection["login"], connection["lifetime"]
+            if login and login["end"] - login["start"] > 10:
+                duration = login["end"] - login["start"]
+                add(key, "ssh_session", f"SSH PID {connection['pid']}: accepted key to PAM session",
+                    login["start"] + boot["offset"], login["end"] + boot["offset"],
+                    severity="long" if duration >= 20 else "moderate",
+                    note="Host session-opening interval; not TCP connection establishment or exact lockup onset.")
+            if lifetime and not lifetime["censored"] and lifetime["end"] - lifetime["start"] > ssh_stats["threshold_s"]:
+                duration = lifetime["end"] - lifetime["start"]
+                add(key, "ssh_lifetime", f"SSH PID {connection['pid']}: PAM session open to close",
+                    lifetime["start"] + boot["offset"], lifetime["end"] + boot["offset"],
+                    severity="long" if duration >= 20 else "moderate",
+                    note=f"Completed session lifetime exceeds {ssh_stats['threshold_s']:.3f}s outlier threshold (max of 1s and Q3 + 3 × IQR). Includes command execution and client waiting; not a measured kernel stall.")
         for event in journal:
             name, export = event["name"], event["activating"] / 1e6
-            if "Accepted publickey" in name:
-                pid = re.match(r"sshd-session\[(\d+)\]", name)[1]
-                pam = next((e for e in journal if e["name"].startswith(f"sshd-session[{pid}]: pam_unix(sshd:session): session opened")), None)
-                if pam and (pam["activating"] - event["activating"]) > 10e6:
-                    duration = (pam["activating"] - event["activating"]) / 1e6
-                    add(key, "ssh_session", f"SSH PID {pid}: accepted key to PAM session", export, pam["activating"] / 1e6,
-                        severity="long" if duration >= 20 else "moderate", note="Host session-opening interval; not TCP connection establishment or exact lockup onset.")
             if "Forward time jump detected!" in name:
                 add(key, "clock_jump", "chronyd forward time-jump report", export,
                     severity="signal", note="Report time only; clock change/earlier stall onset not established.")
@@ -250,6 +312,7 @@ def main():
         "kernel_message_count": total_kernel, "normalized_kernel_signature_count": len(signatures),
         "kernel_diagnostic_counts": dict(diagnostic_counts),
         "rtc_invalid_boot_count": len(rtc_keys), "rtc_invalid_and_long_or_signal": sorted(rtc_keys & severe_keys),
+        "ssh_lifetimes": ssh_stats,
         "all_offset_fields_match": True}
     (OUT / "stall-summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary, indent=2))

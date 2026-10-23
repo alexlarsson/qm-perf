@@ -1,8 +1,8 @@
 {
   "boot_count": 299,
-  "event_count": 59,
-  "candidate_boot_count": 36,
-  "long_or_signal_boot_count": 24,
+  "event_count": 65,
+  "candidate_boot_count": 38,
+  "long_or_signal_boot_count": 26,
   "event_categories": {
     "service": 19,
     "nic_bringup": 1,
@@ -10,6 +10,8 @@
     "ssh_session": 19,
     "clock_jump": 11,
     "soft_lockup": 2,
+    "ssh_lifetime": 4,
+    "service_stop": 2,
     "hrtimer_latency": 1
   },
   "kernel_message_count": 118925,
@@ -31,5 +33,18 @@
       63
     ]
   ],
+  "ssh_lifetimes": {
+    "completed_samples": 620,
+    "incomplete_samples": 299,
+    "threshold_s": 1.0,
+    "rule": "Completed lifetime exceeds max(1 second, Q3 + 3 \u00d7 IQR); incomplete lifetimes are excluded.",
+    "q1_s": 0.19657125000000075,
+    "q3_s": 0.25848200000000077,
+    "completed_median_s": 0.2233615000000011,
+    "ordinary_samples": 616,
+    "ordinary_median_s": 0.22259700000000038,
+    "ordinary_max_s": 0.5446159999999978,
+    "outlier_count": 4
+  },
   "all_offset_fields_match": true
 }
