@@ -222,12 +222,13 @@ None of these eleven boots has the RTC-invalid sequence either.
   first SSH session. Orange seat-announcement dots and teal new-session
   announcement dots sit on the logind startup row. Every recorded new session
   is shown on individual boots; the reference averages only the first session
-  announcement per boot. The network-setup hover details list each bridge/veth milestone; its
+  announcement per boot. The network-setup popup details list each bridge/veth milestone; its
   interval does not imply every Podman networking operation has completed.
   Missing records are labeled rather
   than represented as zero. Repeated service attempts remain separate.
-  Hover/focus popups show service context and highlighted journal lines across
-  the relevant interval; clicking keeps them open for reading and copying.
+  Clicking a timeline mark or background phase opens service context and
+  highlighted journal lines across the relevant interval. Popups stay open
+  until closed with Close, Escape, or an outside click; Enter/Space also opens them.
   Run, search and moderate-observation filters preserve the reference cohort.
 - `timeline-reference.json`: the exact 263-boot reference cohort, mean phase
   boundaries/durations and per-service means, ranges and contributing counts.
