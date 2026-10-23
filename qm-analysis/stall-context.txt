@@ -2775,7 +2775,7 @@ Nearby evidence (kernel-relative seconds; source journal order preserved):
 
 RUN 1 BOOT 81; offset 4.096802s; RTC invalid: False
 
-soft_lockup: CPU 0 watchdog report, age 30s
+soft_lockup: Soft lockup: CPU 0, watchdog age 30s
   kernel interval/report: 56.170116 -> None
   context anchor: 26.170116
   starting: (none observed)
@@ -5899,7 +5899,7 @@ ssh_session: SSH PID 621: accepted key to PAM session
   nearby unit transitions: (none observed)
   Host session-opening interval; not TCP connection establishment or exact lockup onset.
 
-soft_lockup: CPU 7 watchdog report, age 32s
+soft_lockup: Soft lockup: CPU 7, watchdog age 32s
   kernel interval/report: 53.260160 -> None
   context anchor: 21.260160
   starting: (none observed)

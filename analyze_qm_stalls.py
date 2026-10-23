@@ -235,7 +235,7 @@ def main():
             if lockup:
                 kind = "soft_lockup"
                 age = int(lockup[2])
-                add(key, "soft_lockup", f"CPU {lockup[1]} watchdog report, age {age}s", export,
+                add(key, "soft_lockup", f"Soft lockup: CPU {lockup[1]}, watchdog age {age}s", export,
                     severity="signal", age=age,
                     note=f"Detection time. Context uses report minus printed age = {export - boot['offset'] - age:.3f}s; heuristic last-watchdog-progress reference, not precise onset.")
             elif "hrtimer: interrupt took" in name:

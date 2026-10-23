@@ -45,6 +45,12 @@ identify a filesystem operation, device wait, or other blocked function.
 
 ## SSH startup versus SSH session opening
 
+A follow-up CPU-accounting check distinguishes the RSA outliers from long
+sleeping waits: 2/20 reports 9.747 s CPU for 9.610 s activation, and 2/60
+reports 11.198 s CPU for 11.000 s activation. Both initialize the CRNG before
+key generation starts. These remain performance outliers, but the accounting
+suggests computation and is weak evidence for the shared kernel-stall group.
+
 The actual `sshd.service` activation median is 0.170 s and maximum 1.210 s
 (run 2 boot 36). It has one candidate under this screen. The much larger SSH
 delays discussed earlier concern authenticated sessions opening, or, in the

@@ -74,6 +74,14 @@ or identify the delayed call without a stack/trace. The dispatcher startup
 message near recovery is not a required second trigger in this driver path.
 [Version-specific NIC driver trace](nic-driver-run-1-boot-1.md).
 
+[Cross-case source comparison](shared-waits-other-cases.md) additionally finds
+kernfs removal and fsnotify/SRCU teardown candidates in user-manager shutdown,
+but no demonstrated direct RCU wait in runtime-directory creation or ordinary
+SSH session setup. Their D-Bus/job dependencies can propagate a delay. CPU
+accounting suggests the RSA key-generation outliers are computation rather
+than long sleeping waits; they remain timing candidates, not strong evidence
+for the same underlying stall.
+
 Services commonly active in the root-system incidents include journald, udev,
 D-Bus, auditd, chronyd, logind and, in later incidents, NetworkManager, sshd,
 hostnamed, QM and the user manager. This commonality is expected in an ordinary

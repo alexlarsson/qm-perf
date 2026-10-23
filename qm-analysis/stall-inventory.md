@@ -19,7 +19,7 @@ Times are reconstructed seconds since kernel start. Intervals are operation boun
 | 1/48 | systemd-journal-flush.service | 7.062–11.015 | 7.062 | systemd-journal-flush.service; systemd-udevd.service |
 | 1/63 | NetworkManager.service | 11.255–45.422 | 11.255 | NetworkManager.service |
 | 1/63 | systemd-hostnamed.service | 11.765–45.101 | 11.765 | NetworkManager.service; systemd-hostnamed.service; systemd-logind.service |
-| 1/81 | CPU 0 watchdog report, age 30s | 56.170 (report) | 26.170 | None observed |
+| 1/81 | Soft lockup: CPU 0, watchdog age 30s | 56.170 (report) | 26.170 | None observed |
 | 1/93 | systemd-journal-flush.service | 7.058–10.256 | 7.058 | systemd-journal-flush.service; systemd-udevd.service |
 | 1/95 | chronyd forward time-jump report | 51.472 (report) | 51.472 | None observed |
 | 1/97 | SSH PID 611: PAM session open to close | 20.916–52.309 | 20.916 | None observed |
@@ -49,7 +49,7 @@ Times are reconstructed seconds since kernel start. Intervals are operation boun
 | 2/90 | SSH PID 638: accepted key to PAM session | 21.167–52.703 | 21.167 | None observed |
 | 2/94 | SSH PID 617: accepted key to PAM session | 22.281–55.443 | 22.281 | None observed |
 | 2/94 | SSH PID 621: accepted key to PAM session | 43.174–55.450 | 43.174 | None observed |
-| 2/94 | CPU 7 watchdog report, age 32s | 53.260 (report) | 21.260 | None observed |
+| 2/94 | Soft lockup: CPU 7, watchdog age 32s | 53.260 (report) | 21.260 | None observed |
 | 3/2 | systemd-udevd.service | 6.998–9.240 | 6.998 | systemd-udevd.service |
 | 3/4 | systemd-udevd.service | 6.902–9.054 | 6.902 | systemd-udevd.service |
 | 3/8 | SSH PID 612: PAM session open to close | 20.634–51.248 | 20.634 | None observed |

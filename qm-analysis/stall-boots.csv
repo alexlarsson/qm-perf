@@ -8,7 +8,7 @@ run,boot_index,rtc_invalid,categories,events
 1,42,False,qm_timeout,13.422–46.136 qm.service initial attempt
 1,48,False,service,7.062–11.015 systemd-journal-flush.service
 1,63,True,service,11.255–45.422 NetworkManager.service | 11.765–45.101 systemd-hostnamed.service
-1,81,False,soft_lockup,"56.170 CPU 0 watchdog report, age 30s"
+1,81,False,soft_lockup,"56.170 Soft lockup: CPU 0, watchdog age 30s"
 1,93,True,service,7.058–10.256 systemd-journal-flush.service
 1,95,False,clock_jump,51.472 chronyd forward time-jump report
 1,97,False,clock_jump; ssh_lifetime,20.916–52.309 SSH PID 611: PAM session open to close | 52.263 chronyd forward time-jump report
@@ -26,7 +26,7 @@ run,boot_index,rtc_invalid,categories,events
 2,83,False,clock_jump; qm_timeout,13.537–46.399 qm.service initial attempt | 46.299 chronyd forward time-jump report
 2,84,True,service,7.078–10.272 systemd-journal-flush.service
 2,90,False,ssh_session,21.167–52.703 SSH PID 638: accepted key to PAM session
-2,94,False,soft_lockup; ssh_session,"22.281–55.443 SSH PID 617: accepted key to PAM session | 43.174–55.450 SSH PID 621: accepted key to PAM session | 53.260 CPU 7 watchdog report, age 32s"
+2,94,False,soft_lockup; ssh_session,"22.281–55.443 SSH PID 617: accepted key to PAM session | 43.174–55.450 SSH PID 621: accepted key to PAM session | 53.260 Soft lockup: CPU 7, watchdog age 32s"
 3,2,False,service,6.998–9.240 systemd-udevd.service
 3,4,True,service,6.902–9.054 systemd-udevd.service
 3,8,False,clock_jump; ssh_lifetime,20.634–51.248 SSH PID 612: PAM session open to close | 52.012 chronyd forward time-jump report
